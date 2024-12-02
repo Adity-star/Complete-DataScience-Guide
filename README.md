@@ -3,7 +3,7 @@
 - 🌱 I’m currently learning Machine Learning Algorithms.
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me aakuskar.980@gmail.com
-
+- Currently working on Machine learning algrothims.
 
 <!---
 Adity-star/Adity-star is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
