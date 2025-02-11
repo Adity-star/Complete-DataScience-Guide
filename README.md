@@ -49,7 +49,7 @@ Contributions, issues, and feature requests are welcome! Feel free to fork the r
 ## 📬 Contact
 For any queries, feel free to connect with me:
 - **GitHub**: [Adity-star](https://github.com/Adity-star)
-- **LinkedIn**: [www.linkedin.com/in/aditya-akuskar-27b43533a](#)
+- **LinkedIn**: [Aditya Akuskar](www.linkedin.com/in/aditya-akuskar-27b43533a)
 - **Email**: aakuskar.980@gmail.com
 
 ---
