@@ -1,6 +1,6 @@
 # DataScience-Work
 
-Welcome to the **DataScience-Work** repository! This repository contains various data science projects, analyses, and implementations covering a wide range of concepts and techniques in data science, machine learning, and data analytics.
+Welcome to the **DataScience-Work** repository! This repository contains various data science projects, analyses, and implementations covering a wide range of concepts and techniques in data science, machine learning, and data analytics also study material like cheatsheets,notes and books for learning Data science.
 
 ## 📌 Repository Overview
 This repository serves as a collection of hands-on projects and code snippets related to data science. The projects cover key topics such as:
