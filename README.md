@@ -12,6 +12,7 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Feature Engineering
 - Data Visualization
 - Study Materials for all
+- Research Papers
 
 ## 📂 Project Structure
 The repository is organized into multiple directories, each representing a different project or topic. Below is a general structure:
@@ -49,7 +50,7 @@ Contributions, issues, and feature requests are welcome! Feel free to fork the r
 ## 📬 Contact
 For any queries, feel free to connect with me:
 - **GitHub**: [Adity-star](https://github.com/Adity-star)
-- **LinkedIn**: [Aditya Akuskar](www.linkedin.com/in/aditya-akuskar-27b43533a)
+- **LinkedIn**: [Aditya Akuskar](https://www.linkedin.com/in/aditya-a-27b43533a/)
 - **Email**: aakuskar.980@gmail.com
 
 ---
