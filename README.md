@@ -15,9 +15,6 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Research Papers
 - Interview question
 
-## 📂 Project Structure
-The repository is organized into multiple directories, each representing a different project or topic. Below is a general structure:
-
 
 ## 🛠️ Technologies Used
 The Notebooks in this repository make use of various data science libraries and tools, including:
