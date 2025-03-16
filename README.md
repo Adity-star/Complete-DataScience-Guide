@@ -13,6 +13,7 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Data Visualization
 - Study Materials for all
 - Research Papers
+- Interview question
 
 ## 📂 Project Structure
 The repository is organized into multiple directories, each representing a different project or topic. Below is a general structure:
