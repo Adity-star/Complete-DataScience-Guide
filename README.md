@@ -9,40 +9,30 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Machine Learning Algorithms
 - Deep Learning
 - Pytorch
-- Feature Engineering
-- Data Visualization
-- Study Materials for all
+- Feature Engineering techniques
+- Data Science Ebooks
 - Research Papers
-
-## 📂 Project Structure
-The repository is organized into multiple directories, each representing a different project or topic. Below is a general structure:
+- Interview question
 
 
-## 🛠️ Technologies Used
-The Notebooks in this repository make use of various data science libraries and tools, including:
-- Python 🐍
-- Pandas, NumPy
-- Matplotlib, Seaborn, Plotly
-- Scikit-learn
-- TensorFlow, Keras, PyTorch
+## Data Science EBooks
+* [100 days of Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
+* [Hands on MAchine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Hands-On_Machine_Learning_with_Scikit-Learn-Keras-and-TensorFlow-2nd-Edition-Aurelien-Geron.pdf)
+* [Introduction tp Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Introduction%20to%20Machine%20Learning.pdf)
+* [Introduction to Machine Learning with A Guide For Beginners](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Introduction_to_Machine_Learning_with_Python_A_Guide_for_Beginners.epub)
+* [Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine%20Learning%20(%20etc.)%20(z-lib.org).pdf)
+* [Machine Learning with TenserFlow](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine%20Learning%20with%20TensorFlow%20(%20PDFDrive%20).pdf)
+* [Machine Learning with Python](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine_Learning_with_Python.pdf)
+* [Python MAchine Learning CookBook](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine_Learning_with_Python_Cookbook_Practical_Solutions_from_Preprocessing.pdf)
+* [Pratical Machine Learning and Image Processing](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Practical_Machine_Learning_and_Image_Processing_For_Facial_Recognition.pdf)
+* [Python Machine Learing Case Studies](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Python%20Machine%20Learning%20Case%20Studies.pdf)
+* [Thoughtful Machine Learning with Python](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Thoughtful%20Machine%20Learning.pdf)
+* [Dive into Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/d2l-en.pdf)
+* [Generative Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/generative-deep-learning-teaching-machines-to-paint-write-compose-and-play-2nbsped-1098134184-9781098134181.pdf)
+* [Natural Language Processing with Transformers](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/natural-language-processing-with-transformers-revised-edition-1098136799-9781098136796-9781098103248.pdf)
 
-## 📖 How to Use
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Adity-star/DataScience-Work.git
-   ```
-2. Navigate to a specific project directory:
-   ```bash
-   cd DataScience-Work/Project1_Name
-   ```
-4. Run the Jupyter Notebook or Python script:
-   ```bash
-   jupyter notebook notebook.ipynb
-   ```
-   or
-   ```bash
-   python script.py
-   ```
+  
+
 
 ## 📢 Contributions
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository, create a new branch, and submit a pull request.
