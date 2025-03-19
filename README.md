@@ -14,8 +14,13 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Research Papers
 - Interview question
 
+  ### Here are the Sections
+  * [Data Science Ebooks](#data-science-ebooks)
+  * [Data Science CheatSheets](#data-science-cheetsheets)
+
 
 ## Data Science EBooks
+This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/EBooks) contains books,some of which I have read about data science and machine learning:
 * [100 days of Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
 * [Hands on MAchine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Hands-On_Machine_Learning_with_Scikit-Learn-Keras-and-TensorFlow-2nd-Edition-Aurelien-Geron.pdf)
 * [Introduction tp Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Introduction%20to%20Machine%20Learning.pdf)
@@ -31,6 +36,14 @@ This repository serves as a collection of hands-on projects and code snippets re
 * [Generative Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/generative-deep-learning-teaching-machines-to-paint-write-compose-and-play-2nbsped-1098134184-9781098134181.pdf)
 * [Natural Language Processing with Transformers](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/natural-language-processing-with-transformers-revised-edition-1098136799-9781098136796-9781098103248.pdf)
 
+
+## Data Science Cheetsheets
+This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets) contains cheatsheets of basic concepts in data science that will be asked in interviews:
+* Standford Materials
+* Statistics and Probability
+* Machine Learning Concepts
+* Deep Learning Concepts
+* Natural Language Processing
   
 
 
