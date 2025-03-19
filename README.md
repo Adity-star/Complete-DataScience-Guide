@@ -9,20 +9,14 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Machine Learning Algorithms
 - Deep Learning
 - Pytorch
-- Feature Engineering
-- Data Visualization
-- Study Materials for all
+- Feature Engineering techniques
+- Data Science Ebooks
 - Research Papers
 - Interview question
 
 
-## 🛠️ Technologies Used
-The Notebooks in this repository make use of various data science libraries and tools, including:
-- Python 🐍
-- Pandas, NumPy
-- Matplotlib, Seaborn, Plotly
-- Scikit-learn
-- TensorFlow, Keras, PyTorch
+## Data SCience EBooks
+* 100 days of python (https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
 
 ## 📖 How to Use
 1. Clone the repository:
