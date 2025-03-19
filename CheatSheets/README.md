@@ -6,7 +6,7 @@ This repository serves two main purposes:
 2. Introduce Data Science Concepts to Beginners.
 
 Categories:
-* [Stanford Materials](##Stanford Materials)
+* [Stanford Materials](##standford-materials)
 * [Statistics and Probability]
 * [Machine Learning Concepts]
 * [Deep Learning Concepts]
