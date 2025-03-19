@@ -17,7 +17,17 @@ This repository serves as a collection of hands-on projects and code snippets re
 
 ## Data SCience EBooks
 * [100 days of Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
-
+* [Hands on MAchine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Hands-On_Machine_Learning_with_Scikit-Learn-Keras-and-TensorFlow-2nd-Edition-Aurelien-Geron.pdf)
+* [Introduction tp Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Introduction%20to%20Machine%20Learning.pdf)
+* [Introduction to Machine Learning with A Guide For Beginners](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Introduction_to_Machine_Learning_with_Python_A_Guide_for_Beginners.epub)
+* [Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine%20Learning%20(%20etc.)%20(z-lib.org).pdf)
+* [Machine Learning with TenserFlow](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine%20Learning%20with%20TensorFlow%20(%20PDFDrive%20).pdf)
+* [Machine Learning with Python](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine_Learning_with_Python.pdf)
+* [Python MAchine Learning CookBook](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Machine_Learning_with_Python_Cookbook_Practical_Solutions_from_Preprocessing.pdf)
+* [Pratical Machine Learning and Image Processing](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Practical_Machine_Learning_and_Image_Processing_For_Facial_Recognition.pdf)
+* [Python Machine Learing Case Studies](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Python%20Machine%20Learning%20Case%20Studies.pdf)
+* [Thoughtful Machine Learning with Python](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Thoughtful%20Machine%20Learning.pdf)
+* 
 ## 📖 How to Use
 1. Clone the repository:
    ```bash
