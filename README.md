@@ -16,7 +16,7 @@ This repository serves as a collection of hands-on projects and code snippets re
 
 
 ## Data SCience EBooks
-* [100 days of Machine Learning](!https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
+* [100 days of Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
 
 ## 📖 How to Use
 1. Clone the repository:
