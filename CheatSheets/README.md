@@ -187,6 +187,126 @@ Types of Probability Distributions:
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
+#### [Log-Normal Distribution](#log-normal-distribution)
+* The **Log-Normal distribution** is a continuous probability distribution of a random variable whose logarithm is normally distributed. If \( X \) is normally distributed, then \( Y = e^X \) follows a log-normal distribution.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{(\ln(x) - \mu)^2}{2\sigma^2}}, \quad x > 0
+    \]
+    where \( \mu \) and \( \sigma \) are the parameters of the normal distribution of \( \ln(x) \).
+
+* **Example**:
+  - The distribution of stock prices is often modeled using a log-normal distribution.
+
+[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+#### [Pareto Distribution](#pareto-distribution)
+* The **Pareto distribution** is a power-law probability distribution that is often used to model the distribution of wealth, city populations, or income.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{\alpha x_m^\alpha}{x^{\alpha+1}}, \quad x \geq x_m
+    \]
+    where \( \alpha \) is the shape parameter, and \( x_m \) is the scale parameter.
+
+* **Example**:
+  - Income distribution, where a small number of people hold most of the wealth.
+
+[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
 ---
 
 [Back to Top](#data-science-cheatsheets)
+
+---
+---
+
+## Central Limit Theorem (CLT)
+The **Central Limit Theorem (CLT)** is one of the most important theorems in statistics, explaining why the normal distribution appears so often in practice. It describes the distribution of sample means from any population distribution, provided certain conditions are met.
+
+### 1. The Basic Idea of the Central Limit Theorem
+The CLT states that if you take a large enough sample from a population with any shape of distribution (it doesn’t have to be normal), the sampling distribution of the sample mean will approach a normal distribution as the sample size increases.
+
+**Formally:**
+- Given a population with mean \( \mu \) and variance \( \sigma^2 \).
+- Take a random sample of size \( n \) from this population.
+- Compute the sample mean for this sample.
+- If you repeat this process many times, the distribution of the sample means will approximate a normal distribution with:
+  - Mean \( \mu \) (the population mean).
+  - Standard deviation \( \frac{\sigma}{\sqrt{n}} \), which is the standard error of the mean.
+
+[Back to Top](#data-science-cheatsheets)
+
+---
+
+### 2. Key Concepts in CLT
+- **Population Distribution**: The distribution of values in the original population. It can be skewed, uniform, binomial, or any other shape.
+- **Sample Mean**: The average of the values in each sample.
+- **Sampling Distribution**: The distribution of the sample means, which is the key focus of CLT.
+
+---
+
+### 3. What Happens as Sample Size Increases?
+As sample size \( n \) increases, the distribution of the sample mean becomes more normal, regardless of the population distribution's shape.
+- For a sample size of \( n = 30 \) or greater, the sampling distribution of the sample mean tends to be close to normal, even if the original population distribution is highly skewed.
+
+---
+
+### 4. Mathematical Formulation of the CLT
+Suppose the population has a mean \( \mu \) and variance \( \sigma^2 \). 
+- Draw a sample of size \( n \) from this population and compute the sample mean \( \bar{X} \).
+- The sampling distribution of \( \bar{X} \) will have:
+  - Mean: \( E(\bar{X}) = \mu \)
+  - Standard deviation (Standard error): \( SE = \frac{\sigma}{\sqrt{n}} \)
+  
+As the sample size \( n \) increases, the sampling distribution of the sample mean will resemble a normal distribution with:
+  \[
+  N\left(\mu, \frac{\sigma^2}{n}\right)
+  \]
+  This means the sample means have the same mean \( \mu \) as the population but a smaller variance, which decreases as \( n \) increases.
+
+---
+
+### 5. Conditions for the Central Limit Theorem to Apply
+The Central Limit Theorem holds under the following conditions:
+- **Independence**: The samples must be drawn independently of each other.
+- **Sample Size**: The sample size \( n \) should be sufficiently large. A sample size of \( n \geq 30 \) is generally considered enough for CLT to apply.
+- **Finite Variance**: The population must have finite variance.
+
+---
+
+### 6. Implications of the Central Limit Theorem
+- **Sampling Distribution of the Mean**: Even if the population distribution is not normal, the sampling distribution of the sample means will still be normal (or close to normal) as long as the sample size is large.
+- **Normal Approximation**: This is why the normal distribution is so commonly used in statistics. The CLT enables statisticians to approximate probabilities using the normal distribution, even if the original data isn’t normally distributed.
+
+---
+
+### 7. Practical Examples of CLT
+
+#### Example 1: Coin Flips
+Imagine flipping a fair coin 100 times. The population distribution is binomial, but if you repeatedly take samples of 10 flips and calculate the average number of heads, the sampling distribution of the sample means will approximate a normal distribution as you take more and more samples.
+
+#### Example 2: Height of People
+Suppose we are studying the height of adult men in a country. The population distribution might be skewed, but if we repeatedly take random samples of 50 men and calculate the sample means of their heights, the distribution of these means will approach a normal distribution.
+
+---
+
+### 8. Why is the CLT Important?
+- **Estimation**: It allows us to use sample data to make inferences about population parameters, such as using the sample mean to estimate the population mean.
+- **Hypothesis Testing**: The CLT justifies the use of the normal distribution for conducting hypothesis tests, even when the underlying population is not normal.
+- **Confidence Intervals**: It enables the calculation of confidence intervals for population means, assuming the sample size is sufficiently large.
+
+---
+
+### 9. Limitations of the CLT
+- **Very Small Sample Sizes**: The CLT does not apply well to very small sample sizes, especially if the population distribution is highly skewed or contains outliers.
+- **Non-Independent Samples**: If the samples are not independent, the CLT cannot be applied.
+- **Infinite or Very Large Population**: The CLT assumes that the population is large enough or infinite so that sampling does not significantly affect the population distribution.
+
+[Back to [Central Limit Theorem]](#central-limit-theorem)
+
+[Back to Top](#data-science-cheatsheets)
+
