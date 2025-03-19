@@ -61,3 +61,124 @@ Types of Probability Distributions:
 * **Properties**:
   - **Mean** (Expected Value): \( \mu = p \)
   - **Variance**: \( \sigma^2 = p(1 - p) \)
+
+#### Binomial Distribution
+* The **Binomial distribution** is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with the same probability of success. It generalizes the Bernoulli distribution (which models a single trial) to multiple trials.
+
+* **Key Characteristics** of the Binomial Distribution:
+  - **Number of trials**: There are \( n \) independent trials (experiments).
+  - **Probability of success**: The probability of success on each trial is \( p \), and the probability of failure is \( 1 - p \).
+  - **Number of successes**: The random variable \( X \) represents the number of successes (or the count of successful outcomes) in the \( n \) trials.
+
+* **Formula**:
+  - Probability mass function (PMF):
+    \[
+    P(X=k) = \binom{n}{k} p^k (1 - p)^{n-k}
+    \]
+    where \( X \) is the number of successes, \( k \in \{0, 1, 2, \dots, n\} \), and \( \binom{n}{k} \) is the binomial coefficient.
+
+* **Example**:
+  - In a series of 10 coin tosses, what is the probability of getting exactly 6 heads (successes)? Here, \( n = 10 \) and \( p = 0.5 \).
+
+* **Properties**:
+  - **Mean** (Expected Value): \( \mu = n \cdot p \)
+  - **Variance**: \( \sigma^2 = n \cdot p \cdot (1 - p) \)
+
+#### Poisson Distribution
+* The **Poisson distribution** models the number of times an event occurs within a fixed interval of time or space, given that the events occur independently and at a constant average rate.
+
+* **Key Characteristics**:
+  - **Parameter** \( \lambda \): The average rate of occurrence of the event within a fixed interval.
+  - The number of occurrences is modeled as a random variable \( X \), and it can take values \( k = 0, 1, 2, \dots \).
+
+* **Formula**:
+  - Probability mass function (PMF):
+    \[
+    P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+    \]
+    where \( \lambda \) is the expected number of occurrences, and \( k \) is the actual number of occurrences.
+
+* **Example**:
+  - The average number of emails received per hour is 5. What is the probability of receiving exactly 3 emails in an hour?
+
+* **Properties**:
+  - **Mean**: \( \mu = \lambda \)
+  - **Variance**: \( \sigma^2 = \lambda \)
+
+---
+
+### Continuous Probability Distributions
+#### Uniform Distribution
+* The **Uniform distribution** is a type of continuous probability distribution in which all outcomes are equally likely within a given range. The distribution is defined by two parameters: the minimum and maximum values.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{1}{b - a}, \quad \text{for} \, a \leq x \leq b
+    \]
+    where \( a \) and \( b \) are the minimum and maximum values of the range.
+
+* **Example**:
+  - Rolling a fair 6-sided die. Each outcome is equally likely, so the distribution is uniform over the range \( [1, 6] \).
+
+#### Normal (Gaussian) Distribution
+* The **Normal distribution**, also known as the **Gaussian distribution**, is a continuous probability distribution that is symmetric around the mean. It is one of the most commonly used distributions in statistics.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+    \]
+    where \( \mu \) is the mean and \( \sigma \) is the standard deviation.
+
+* **Properties**:
+  - Symmetrical: The distribution is symmetrical around the mean.
+  - **Mean** = \( \mu \)
+  - **Variance** = \( \sigma^2 \)
+
+#### Exponential Distribution
+* The **Exponential distribution** models the time between events in a Poisson process. It is a continuous distribution with a constant hazard rate.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+    \]
+    where \( \lambda \) is the rate parameter.
+
+* **Example**:
+  - The time between arrivals of customers at a service desk follows an exponential distribution.
+
+#### Student’s t-Distribution
+* The **t-distribution** is used in hypothesis testing, particularly in small sample sizes when the population variance is unknown.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi} \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}
+    \]
+    where \( \nu \) is the degrees of freedom.
+
+#### Log-Normal Distribution
+* The **Log-Normal distribution** models a random variable whose logarithm is normally distributed.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{(\ln(x) - \mu)^2}{2\sigma^2}}
+    \]
+    where \( \mu \) and \( \sigma \) are the parameters of the normal distribution.
+
+#### Pareto Distribution
+* The **Pareto distribution** is a power-law probability distribution. It is used to model situations where a small number of occurrences account for a large portion of the effect.
+
+* **Formula**:
+  - Probability density function (PDF):
+    \[
+    f(x) = \frac{\alpha x_m^\alpha}{x^{\alpha + 1}}, \quad x \geq x_m
+    \]
+    where \( \alpha \) is the shape parameter and \( x_m \) is the scale parameter.
+
+---
+
+This structure gives a clear breakdown of all the key topics in **Probability Distributions** in both discrete and continuous categories. Feel free to adjust the content according to your needs!
