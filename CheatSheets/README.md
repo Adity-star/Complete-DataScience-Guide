@@ -222,9 +222,8 @@ Types of Probability Distributions:
 [Back to Top](#data-science-cheatsheets)
 
 ---
----
 
-## [Central Limit Theorem (CLT)](#central-limit-theorem)
+## Central Limit Theorem (CLT)
 The **Central Limit Theorem (CLT)** is one of the most important theorems in statistics, explaining why the normal distribution appears so often in practice. It describes the distribution of sample means from any population distribution, provided certain conditions are met.
 
 ### 1. The Basic Idea of the Central Limit Theorem
