@@ -15,7 +15,7 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Interview question
 
 
-## Data SCience EBooks
+## Data Science EBooks
 * [100 days of Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/100%20Days%20of%20Machine%20Learning.pdf)
 * [Hands on MAchine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Hands-On_Machine_Learning_with_Scikit-Learn-Keras-and-TensorFlow-2nd-Edition-Aurelien-Geron.pdf)
 * [Introduction tp Machine Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Introduction%20to%20Machine%20Learning.pdf)
@@ -27,24 +27,12 @@ This repository serves as a collection of hands-on projects and code snippets re
 * [Pratical Machine Learning and Image Processing](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Practical_Machine_Learning_and_Image_Processing_For_Facial_Recognition.pdf)
 * [Python Machine Learing Case Studies](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Python%20Machine%20Learning%20Case%20Studies.pdf)
 * [Thoughtful Machine Learning with Python](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/Machine%20Learning%20Study%20Material/Thoughtful%20Machine%20Learning.pdf)
-* 
-## 📖 How to Use
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Adity-star/DataScience-Work.git
-   ```
-2. Navigate to a specific project directory:
-   ```bash
-   cd DataScience-Work/Project1_Name
-   ```
-4. Run the Jupyter Notebook or Python script:
-   ```bash
-   jupyter notebook notebook.ipynb
-   ```
-   or
-   ```bash
-   python script.py
-   ```
+* [Dive into Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/d2l-en.pdf)
+* [Generative Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/generative-deep-learning-teaching-machines-to-paint-write-compose-and-play-2nbsped-1098134184-9781098134181.pdf)
+* [Natural Language Processing with Transformers](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/natural-language-processing-with-transformers-revised-edition-1098136799-9781098136796-9781098103248.pdf)
+
+  
+
 
 ## 📢 Contributions
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository, create a new branch, and submit a pull request.
