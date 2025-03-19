@@ -323,7 +323,7 @@ Suppose we are studying the height of adult men in a country. The population dis
 [Back to Top](#data-science-cheatsheets)
 ---
 
-## Hypothesis Testing
+## Hypothesis Test
 ## 1. What is Hypothesis Testing?
 In hypothesis testing, we start with a null hypothesis and an alternative hypothesis. The goal is to use sample data to evaluate whether there is enough evidence to reject the null hypothesis in favor of the alternative hypothesis.
 
@@ -407,7 +407,7 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 - **Two-Tailed Test**: Tests for an effect in both directions (either greater than or less than). You are testing if the parameter is different from a certain value (not equal).  
   **Example**: Testing if the average height is different from 175 cm (\(H_1: \mu \neq 175\)).
 
-[Back to [Hypothesis Testing](#hypothesis-testing)|[Back to Statistics and Probability](#statistics-and-probability)
+[Back to [Hypothesis Testing](#hypothesis-test)|[Back to Statistics and Probability](#statistics-and-probability)
 
 [Back to Top](#data-science-cheatsheets)
 
