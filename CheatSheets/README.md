@@ -78,6 +78,8 @@ Types of Probability Distributions:
 
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
+---
+
 #### [Binomial Distribution](#binomial-distribution)
 * The **Binomial distribution** is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with the same probability of success. It generalizes the Bernoulli distribution (which models a single trial) to multiple trials.
 
@@ -101,6 +103,8 @@ Types of Probability Distributions:
   - **Variance**: \( \sigma^2 = n \cdot p \cdot (1 - p) \)
 
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+---
 
 #### [Poisson Distribution](#poisson-distribution)
 * The **Poisson distribution** models the number of times an event occurs within a fixed interval of time or space, given that the events occur independently and at a constant average rate.
@@ -143,6 +147,8 @@ Types of Probability Distributions:
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
+---
+
 #### [Normal (Gaussian) Distribution](#normal-gaussian-distribution)
 * The **Normal distribution**, also known as the **Gaussian distribution**, is a continuous probability distribution that is symmetric around the mean. It is one of the most commonly used distributions in statistics.
 
@@ -160,6 +166,8 @@ Types of Probability Distributions:
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
+---
+
 #### [Exponential Distribution](#exponential-distribution)
 * The **Exponential distribution** models the time between events in a Poisson process. It is a continuous distribution with a constant hazard rate.
 
@@ -175,6 +183,8 @@ Types of Probability Distributions:
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
+---
+
 #### [Student’s t-Distribution](#students-t-distribution)
 * The **t-distribution** is used in hypothesis testing, particularly in small sample sizes when the population variance is unknown.
 
@@ -186,6 +196,8 @@ Types of Probability Distributions:
     where \( \nu \) is the degrees of freedom.
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+---
 
 #### [Log-Normal Distribution](#log-normal-distribution)
 * The **Log-Normal distribution** is a continuous probability distribution of a random variable whose logarithm is normally distributed. If \( X \) is normally distributed, then \( Y = e^X \) follows a log-normal distribution.
@@ -201,6 +213,8 @@ Types of Probability Distributions:
   - The distribution of stock prices is often modeled using a log-normal distribution.
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+---
 
 #### [Pareto Distribution](#pareto-distribution)
 * The **Pareto distribution** is a power-law probability distribution that is often used to model the distribution of wealth, city populations, or income.
@@ -223,7 +237,7 @@ Types of Probability Distributions:
 
 ---
 
-## Central Limit Theorem (CLT)
+## Central Limit Theorem
 The **Central Limit Theorem (CLT)** is one of the most important theorems in statistics, explaining why the normal distribution appears so often in practice. It describes the distribution of sample means from any population distribution, provided certain conditions are met.
 
 ### 1. The Basic Idea of the Central Limit Theorem
