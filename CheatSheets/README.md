@@ -12,11 +12,17 @@ Categories:
 * [Deep Learning Concepts](#deep-learning-concepts)
 * [Natural Language Processing](#natural-language-processing)
 
+---
+
 ## Stanford Materials
 The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material](https://stanford.edu/~shervine/teaching/)
 * [CS221 - Artificial Intelligence](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Stanford-CS221%20Artifical%20Intelligence)
 * [CS229 - Machine Learning](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Standford-CS229%20Machine%20Learning)
 * [CS230 - Deep Learning](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Standford-CS230%20Deep%20Learning)
+
+[Back to Top](#data-science-cheatsheets)
+
+---
 
 ## Statistics and Probability
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
@@ -24,6 +30,10 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [Probability Distributions](#probability-distributions)
 * [Central Limit Theorem](#central-limit-theorem)
 * [Hypothesis Test](#hypothesis-test)
+
+[Back to Top](#data-science-cheatsheets)
+
+---
 
 ### Probability Distributions
 Types of Probability Distributions:
@@ -39,8 +49,12 @@ Types of Probability Distributions:
    * [Log-Normal Distribution](#log-normal-distribution)
    * [Pareto Distribution](#pareto-distribution)
 
+[Back to Top](#statistics-and-probability)
+
+---
+
 ### Discrete Probability Distributions
-#### Bernoulli Distribution
+#### [Bernoulli Distribution](#bernoulli-distribution)
 * The **Bernoulli distribution** is a discrete probability distribution of a random variable that has exactly two possible outcomes, usually labeled as success and failure. It is a special case of the binomial distribution where the number of trials is one.
   
 * **Key Characteristics** of the Bernoulli Distribution:
@@ -62,7 +76,9 @@ Types of Probability Distributions:
   - **Mean** (Expected Value): \( \mu = p \)
   - **Variance**: \( \sigma^2 = p(1 - p) \)
 
-#### Binomial Distribution
+[Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+#### [Binomial Distribution](#binomial-distribution)
 * The **Binomial distribution** is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with the same probability of success. It generalizes the Bernoulli distribution (which models a single trial) to multiple trials.
 
 * **Key Characteristics** of the Binomial Distribution:
@@ -84,7 +100,9 @@ Types of Probability Distributions:
   - **Mean** (Expected Value): \( \mu = n \cdot p \)
   - **Variance**: \( \sigma^2 = n \cdot p \cdot (1 - p) \)
 
-#### Poisson Distribution
+[Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+#### [Poisson Distribution](#poisson-distribution)
 * The **Poisson distribution** models the number of times an event occurs within a fixed interval of time or space, given that the events occur independently and at a constant average rate.
 
 * **Key Characteristics**:
@@ -105,10 +123,12 @@ Types of Probability Distributions:
   - **Mean**: \( \mu = \lambda \)
   - **Variance**: \( \sigma^2 = \lambda \)
 
+[Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
 ---
 
 ### Continuous Probability Distributions
-#### Uniform Distribution
+#### [Uniform Distribution](#uniform-distribution)
 * The **Uniform distribution** is a type of continuous probability distribution in which all outcomes are equally likely within a given range. The distribution is defined by two parameters: the minimum and maximum values.
 
 * **Formula**:
@@ -121,7 +141,9 @@ Types of Probability Distributions:
 * **Example**:
   - Rolling a fair 6-sided die. Each outcome is equally likely, so the distribution is uniform over the range \( [1, 6] \).
 
-#### Normal (Gaussian) Distribution
+[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+#### [Normal (Gaussian) Distribution](#normal-gaussian-distribution)
 * The **Normal distribution**, also known as the **Gaussian distribution**, is a continuous probability distribution that is symmetric around the mean. It is one of the most commonly used distributions in statistics.
 
 * **Formula**:
@@ -136,7 +158,9 @@ Types of Probability Distributions:
   - **Mean** = \( \mu \)
   - **Variance** = \( \sigma^2 \)
 
-#### Exponential Distribution
+[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+#### [Exponential Distribution](#exponential-distribution)
 * The **Exponential distribution** models the time between events in a Poisson process. It is a continuous distribution with a constant hazard rate.
 
 * **Formula**:
@@ -149,7 +173,9 @@ Types of Probability Distributions:
 * **Example**:
   - The time between arrivals of customers at a service desk follows an exponential distribution.
 
-#### Student’s t-Distribution
+[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
+#### [Student’s t-Distribution](#students-t-distribution)
 * The **t-distribution** is used in hypothesis testing, particularly in small sample sizes when the population variance is unknown.
 
 * **Formula**:
@@ -159,26 +185,8 @@ Types of Probability Distributions:
     \]
     where \( \nu \) is the degrees of freedom.
 
-#### Log-Normal Distribution
-* The **Log-Normal distribution** models a random variable whose logarithm is normally distributed.
-
-* **Formula**:
-  - Probability density function (PDF):
-    \[
-    f(x) = \frac{1}{x \sigma \sqrt{2\pi}} e^{-\frac{(\ln(x) - \mu)^2}{2\sigma^2}}
-    \]
-    where \( \mu \) and \( \sigma \) are the parameters of the normal distribution.
-
-#### Pareto Distribution
-* The **Pareto distribution** is a power-law probability distribution. It is used to model situations where a small number of occurrences account for a large portion of the effect.
-
-* **Formula**:
-  - Probability density function (PDF):
-    \[
-    f(x) = \frac{\alpha x_m^\alpha}{x^{\alpha + 1}}, \quad x \geq x_m
-    \]
-    where \( \alpha \) is the shape parameter and \( x_m \) is the scale parameter.
+[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
 ---
 
-This structure gives a clear breakdown of all the key topics in **Probability Distributions** in both discrete and continuous categories. Feel free to adjust the content according to your needs!
+[Back to Top](#data-science-cheatsheets)
