@@ -15,7 +15,5 @@
 ## VIP Refreshers
 | | |
 |:-:|:-:|
-| [![Probability and Statistics](images/![image](https://github.com/user-attachments/assets/d7efb5b0-bba0-49b4-8ad1-624437af0b29)
-)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Standford-CS229%20Machine%20Learning/refresher-probabilities-statistics.pdf) | [![Linear Algebra and Calculus](images/![image](https://github.com/user-attachments/assets/23b5caea-58ec-45d9-adca-6972d8db23a5)
-)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Standford-CS229%20Machine%20Learning/refresher-algebra-calculus.pdf) |
+| [![Probability and Statistics](images/![image])](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Standford-CS229%20Machine%20Learning/refresher-probabilities-statistics.pdf) | [![Linear Algebra and Calculus](images/![image])](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Standford-CS229%20Machine%20Learning/refresher-algebra-calculus.pdf) |
 | **[Probability and Statistics](https://your-link.com/probability)** | **[Linear Algebra and Calculus](https://your-link.com/linear-algebra)** |
