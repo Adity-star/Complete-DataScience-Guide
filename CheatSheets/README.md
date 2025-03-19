@@ -251,7 +251,6 @@ The CLT states that if you take a large enough sample from a population with any
   - Mean \( \mu \) (the population mean).
   - Standard deviation \( \frac{\sigma}{\sqrt{n}} \), which is the standard error of the mean.
 
-[Back to Top](#data-science-cheatsheets)
 
 ---
 
@@ -319,7 +318,96 @@ Suppose we are studying the height of adult men in a country. The population dis
 - **Non-Independent Samples**: If the samples are not independent, the CLT cannot be applied.
 - **Infinite or Very Large Population**: The CLT assumes that the population is large enough or infinite so that sampling does not significantly affect the population distribution.
 
-[Back to [Central Limit Theorem]](#central-limit-theorem)
+[Back to [Central Limit Theorem]](#central-limit-theorem)|[Back to Statistics and Probability](#statistics-and-probability)
+
+[Back to Top](#data-science-cheatsheets)
+---
+
+## Hypothesis Testing
+## 1. What is Hypothesis Testing?
+In hypothesis testing, we start with a null hypothesis and an alternative hypothesis. The goal is to use sample data to evaluate whether there is enough evidence to reject the null hypothesis in favor of the alternative hypothesis.
+
+### Null Hypothesis (\(H_0\)):
+This is a statement that there is no effect, no difference, or no relationship in the population. It's what we assume to be true unless the evidence suggests otherwise.
+
+**Example**: "The average height of adult men in a country is 175 cm."
+
+### Alternative Hypothesis (\(H_1\) or \(H_a\)):
+This is the statement that contradicts the null hypothesis. It suggests that there is an effect, a difference, or a relationship in the population.
+
+**Example**: "The average height of adult men in a country is not 175 cm."
+
+---
+
+## 2. Steps in Hypothesis Testing
+Here are the general steps involved in performing a hypothesis test:
+
+### Step 1: State the Hypotheses
+- **Null Hypothesis (\(H_0\))**: A statement about the population parameter (e.g., mean, proportion) that you want to test.
+- **Alternative Hypothesis (\(H_1\))**: The opposite statement, suggesting what you want to prove.
+
+### Step 2: Choose the Significance Level (\(\alpha\))
+The significance level (\(\alpha\)) is the probability of rejecting the null hypothesis when it is actually true (i.e., making a Type I error).  
+Common values for \(\alpha\) are 0.05, 0.01, or 0.10.  
+For example, if \(\alpha = 0.05\), you are allowing a 5% chance of incorrectly rejecting the null hypothesis.
+
+### Step 3: Select the Appropriate Test
+Depending on the nature of the data and the hypothesis, choose the correct statistical test:
+- **t-test**: Used when the population standard deviation is unknown and the sample size is small.
+- **z-test**: Used when the population standard deviation is known and the sample size is large (typically \(n \geq 30\)).
+- **Chi-square test**: Used for categorical data to test the goodness-of-fit or independence.
+- **ANOVA (Analysis of Variance)**: Used to compare means across multiple groups.
+
+### Step 4: Collect Data and Compute the Test Statistic
+Gather your sample data and calculate the test statistic. The test statistic is a value that measures how far your sample data is from the null hypothesis.
+
+**For example**:  
+In a t-test, the test statistic is the t-value, calculated as:  
+\[
+t = \frac{\overline{X} - \mu_0}{s / \sqrt{n}}
+\]
+Where:
+- \(\overline{X}\) = sample mean  
+- \(\mu_0\) = hypothesized population mean  
+- \(s\) = sample standard deviation  
+- \(n\) = sample size
+
+### Step 5: Determine the Critical Value(s) and Compare
+Based on the significance level \(\alpha\), find the critical value (or rejection region) from statistical tables (e.g., z-table or t-table) or statistical software.
+
+- **Critical value**: This is the threshold beyond which you will reject the null hypothesis. If the test statistic exceeds this value, you reject \(H_0\).
+- For example, in a two-tailed test with \(\alpha = 0.05\), the critical z-values might be \(\pm 1.96\) for a normal distribution.
+
+### Step 6: Make a Decision
+- **Reject \(H_0\)**: If the test statistic falls in the rejection region (i.e., the observed value is far enough from the expected value under \(H_0\)), you reject the null hypothesis and conclude that there is enough evidence to support the alternative hypothesis.
+- **Fail to reject \(H_0\)**: If the test statistic does not fall in the rejection region (i.e., the observed value is close enough to the expected value under \(H_0\)), you fail to reject the null hypothesis, meaning there is insufficient evidence to support the alternative hypothesis.
+
+### Step 7: Interpret the Results
+Based on the decision made in Step 6, interpret the results in the context of your research question.
+
+**Example**: If you reject the null hypothesis, you might say, "There is enough evidence to suggest that the average height of adult men in the country is not 175 cm."
+
+---
+
+## 3. Types of Errors in Hypothesis Testing
+
+- **Type I Error (False Positive)**: Rejecting the null hypothesis when it is actually true. The probability of making a Type I error is \(\alpha\), the significance level.  
+  **Example**: Concluding that the average height of adult men is not 175 cm when it actually is.
+
+- **Type II Error (False Negative)**: Failing to reject the null hypothesis when the alternative hypothesis is actually true. The probability of making a Type II error is denoted by \(\beta\).  
+  **Example**: Concluding that the average height of adult men is 175 cm when it is actually different.
+
+---
+
+## 4. One-Tailed vs. Two-Tailed Tests
+
+- **One-Tailed Test**: Tests for an effect in one direction (either greater than or less than). You are testing if the parameter is greater than or less than a certain value.  
+  **Example**: Testing if the average height is greater than 175 cm (\(H_1: \mu > 175\)).
+
+- **Two-Tailed Test**: Tests for an effect in both directions (either greater than or less than). You are testing if the parameter is different from a certain value (not equal).  
+  **Example**: Testing if the average height is different from 175 cm (\(H_1: \mu \neq 175\)).
+
+[Back to [Hypothesis Testing](#hypothesis-testing)|[Back to Statistics and Probability](#statistics-and-probability)
 
 [Back to Top](#data-science-cheatsheets)
 
