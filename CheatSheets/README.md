@@ -229,11 +229,11 @@ Types of Probability Distributions:
 * **Example**:
   - Income distribution, where a small number of people hold most of the wealth.
 
-[Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+[Back to Continuous Probability Distributions](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
 ---
 
-[Back to Top](#data-science-cheatsheets)
+#### [Back to Top](#data-science-cheatsheets)
 
 ---
 
@@ -318,9 +318,9 @@ Suppose we are studying the height of adult men in a country. The population dis
 - **Non-Independent Samples**: If the samples are not independent, the CLT cannot be applied.
 - **Infinite or Very Large Population**: The CLT assumes that the population is large enough or infinite so that sampling does not significantly affect the population distribution.
 
-[Back to [Central Limit Theorem]](#central-limit-theorem)|[Back to Statistics and Probability](#statistics-and-probability)
+[Back to Central Limit Theorem](#central-limit-theorem) | [Back to Statistics and Probability](#statistics-and-probability)
 
-[Back to Top](#data-science-cheatsheets)
+#### [Back to Top](#data-science-cheatsheets)
 ---
 
 ## Hypothesis Test
@@ -407,7 +407,7 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 - **Two-Tailed Test**: Tests for an effect in both directions (either greater than or less than). You are testing if the parameter is different from a certain value (not equal).  
   **Example**: Testing if the average height is different from 175 cm (\(H_1: \mu \neq 175\)).
 
-[Back to [Hypothesis Testing](#hypothesis-test)|[Back to Statistics and Probability](#statistics-and-probability)
+[Back to Hypothesis Testing](#hypothesis-test) | [Back to Statistics and Probability](#statistics-and-probability)
 
-[Back to Top](#data-science-cheatsheets)
+#### [Back to Top](#data-science-cheatsheets)
 
