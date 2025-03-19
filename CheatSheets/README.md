@@ -12,7 +12,7 @@ Categories:
 * [Deep Learning Concepts]
 * [Natural Language Processing]
 
-## [Stanford Materials](##standard-materials)
+## Stanford Materials
 The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material](https://stanford.edu/~shervine/teaching/)
 * [CS221 - Artificial Intelligence](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Stanford-CS221%20Artifical%20Intelligence)
 * [CS229 - Machine Learning](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Standford-CS229%20Machine%20Learning)
