@@ -14,9 +14,9 @@ This repository serves as a collection of hands-on projects and code snippets re
 - Research Papers
 - Interview question
 
-  # Here are the Sections
-  * [Data Science Ebooks](#data-science-ebooks)
-  * [Data Science CheatSheets](#data-science-cheetsheets)
+# Here are the Sections
+* [Data Science Ebooks](#data-science-ebooks)
+* [Data Science CheatSheets](#data-science-cheetsheets)
 
 
 ## Data Science EBooks
