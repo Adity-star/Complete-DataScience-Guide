@@ -6,8 +6,8 @@ This repository serves two main purposes:
 2. Introduce Data Science Concepts to Beginners.
 
 Categories:
-* [Stanford Materials](##standford-materials)
-* [Statistics and Probability](##stastics-and-probability)
+* [Stanford Materials](#standford-materials)
+* [Statistics and Probability](#stastics-and-probability)
 * [Machine Learning Concepts]
 * [Deep Learning Concepts]
 * [Natural Language Processing]
@@ -21,13 +21,13 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 ## Statistics and Probability
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
 * [Statistics Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/stats_cheatsheet.pdf)
-* [Probability Distributions]
+* [Probability Distributions](#probability-distributions)
 * [Central Limit Theorem]
 * [ hypothesis test]
 
 ## Probability Distributions
 Types of  Probability Distributions
-1. Discrete Probability Distributions
+1. Discrete Probability Distributions(#discrete-probability-dictributions)
   * Bernoulli Distribution
   * Binomial Distribution
   * Poisson Distribution
@@ -40,7 +40,7 @@ Types of  Probability Distributions
   * Pareto Distribution
 
 Lets Start one by one
-1. Discrets
+1. Discrete Probability Distributions
 a. bernouli Distributions
 * The Bernoulli distribution is a discrete probability distribution of a random variable that has exactly two possible outcomes, usually labeled as success and failure. It is a special case of the binomial distribution where the number of trials is one.
 * Key Characteristics of the Bernoulli Distribution:
@@ -109,7 +109,7 @@ where
 x∈{0,1}.
 * Example:
 
-A coin toss: Heads = 1 (success), Tails = 0 (failure), with 
+   * A coin toss: Heads = 1 (success), Tails = 0 (failure), with 
 𝑝
 =
 0.5
