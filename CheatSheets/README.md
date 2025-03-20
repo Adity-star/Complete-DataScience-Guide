@@ -21,7 +21,6 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [CS230 - Deep Learning](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Standford-CS230%20Deep%20Learning)
 
 [Back to Top](#data-science-cheatsheets)
-
 ---
 
 ## Statistics and Probability
@@ -126,7 +125,7 @@ The IQR is commonly used to detect outliers. Any data point that lies below \( Q
 - **Percentiles**: Useful when you want to know the relative position of a data point or the distribution of data in 100 intervals.
 - **IQR**: Useful to understand the spread of the middle 50% of the data and for identifying potential outliers.
 
-  [Back to Top](#statistics-and-probability)
+[Back to Top](#statistics-and-probability)
 ---
 
 ### 1. Covariance
@@ -207,7 +206,6 @@ Types of Probability Distributions:
    * [Pareto Distribution](#pareto-distribution)
 
 [Back to Top](#statistics-and-probability)
-
 ---
 
 ### Discrete Probability Distributions
