@@ -468,7 +468,7 @@ Types of Probability Distributions:
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
-(![image](https://github.com/user-attachments/assets/ab1f2736-716c-4791-89a2-7a6dd17c5c6f)
+![image](https://github.com/user-attachments/assets/bb5aad97-c40e-4d44-8faa-2eacdd770c3f)
 
 
 ---
@@ -567,6 +567,7 @@ Types of Probability Distributions:
  
     ![image](https://github.com/user-attachments/assets/d2f14b04-a9af-4f94-be58-7ba49d13362e)
 
+ You can all the visualisations of graphs by setting different parameters [here](https://probstats.org/)
 
 [Back to Continuous Probability Distributions](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
