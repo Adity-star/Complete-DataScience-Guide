@@ -15,4 +15,4 @@
 | **Probability and Statistics** | **Linear Algebra and Calculus** |
 
 ## website
-This material is also available on a de dedicated [website](https://stanford.edu/~shervine/teaching/cs-229/), so that you can enjoy reading it from there.
+This material is also available on a dedicated [website](https://stanford.edu/~shervine/teaching/cs-229/), so that you can enjoy reading it from there.
