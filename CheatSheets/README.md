@@ -389,6 +389,9 @@ Types of Probability Distributions:
   - **Mean** (Expected Value): \( \mu = p \)
   - **Variance**: \( \sigma^2 = p(1 - p) \)
 
+    ()![image](https://github.com/user-attachments/assets/4ea762b3-981e-4943-85d7-d684c80de287)
+
+
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
 ---
@@ -414,6 +417,8 @@ Types of Probability Distributions:
 * **Properties**:
   - **Mean** (Expected Value): \( \mu = n \cdot p \)
   - **Variance**: \( \sigma^2 = n \cdot p \cdot (1 - p) \)
+    ![image](https://github.com/user-attachments/assets/b6b4db5c-d84a-4c14-ab75-9e7b8016dda9)
+
 
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -439,6 +444,9 @@ Types of Probability Distributions:
 * **Properties**:
   - **Mean**: \( \mu = \lambda \)
   - **Variance**: \( \sigma^2 = \lambda \)
+
+    ![image](https://github.com/user-attachments/assets/2139df1c-b2c9-497a-903a-08f878eb2018)
+
 
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -479,6 +487,9 @@ Types of Probability Distributions:
   - Symmetrical: The distribution is symmetrical around the mean.
   - **Mean** = \( \mu \)
   - **Variance** = \( \sigma^2 \)
+ 
+    ![image](https://github.com/user-attachments/assets/ca8d7261-641b-425e-8976-87c8a7a1d459)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -496,6 +507,9 @@ Types of Probability Distributions:
 
 * **Example**:
   - The time between arrivals of customers at a service desk follows an exponential distribution.
+ 
+    ![image](https://github.com/user-attachments/assets/fb0792a9-4219-4911-8527-ec2562926dfb)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -510,6 +524,9 @@ Types of Probability Distributions:
     f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi} \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}
     \]
     where \( \nu \) is the degrees of freedom.
+
+    ![Screenshot 2025-03-20 083543](https://github.com/user-attachments/assets/6a901c9f-caad-4d59-a8b5-5eba0d4d1c7b)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -527,6 +544,9 @@ Types of Probability Distributions:
 
 * **Example**:
   - The distribution of stock prices is often modeled using a log-normal distribution.
+ 
+    ![image](https://github.com/user-attachments/assets/b2a73c27-2717-46bd-b9fc-96bee2a9595c)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -544,6 +564,9 @@ Types of Probability Distributions:
 
 * **Example**:
   - Income distribution, where a small number of people hold most of the wealth.
+ 
+    ![image](https://github.com/user-attachments/assets/d2f14b04-a9af-4f94-be58-7ba49d13362e)
+
 
 [Back to Continuous Probability Distributions](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
