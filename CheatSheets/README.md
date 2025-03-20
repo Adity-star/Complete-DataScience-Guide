@@ -29,6 +29,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
 * [Statistics Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/stats_cheatsheet.pdf)
 * [Probability Funcations](#probability-funcations)
+* [Skewness and Kurtosis](#skewness-and-kurtosis)
 * [Probability Distributions](#probability-distributions)
 * [Central Limit Theorem](#central-limit-theorem)
 * [Hypothesis Test](#hypothesis-test)
@@ -277,9 +278,77 @@ PDF is used to describe continuous probability distributions, such as the normal
 [Back to Statistics and Probability](#statistics-and-probability)
 
 ---
+## Skewness and kurtosis
+### 1. Skewness
+
+**Definition**: Skewness measures the asymmetry or lack of symmetry in a probability distribution. A distribution can be:
+- **Positively skewed** (right-skewed): The right tail is longer or fatter than the left.
+- **Negatively skewed** (left-skewed): The left tail is longer or fatter than the right.
+- **Symmetric**: If skewness is zero, the distribution is symmetric.
+
+**Formula**:  
+The skewness \( \gamma_1 \) of a random variable \( X \) is given by:
+\[
+\gamma_1 = \frac{n}{(n-1)(n-2)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^3
+\]
+where:
+- \( x_i \) is the data point,
+- \( \bar{x} \) is the mean of the dataset,
+- \( s \) is the standard deviation of the dataset,
+- \( n \) is the number of data points.
+
+**Interpretation**:
+- If \( \gamma_1 = 0 \), the distribution is symmetric.
+- If \( \gamma_1 > 0 \), the distribution is positively skewed (right-skewed).
+- If \( \gamma_1 < 0 \), the distribution is negatively skewed (left-skewed).
+
+---
+
+### 2. Kurtosis
+
+**Definition**: Kurtosis measures the "tailedness" or the sharpness of the peak of a probability distribution. It provides an indication of how much of the data is in the tails or the center of the distribution.
+- **Leptokurtic**: Distributions with high kurtosis (heavy tails and sharp peaks).
+- **Platykurtic**: Distributions with low kurtosis (light tails and flatter peaks).
+- **Mesokurtic**: Distributions with kurtosis similar to the normal distribution.
+
+**Formula**:  
+The kurtosis \( \gamma_2 \) of a random variable \( X \) is given by:
+\[
+\gamma_2 = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^4 - \frac{3(n-1)^2}{(n-2)(n-3)}
+\]
+where:
+- \( x_i \) is the data point,
+- \( \bar{x} \) is the mean of the dataset,
+- \( s \) is the standard deviation of the dataset,
+- \( n \) is the number of data points.
+
+**Interpretation**:
+- If \( \gamma_2 = 0 \), the distribution has normal kurtosis (mesokurtic).
+- If \( \gamma_2 > 0 \), the distribution is leptokurtic (heavy tails and sharp peak).
+- If \( \gamma_2 < 0 \), the distribution is platykurtic (light tails and flatter peak).
+
+---
+
+### Summary of Key Terms:
+
+| **Term**         | **Definition**                                                    | **Formula**                                                       |
+|------------------|-------------------------------------------------------------------|-------------------------------------------------------------------|
+| **Skewness**     | Measures the asymmetry of the distribution.                       | \( \gamma_1 = \frac{n}{(n-1)(n-2)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^3 \) |
+| **Kurtosis**     | Measures the "tailedness" of the distribution.                     | \( \gamma_2 = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^4 - \frac{3(n-1)^2}{(n-2)(n-3)} \) |
+
+---
+
+### When to Use Each Measure:
+
+- **Skewness**: Use skewness to understand the asymmetry of a distribution. Positive skewness suggests a longer right tail, while negative skewness indicates a longer left tail.
+- **Kurtosis**: Use kurtosis to understand the "tailedness" of a distribution. High kurtosis (leptokurtic) suggests the presence of outliers, while low kurtosis (platykurtic) indicates fewer outliers and a flatter distribution.
+
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
 
 
-### Probability Distributions
+## Probability Distributions
 Types of Probability Distributions:
 1. [Discrete Probability Distributions](#discrete-probability-distributions)
    * [Bernoulli Distribution](#bernoulli-distribution)
