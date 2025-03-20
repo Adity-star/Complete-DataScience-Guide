@@ -21,21 +21,334 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [CS230 - Deep Learning](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets/Standford-CS230%20Deep%20Learning)
 
 [Back to Top](#data-science-cheatsheets)
-
 ---
 
 ## Statistics and Probability
+* [Measures of central tendency](#measure-of-central-tendency)
+* [Important Terms](#important-terms)
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
 * [Statistics Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/stats_cheatsheet.pdf)
+* [Probability Funcations](#probability-funcations)
+* [Skewness and Kurtosis](#skewness-and-kurtosis)
 * [Probability Distributions](#probability-distributions)
 * [Central Limit Theorem](#central-limit-theorem)
 * [Hypothesis Test](#hypothesis-test)
 
 [Back to Top](#data-science-cheatsheets)
+---
+
+## Measure of central Tendency
+### 1. Mean (Arithmetic Mean)
+
+**Definition**: The mean is the sum of all the data points divided by the number of data points. It gives the average value of the data.  
+**Formula**:  
+\[
+\text{Mean} = \frac{\sum_{i=1}^{n} x_i}{n}
+\]
+where \( x_i \) is each data point and \( n \) is the total number of data points.
 
 ---
 
-### Probability Distributions
+### 2. Median
+
+**Definition**: The median is the middle value when the data points are sorted in ascending (or descending) order. If the dataset has an even number of observations, the median is the average of the two middle values.
+
+**Formula**:
+- If the dataset has an odd number of data points, the median is the value at position \( \frac{n+1}{2} \).
+- If the dataset has an even number of data points, the median is the average of the values at positions \( \frac{n}{2} \) and \( \left( \frac{n}{2} + 1 \right) \).
+
+---
+
+### 3. Mode
+
+**Definition**: The mode is the value that appears most frequently in the dataset. A dataset may have no mode, one mode, or more than one mode (bimodal, multimodal).
+
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
+### Important Terms
+### 1. Quantile
+
+**Definition**: A quantile is a value that divides a dataset into intervals with a specific number of data points. The most common quantiles are quartiles, quintiles, and percentiles. Quantiles give us insights into the distribution of data. For example, the median is the 2nd quartile (Q2).
+
+**Formula**:  
+The \( p \)-th quantile \( Q_p \) is the value below which a fraction \( p \) of the data falls:
+\[
+Q_p = \text{Value at position} \left( p \times (n + 1) \right)
+\]
+where \( p \) is the fraction of data points below the quantile, and \( n \) is the total number of data points.
+
+---
+
+### 2. Percentile
+
+**Definition**: A percentile is a specific type of quantile that divides the dataset into 100 equal parts. The \( p \)-th percentile corresponds to the value below which \( p \) percent of the data lies.
+
+**Formula**:  
+The \( p \)-th percentile is calculated as:
+\[
+P_p = \text{Value at position} \left( \frac{p}{100} \times (n + 1) \right)
+\]
+where \( p \) is the percentile and \( n \) is the total number of data points.
+
+**Example**:  
+For the 25th percentile (also known as the 1st quartile), we calculate \( P_{25} \).
+
+---
+
+### 3. Interquartile Range (IQR)
+
+**Definition**: The Interquartile Range (IQR) is a measure of statistical dispersion, or how spread out the data is. It is the difference between the 75th percentile (Q3) and the 25th percentile (Q1). The IQR is used to identify outliers in the dataset.
+
+**Formula**:  
+\[
+\text{IQR} = Q_3 - Q_1
+\]
+where:
+- \( Q_1 \) is the 25th percentile (1st quartile),
+- \( Q_3 \) is the 75th percentile (3rd quartile).
+
+**Usage**:  
+The IQR is commonly used to detect outliers. Any data point that lies below \( Q_1 - 1.5 \times \text{IQR} \) or above \( Q_3 + 1.5 \times \text{IQR} \) is often considered an outlier.
+
+---
+
+### Summary of Key Terms:
+
+| **Term**             | **Definition**                                               | **Formula**                                                 |
+|----------------------|--------------------------------------------------------------|-------------------------------------------------------------|
+| **Quantile**         | Divides data into equal intervals. Quantiles can be any fraction (e.g., quartiles, quintiles). | \( Q_p = \text{Value at position} \left( p \times (n + 1) \right) \) |
+| **Percentile**       | A specific quantile dividing data into 100 equal parts.      | \( P_p = \text{Value at position} \left( \frac{p}{100} \times (n + 1) \right) \) |
+| **Interquartile Range (IQR)** | The range between the 25th and 75th percentiles, representing the spread of the middle 50% of the data. | \( \text{IQR} = Q_3 - Q_1 \)                                  |
+
+---
+
+### When to Use Each Measure:
+
+- **Quantiles**: Useful to divide the data into equal intervals, such as when examining the distribution or specific sections of a dataset.
+- **Percentiles**: Useful when you want to know the relative position of a data point or the distribution of data in 100 intervals.
+- **IQR**: Useful to understand the spread of the middle 50% of the data and for identifying potential outliers.
+
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
+
+### 1. Covariance
+
+**Definition**: Covariance is a measure of how two variables change together. It shows whether an increase in one variable would result in an increase or decrease in another variable. If the covariance is positive, the variables tend to increase or decrease together. If it's negative, one variable tends to increase when the other decreases. If it's close to zero, there is little or no relationship between the variables.
+
+**Formula**:  
+For two variables \( X \) and \( Y \), the covariance is given by:
+\[
+\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})
+\]
+where:
+- \( x_i \) and \( y_i \) are individual data points of variables \( X \) and \( Y \),
+- \( \bar{x} \) and \( \bar{y} \) are the means of \( X \) and \( Y \),
+- \( n \) is the number of data points.
+
+**Interpretation**:
+- If \(\text{Cov}(X, Y) > 0\), both variables tend to increase or decrease together.
+- If \(\text{Cov}(X, Y) < 0\), one variable tends to increase while the other decreases.
+- If \(\text{Cov}(X, Y) = 0\), there is no linear relationship between the variables.
+
+---
+
+### 2. Correlation
+
+**Definition**: Correlation is a normalized version of covariance that provides a measure of the strength and direction of the linear relationship between two variables. It ranges from \(-1\) to \(+1\), where:
+- \( +1 \) indicates a perfect positive linear relationship,
+- \( -1 \) indicates a perfect negative linear relationship,
+- \( 0 \) indicates no linear relationship.
+
+**Formula**:  
+The Pearson correlation coefficient \( r \) between two variables \( X \) and \( Y \) is given by:
+\[
+r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
+\]
+where:
+- \(\text{Cov}(X, Y)\) is the covariance between \( X \) and \( Y \),
+- \( \sigma_X \) and \( \sigma_Y \) are the standard deviations of \( X \) and \( Y \).
+
+**Interpretation**:
+- \( r > 0 \) indicates a positive correlation: as \( X \) increases, \( Y \) tends to increase.
+- \( r < 0 \) indicates a negative correlation: as \( X \) increases, \( Y \) tends to decrease.
+- \( r = 0 \) indicates no linear relationship between \( X \) and \( Y \).
+- The closer \( r \) is to \( +1 \) or \( -1 \), the stronger the linear relationship.
+
+---
+
+### Summary of Key Terms:
+
+| **Term**         | **Definition**                                                                 | **Formula**                                                 |
+|------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------|
+| **Covariance**   | Measures how two variables change together.                                     | \(\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})\) |
+| **Correlation**   | A normalized version of covariance that measures the strength and direction of a linear relationship. | \(r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}\) |
+
+---
+
+### When to Use Each Measure:
+
+- **Covariance**: Use covariance when you want to understand the direction of the relationship between two variables, but be aware that it is affected by the scale of the data (i.e., it doesn't normalize the relationship).
+- **Correlation**: Use correlation when you want to understand both the direction and strength of the linear relationship between two variables, and need a scale-independent measure (since correlation is normalized)
+  
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
+## Probability Funcations
+### 1. Probability Mass Function (PMF)
+
+**Definition**: The **Probability Mass Function (PMF)** is used for discrete random variables. It gives the probability that a discrete random variable is exactly equal to some value. The PMF must satisfy two conditions:
+- The probability of each possible outcome is between 0 and 1, i.e., \( 0 \leq P(X = x) \leq 1 \),
+- The sum of all probabilities over all possible outcomes equals 1, i.e., \( \sum_{x} P(X = x) = 1 \).
+
+**Formula**:  
+For a discrete random variable \( X \), the PMF is given by:
+\[
+P(X = x) = p_x
+\]
+where \( p_x \) is the probability of the random variable \( X \) taking the value \( x \).
+
+**Usage**:  
+PMF is used to describe discrete probability distributions, such as the distribution of the number of heads in a coin toss or the number of successes in a series of Bernoulli trials.
+
+---
+
+### 2. Cumulative Distribution Function (CDF)
+
+**Definition**: The **Cumulative Distribution Function (CDF)** is a function that describes the probability that a random variable \( X \) will take a value less than or equal to \( x \). It is used for both discrete and continuous random variables.
+
+**Formula**:  
+The CDF for a random variable \( X \) is given by:
+\[
+F_X(x) = P(X \leq x)
+\]
+For a discrete random variable:
+\[
+F_X(x) = \sum_{t \leq x} P(X = t)
+\]
+For a continuous random variable:
+\[
+F_X(x) = \int_{-\infty}^{x} f_X(t) \, dt
+\]
+where \( P(X \leq x) \) is the probability that \( X \) takes a value less than or equal to \( x \), and \( f_X(t) \) is the probability density function of \( X \).
+
+**Usage**:  
+The CDF is helpful for understanding the cumulative probability up to a certain point and for determining percentiles of a distribution.
+
+---
+
+### 3. Probability Density Function (PDF)
+
+**Definition**: The **Probability Density Function (PDF)** is used for continuous random variables. It provides the probability of the random variable falling within a particular range of values, rather than taking any specific value. Unlike PMF, which gives probabilities for specific outcomes, the PDF gives probabilities in the form of a density.
+
+**Formula**:  
+The PDF of a continuous random variable \( X \) is denoted by \( f_X(x) \) and satisfies the following properties:
+- \( f_X(x) \geq 0 \) for all \( x \),
+- The total area under the curve of the PDF is equal to 1:
+\[
+\int_{-\infty}^{\infty} f_X(x) \, dx = 1
+\]
+To find the probability that \( X \) lies within a range \( [a, b] \), we compute:
+\[
+P(a \leq X \leq b) = \int_{a}^{b} f_X(x) \, dx
+\]
+
+**Usage**:  
+PDF is used to describe continuous probability distributions, such as the normal distribution or the exponential distribution.
+
+---
+
+### Summary of Key Terms:
+
+| **Term**                | **Definition**                                                | **Formula**                                                       |
+|-------------------------|---------------------------------------------------------------|-------------------------------------------------------------------|
+| **PMF**                 | Probability mass function for discrete random variables.       | \( P(X = x) = p_x \)                                              |
+| **CDF**                 | Cumulative distribution function for both discrete and continuous random variables. | \( F_X(x) = P(X \leq x) \)  for discrete, \( F_X(x) = \int_{-\infty}^{x} f_X(t) \, dt \) for continuous |
+| **PDF**                 | Probability density function for continuous random variables.  | \( f_X(x) \), such that \( \int_{-\infty}^{\infty} f_X(x) \, dx = 1 \) |
+
+---
+
+### When to Use Each Measure:
+
+- **PMF**: Use PMF when dealing with discrete random variables to calculate the probability of specific outcomes.
+- **CDF**: Use CDF when you need to know the cumulative probability up to a certain point or when working with percentiles.
+- **PDF**: Use PDF for continuous random variables to find the probability density at a specific point or the probability over a range of values.
+
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
+## Skewness and kurtosis
+### 1. Skewness
+
+**Definition**: Skewness measures the asymmetry or lack of symmetry in a probability distribution. A distribution can be:
+- **Positively skewed** (right-skewed): The right tail is longer or fatter than the left.
+- **Negatively skewed** (left-skewed): The left tail is longer or fatter than the right.
+- **Symmetric**: If skewness is zero, the distribution is symmetric.
+
+**Formula**:  
+The skewness \( \gamma_1 \) of a random variable \( X \) is given by:
+\[
+\gamma_1 = \frac{n}{(n-1)(n-2)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^3
+\]
+where:
+- \( x_i \) is the data point,
+- \( \bar{x} \) is the mean of the dataset,
+- \( s \) is the standard deviation of the dataset,
+- \( n \) is the number of data points.
+
+**Interpretation**:
+- If \( \gamma_1 = 0 \), the distribution is symmetric.
+- If \( \gamma_1 > 0 \), the distribution is positively skewed (right-skewed).
+- If \( \gamma_1 < 0 \), the distribution is negatively skewed (left-skewed).
+
+---
+
+### 2. Kurtosis
+
+**Definition**: Kurtosis measures the "tailedness" or the sharpness of the peak of a probability distribution. It provides an indication of how much of the data is in the tails or the center of the distribution.
+- **Leptokurtic**: Distributions with high kurtosis (heavy tails and sharp peaks).
+- **Platykurtic**: Distributions with low kurtosis (light tails and flatter peaks).
+- **Mesokurtic**: Distributions with kurtosis similar to the normal distribution.
+
+**Formula**:  
+The kurtosis \( \gamma_2 \) of a random variable \( X \) is given by:
+\[
+\gamma_2 = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^4 - \frac{3(n-1)^2}{(n-2)(n-3)}
+\]
+where:
+- \( x_i \) is the data point,
+- \( \bar{x} \) is the mean of the dataset,
+- \( s \) is the standard deviation of the dataset,
+- \( n \) is the number of data points.
+
+**Interpretation**:
+- If \( \gamma_2 = 0 \), the distribution has normal kurtosis (mesokurtic).
+- If \( \gamma_2 > 0 \), the distribution is leptokurtic (heavy tails and sharp peak).
+- If \( \gamma_2 < 0 \), the distribution is platykurtic (light tails and flatter peak).
+
+---
+
+### Summary of Key Terms:
+
+| **Term**         | **Definition**                                                    | **Formula**                                                       |
+|------------------|-------------------------------------------------------------------|-------------------------------------------------------------------|
+| **Skewness**     | Measures the asymmetry of the distribution.                       | \( \gamma_1 = \frac{n}{(n-1)(n-2)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^3 \) |
+| **Kurtosis**     | Measures the "tailedness" of the distribution.                     | \( \gamma_2 = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^{n} \left( \frac{x_i - \bar{x}}{s} \right)^4 - \frac{3(n-1)^2}{(n-2)(n-3)} \) |
+
+---
+
+### When to Use Each Measure:
+
+- **Skewness**: Use skewness to understand the asymmetry of a distribution. Positive skewness suggests a longer right tail, while negative skewness indicates a longer left tail.
+- **Kurtosis**: Use kurtosis to understand the "tailedness" of a distribution. High kurtosis (leptokurtic) suggests the presence of outliers, while low kurtosis (platykurtic) indicates fewer outliers and a flatter distribution.
+
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
+
+
+## Probability Distributions
 Types of Probability Distributions:
 1. [Discrete Probability Distributions](#discrete-probability-distributions)
    * [Bernoulli Distribution](#bernoulli-distribution)
@@ -49,7 +362,7 @@ Types of Probability Distributions:
    * [Log-Normal Distribution](#log-normal-distribution)
    * [Pareto Distribution](#pareto-distribution)
 
-[Back to Top](#statistics-and-probability)
+[Back to Statistics and Probability](#statistics-and-probability)
 
 ---
 
@@ -76,6 +389,9 @@ Types of Probability Distributions:
   - **Mean** (Expected Value): \( \mu = p \)
   - **Variance**: \( \sigma^2 = p(1 - p) \)
 
+    ()![image](https://github.com/user-attachments/assets/4ea762b3-981e-4943-85d7-d684c80de287)
+
+
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
 ---
@@ -101,6 +417,8 @@ Types of Probability Distributions:
 * **Properties**:
   - **Mean** (Expected Value): \( \mu = n \cdot p \)
   - **Variance**: \( \sigma^2 = n \cdot p \cdot (1 - p) \)
+    ![image](https://github.com/user-attachments/assets/b6b4db5c-d84a-4c14-ab75-9e7b8016dda9)
+
 
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -127,6 +445,9 @@ Types of Probability Distributions:
   - **Mean**: \( \mu = \lambda \)
   - **Variance**: \( \sigma^2 = \lambda \)
 
+    ![image](https://github.com/user-attachments/assets/2139df1c-b2c9-497a-903a-08f878eb2018)
+
+
 [Back to [Discrete Probability Distributions]](#discrete-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
 ---
@@ -144,8 +465,11 @@ Types of Probability Distributions:
 
 * **Example**:
   - Rolling a fair 6-sided die. Each outcome is equally likely, so the distribution is uniform over the range \( [1, 6] \).
+ 
+    ![image](https://github.com/user-attachments/assets/bb5aad97-c40e-4d44-8faa-2eacdd770c3f)
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
+
 
 ---
 
@@ -163,6 +487,9 @@ Types of Probability Distributions:
   - Symmetrical: The distribution is symmetrical around the mean.
   - **Mean** = \( \mu \)
   - **Variance** = \( \sigma^2 \)
+ 
+    ![image](https://github.com/user-attachments/assets/ca8d7261-641b-425e-8976-87c8a7a1d459)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -180,6 +507,9 @@ Types of Probability Distributions:
 
 * **Example**:
   - The time between arrivals of customers at a service desk follows an exponential distribution.
+ 
+    ![image](https://github.com/user-attachments/assets/fb0792a9-4219-4911-8527-ec2562926dfb)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -194,6 +524,9 @@ Types of Probability Distributions:
     f(x) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi} \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu + 1}{2}}
     \]
     where \( \nu \) is the degrees of freedom.
+
+    ![Screenshot 2025-03-20 083543](https://github.com/user-attachments/assets/6a901c9f-caad-4d59-a8b5-5eba0d4d1c7b)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -211,6 +544,9 @@ Types of Probability Distributions:
 
 * **Example**:
   - The distribution of stock prices is often modeled using a log-normal distribution.
+ 
+    ![image](https://github.com/user-attachments/assets/b2a73c27-2717-46bd-b9fc-96bee2a9595c)
+
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
@@ -228,12 +564,14 @@ Types of Probability Distributions:
 
 * **Example**:
   - Income distribution, where a small number of people hold most of the wealth.
+ 
+    ![image](https://github.com/user-attachments/assets/d2f14b04-a9af-4f94-be58-7ba49d13362e)
+
+ You can all the visualisations of graphs by setting different parameters [here](https://probstats.org/)
 
 [Back to Continuous Probability Distributions](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
----
-
-#### [Back to Top](#data-science-cheatsheets)
+[Back to Statistics and Probability](#statistics-and-probability)
 
 ---
 
@@ -320,7 +658,7 @@ Suppose we are studying the height of adult men in a country. The population dis
 
 [Back to Central Limit Theorem](#central-limit-theorem) | [Back to Statistics and Probability](#statistics-and-probability)
 
-#### [Back to Top](#data-science-cheatsheets)
+[Back to Top](#data-science-cheatsheets)
 ---
 
 ## Hypothesis Test
@@ -409,5 +747,6 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 
 [Back to Hypothesis Testing](#hypothesis-test) | [Back to Statistics and Probability](#statistics-and-probability)
 
-#### [Back to Top](#data-science-cheatsheets)
+[Back to Top](#data-science-cheatsheets)
+---
 
