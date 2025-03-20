@@ -33,6 +33,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [Hypothesis Test](#hypothesis-test)
 
 [Back to Top](#data-science-cheatsheets)
+---
 
 ### Measure of central Tendency
 ### 1. Mean (Arithmetic Mean)
