@@ -460,6 +460,9 @@ Types of Probability Distributions:
 
 [Back to [Continuous Probability Distributions]](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
+(![image](https://github.com/user-attachments/assets/ab1f2736-716c-4791-89a2-7a6dd17c5c6f)
+
+
 ---
 
 #### [Normal (Gaussian) Distribution](#normal-gaussian-distribution)
