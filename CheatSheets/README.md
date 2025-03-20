@@ -762,6 +762,7 @@ Machine learning is a subfield of artificial intelligence that deals with algori
 
 ## Table of Contents
 - [Machine Learning Basics](#machine-learning-basics)
+- [Machine Learning Workflow](#machine-learning-workflow)
 - [Supervised Algorithms](#supervised-algorithms)
 - [Unsupervised Algorithms](#unsupervised-algorithms)
 - [Metrics](#metrics)
@@ -831,10 +832,11 @@ Many machine learning models have hyperparameters (settings that aren't learned 
 Once the model is trained and evaluated, it can be deployed in real-world applications, such as in a web service or an app.
 
 [Back to Machine Learning Concepts](#machine-learning-concepts)
+[Back to Top](#data-science-cheaatsheets)
 
 ---
 
-# Supervised Learning Algorithms
+# Supervised Algorithms
 
 Supervised learning is a type of machine learning where the model is trained using labeled data. The goal is to learn a mapping from inputs to the outputs based on a set of training data.
 
@@ -969,6 +971,9 @@ Naive Bayes is a family of probabilistic classifiers based on Bayes' Theorem. It
 
 1. [Introduction to Supervised Learning - GeeksforGeeks](https://www.geeksforgeeks.org/supervised-learning/)
 2. [Supervised Learning Algorithms - Towards Data Science](https://towardsdatascience.com/supervised-learning-algorithms-3e5f5b6b88b2)
+
+[Back to Machine Learning Concepts](#machine-learning-concepts)
+[Back to Top](#data-science-cheaatsheets)
 
 ---
 
