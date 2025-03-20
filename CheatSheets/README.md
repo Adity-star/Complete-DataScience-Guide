@@ -61,7 +61,8 @@ where \( x_i \) is each data point and \( n \) is the total number of data point
 
 **Definition**: The mode is the value that appears most frequently in the dataset. A dataset may have no mode, one mode, or more than one mode (bimodal, multimodal).
 
-[Back to Top](#statistics-and-probability)
+[Back to Statistics and Probability](#statistics-and-probability)
+
 ---
 ### Important Terms
 ### 1. Quantile
