@@ -746,11 +746,243 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 - **Two-Tailed Test**: Tests for an effect in both directions (either greater than or less than). You are testing if the parameter is different from a certain value (not equal).  
   **Example**: Testing if the average height is different from 175 cm (\(H_1: \mu \neq 175\)).
 
+---
+
+## Complete Statistics Notebook
+* If you want all of these concepts with code and visualisation, check out this [NoteBook](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Complete%20Statistics.ipynb).
+
 [Back to Hypothesis Testing](#hypothesis-test) | [Back to Statistics and Probability](#statistics-and-probability)
 
 [Back to Top](#data-science-cheatsheets)
 ---
 
-## Complete Statistics Notebook
-* If you want all of these concepts with code and visualisation, check out this [NoteBook](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Complete%20Statistics.ipynb).
+# Machine Learning Concepts
+
+Machine learning is a subfield of artificial intelligence that deals with algorithms and statistical models that enable computers to perform tasks without explicit instructions. This document provides an overview of core machine learning concepts, algorithms, metrics, and advanced topics.
+
+## Table of Contents
+- [Machine Learning Basics](#machine-learning-basics)
+- [Supervised Algorithms](#supervised-algorithms)
+- [Unsupervised Algorithms](#unsupervised-algorithms)
+- [Metrics](#metrics)
+- [Advanced Concepts](#advanced-concepts)
+
+---
+## What is Machine Learning?
+
+Machine learning is the process of developing algorithms that can learn from and make predictions on data. Instead of being programmed with specific instructions, the model improves its performance through experience (data). Machine learning can be applied to tasks such as classification, regression, clustering, and recommendation.
+
+---
+
+## Types of Machine Learning
+
+There are three main types of machine learning, based on how the model learns from the data.
+
+### 1. Supervised Learning
+In supervised learning, the algorithm is trained on labeled data, meaning the input data is paired with the correct output (label). The goal is to learn a mapping from inputs to outputs, so the model can predict the output for new, unseen data.
+
+**Common algorithms:**
+- Linear Regression
+- Logistic Regression
+- Decision Trees
+- Support Vector Machines (SVM)
+- K-Nearest Neighbors (KNN)
+
+### 2. Unsupervised Learning
+Unsupervised learning involves training on data that has no labels. The goal is to find hidden patterns or structures within the data.
+
+**Common algorithms:**
+- K-Means Clustering
+- Hierarchical Clustering
+- Principal Component Analysis (PCA)
+
+### 3. Reinforcement Learning
+In reinforcement learning, the algorithm learns by interacting with an environment and receiving feedback in the form of rewards or penalties. The objective is to learn a policy that maximizes the cumulative reward over time.
+
+**Common algorithms:**
+- Q-learning
+- Deep Q Networks (DQN)
+
+---
+
+## Machine Learning Workflow
+
+The typical machine learning workflow involves several key steps that guide the process of building and evaluating models.
+
+### 1. Data Collection
+The first step is to gather the data, which is the foundation for training and testing models. The data may come from various sources, such as databases, spreadsheets, or sensors.
+
+### 2. Data Preprocessing
+Once the data is collected, it often needs to be cleaned and preprocessed. This can involve tasks such as handling missing values, scaling features, encoding categorical variables, and splitting the data into training and testing sets.
+
+### 3. Model Selection
+In this step, you choose the appropriate machine learning algorithm based on the problem you're trying to solve (e.g., classification, regression, etc.) and the type of data you have.
+
+### 4. Model Training
+After selecting the model, you train it on the training data. The model adjusts its parameters based on the data to minimize the error.
+
+### 5. Model Evaluation
+After training, you evaluate the model using testing data to see how well it generalizes. Various metrics like accuracy, precision, recall, and F1-score are used to assess performance.
+
+### 6. Hyperparameter Tuning
+Many machine learning models have hyperparameters (settings that aren't learned during training) that affect performance. Hyperparameter tuning involves experimenting with different values to find the optimal combination.
+
+### 7. Model Deployment
+Once the model is trained and evaluated, it can be deployed in real-world applications, such as in a web service or an app.
+
+[Back to Machine Learning Concepts](#machine-learning-concepts)
+
+---
+
+# Supervised Learning Algorithms
+
+Supervised learning is a type of machine learning where the model is trained using labeled data. The goal is to learn a mapping from inputs to the outputs based on a set of training data.
+
+## Table of Contents
+1. [Linear Regression](#linear-regression)
+2. [Logistic Regression](#logistic-regression)
+3. [Support Vector Machines (SVM)](#support-vector-machines-svm)
+4. [Decision Trees](#decision-trees)
+5. [Random Forest](#random-forest)
+6. [k-Nearest Neighbors (k-NN)](#k-nearest-neighbors-knn)
+7. [Naive Bayes](#naive-bayes)
+8. [References](#references)
+
+---
+
+## Linear Regression
+
+Linear Regression is a statistical method that models the relationship between a dependent variable and one or more independent variables by fitting a linear equation to observed data.
+
+- **Equation:**  
+  The model assumes the relationship is linear:  
+  \[
+  y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n + \epsilon
+  \]
+  Where:
+  - \( y \) is the dependent variable.
+  - \( x_1, x_2, ... x_n \) are the features.
+  - \( \beta_0, \beta_1, ... \beta_n \) are the coefficients.
+  - \( \epsilon \) is the error term.
+
+- **References:**
+  - [Linear Regression - Wikipedia](https://en.wikipedia.org/wiki/Linear_regression)
+  - [Introduction to Linear Regression - Towards Data Science](https://towardsdatascience.com/introduction-to-linear-regression-9c2cc73c7229)
+
+---
+
+## Logistic Regression
+
+Logistic Regression is used for binary classification problems. Unlike linear regression, it uses a logistic function to model a probability distribution and make decisions based on thresholds.
+
+- **Equation:**
+  The logistic function is given by:
+  \[
+  p(y = 1 | X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n)}}
+  \]
+  Where \( p(y=1) \) is the probability of the output being class 1, and the terms are similar to linear regression.
+
+- **References:**
+  - [Logistic Regression - Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression)
+  - [Logistic Regression Explained - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2015/10/basics-logistic-regression/)
+
+---
+
+## Support Vector Machines (SVM)
+
+Support Vector Machines are powerful classifiers that work by finding a hyperplane that best separates the data points of different classes.
+
+- **Key Idea:**
+  - SVM tries to maximize the margin between two classes. The "support vectors" are the points that define the margin.
+  - SVM can also be extended to nonlinear problems using the kernel trick.
+
+- **References:**
+  - [Support Vector Machine - Wikipedia](https://en.wikipedia.org/wiki/Support_vector_machine)
+  - [A Guide to Support Vector Machines - Machine Learning Mastery](https://machinelearningmastery.com/support-vector-machines-for-machine-learning/)
+
+---
+
+## Decision Trees
+
+Decision Trees are a non-linear model used for classification and regression tasks. They recursively split the data based on feature values that lead to the best prediction.
+
+- **Key Idea:**
+  - Decision trees use a greedy approach to make decisions at each node by choosing the feature that best splits the data.
+  - Common algorithms: ID3, CART, C4.5
+
+- **References:**
+  - [Decision Tree - Wikipedia](https://en.wikipedia.org/wiki/Decision_tree_learning)
+  - [Understanding Decision Trees - Towards Data Science](https://towardsdatascience.com/understanding-decision-trees-54e0f5f282bc)
+
+---
+
+## Random Forest
+
+Random Forest is an ensemble learning method that combines multiple decision trees to improve the accuracy of predictions. Each tree is built using a random subset of features and data.
+
+- **Key Idea:**
+  - Random Forest works by averaging multiple decision trees' predictions to reduce variance.
+  - It is less prone to overfitting compared to a single decision tree.
+
+- **References:**
+  - [Random Forest - Wikipedia](https://en.wikipedia.org/wiki/Random_forest)
+  - [Random Forests - Machine Learning Mastery](https://machinelearningmastery.com/random-forest-ensemble-in-python/)
+
+---
+
+## k-Nearest Neighbors (k-NN)
+
+k-Nearest Neighbors is a simple, non-parametric algorithm used for classification and regression. It makes predictions based on the k-nearest data points in the feature space.
+
+- **Key Idea:**
+  - For classification, the majority class among the nearest k neighbors is chosen as the predicted class.
+  - For regression, the average of the k nearest neighbors' values is used as the prediction.
+
+- **References:**
+  - [k-Nearest Neighbors - Wikipedia](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
+  - [k-NN Algorithm - Towards Data Science](https://towardsdatascience.com/the-k-nearest-neighbors-algorithm-9c7b013c1e1b)
+
+---
+
+## Naive Bayes
+
+Naive Bayes is a family of probabilistic classifiers based on Bayes' Theorem. It assumes that the features are conditionally independent given the class.
+
+- **Key Idea:**
+  - The Naive Bayes classifier calculates the probability of a class given the features, using Bayes' theorem:
+  \[
+  P(C|X) = \frac{P(X|C)P(C)}{P(X)}
+  \]
+  Where:
+  - \( P(C|X) \) is the posterior probability of class \( C \) given features \( X \).
+  - \( P(X|C) \) is the likelihood of features given class \( C \).
+  - \( P(C) \) is the prior probability of class \( C \).
+  - \( P(X) \) is the evidence (the probability of the features).
+
+- **References:**
+  - [Naive Bayes - Wikipedia](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
+  - [Naive Bayes Classifier - Towards Data Science](https://towardsdatascience.com/naive-bayes-classifier-344a7da3d85e)
+
+---
+
+## References
+
+1. [Introduction to Supervised Learning - GeeksforGeeks](https://www.geeksforgeeks.org/supervised-learning/)
+2. [Supervised Learning Algorithms - Towards Data Science](https://towardsdatascience.com/supervised-learning-algorithms-3e5f5b6b88b2)
+
+---
+
+End of Document.
+
+
+
+
+
+
+
+
+
+
+
+
 
