@@ -571,8 +571,6 @@ Types of Probability Distributions:
 
 [Back to Continuous Probability Distributions](#continuous-probability-distributions) | [Back to Probability Distributions](#probability-distributions)
 
----
-
 [Back to Statistics and Probability](#statistics-and-probability)
 
 ---
