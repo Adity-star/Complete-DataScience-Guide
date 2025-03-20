@@ -126,6 +126,9 @@ The IQR is commonly used to detect outliers. Any data point that lies below \( Q
 - **Percentiles**: Useful when you want to know the relative position of a data point or the distribution of data in 100 intervals.
 - **IQR**: Useful to understand the spread of the middle 50% of the data and for identifying potential outliers.
 
+  [Back to Top](#statistics-and-probability)
+---
+
 ### 1. Covariance
 
 **Definition**: Covariance is a measure of how two variables change together. It shows whether an increase in one variable would result in an increase or decrease in another variable. If the covariance is positive, the variables tend to increase or decrease together. If it's negative, one variable tends to increase when the other decreases. If it's close to zero, there is little or no relationship between the variables.
@@ -183,8 +186,10 @@ where:
 ### When to Use Each Measure:
 
 - **Covariance**: Use covariance when you want to understand the direction of the relationship between two variables, but be aware that it is affected by the scale of the data (i.e., it doesn't normalize the relationship).
-- **Correlation**: Use correlation when you want to understand both the direction and strength of the linear relationship between two variables, and need a scale-independent measure (since correlation is normalized).
-
+- **Correlation**: Use correlation when you want to understand both the direction and strength of the linear relationship between two variables, and need a scale-independent measure (since correlation is normalized)
+  
+[Back to Top](#statistics-and-probability)
+---
 
 
 ### Probability Distributions
