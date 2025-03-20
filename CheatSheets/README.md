@@ -804,6 +804,9 @@ In reinforcement learning, the algorithm learns by interacting with an environme
 - Q-learning
 - Deep Q Networks (DQN)
 
+[Back to Machine Learning Concepts](#machine-learning-concepts) 
+
+
 ---
 
 ## Machine Learning Workflow
@@ -831,7 +834,8 @@ Many machine learning models have hyperparameters (settings that aren't learned 
 ### 7. Model Deployment
 Once the model is trained and evaluated, it can be deployed in real-world applications, such as in a web service or an app.
 
-[Back to Machine Learning Concepts](#machine-learning-concepts)
+[Back to Machine Learning Concepts](#machine-learning-concepts) 
+
 [Back to Top](#data-science-cheaatsheets)
 
 ---
@@ -973,6 +977,7 @@ Naive Bayes is a family of probabilistic classifiers based on Bayes' Theorem. It
 2. [Supervised Learning Algorithms - Towards Data Science](https://towardsdatascience.com/supervised-learning-algorithms-3e5f5b6b88b2)
 
 [Back to Machine Learning Concepts](#machine-learning-concepts)
+
 [Back to Top](#data-science-cheaatsheets)
 
 ---
