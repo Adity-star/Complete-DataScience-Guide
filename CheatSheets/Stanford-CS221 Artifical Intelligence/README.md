@@ -1,4 +1,4 @@
-#Artificial Intelligence cheatsheets for Stanford's CS 221
+# Artificial Intelligence cheatsheets for Stanford's CS 221
 
 ## Goal
 This repository aims to provide a comprehensive summary of all the key concepts covered in Stanford's CS 221 Artificial Intelligence Course. It serves as a valuable resource for understanding the fundamentals and advanced topics and 
