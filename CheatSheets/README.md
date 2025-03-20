@@ -26,6 +26,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 
 ## Statistics and Probability
 * [Measures of central tendency](#measure-of-central-tendency)
+* [Important Terms](#important-terms)
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
 * [Statistics Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/stats_cheatsheet.pdf)
 * [Probability Distributions](#probability-distributions)
@@ -62,6 +63,129 @@ where \( x_i \) is each data point and \( n \) is the total number of data point
 
 [Back to Top](#statistics-and-probability)
 ---
+### Important Terms
+### 1. Quantile
+
+**Definition**: A quantile is a value that divides a dataset into intervals with a specific number of data points. The most common quantiles are quartiles, quintiles, and percentiles. Quantiles give us insights into the distribution of data. For example, the median is the 2nd quartile (Q2).
+
+**Formula**:  
+The \( p \)-th quantile \( Q_p \) is the value below which a fraction \( p \) of the data falls:
+\[
+Q_p = \text{Value at position} \left( p \times (n + 1) \right)
+\]
+where \( p \) is the fraction of data points below the quantile, and \( n \) is the total number of data points.
+
+---
+
+### 2. Percentile
+
+**Definition**: A percentile is a specific type of quantile that divides the dataset into 100 equal parts. The \( p \)-th percentile corresponds to the value below which \( p \) percent of the data lies.
+
+**Formula**:  
+The \( p \)-th percentile is calculated as:
+\[
+P_p = \text{Value at position} \left( \frac{p}{100} \times (n + 1) \right)
+\]
+where \( p \) is the percentile and \( n \) is the total number of data points.
+
+**Example**:  
+For the 25th percentile (also known as the 1st quartile), we calculate \( P_{25} \).
+
+---
+
+### 3. Interquartile Range (IQR)
+
+**Definition**: The Interquartile Range (IQR) is a measure of statistical dispersion, or how spread out the data is. It is the difference between the 75th percentile (Q3) and the 25th percentile (Q1). The IQR is used to identify outliers in the dataset.
+
+**Formula**:  
+\[
+\text{IQR} = Q_3 - Q_1
+\]
+where:
+- \( Q_1 \) is the 25th percentile (1st quartile),
+- \( Q_3 \) is the 75th percentile (3rd quartile).
+
+**Usage**:  
+The IQR is commonly used to detect outliers. Any data point that lies below \( Q_1 - 1.5 \times \text{IQR} \) or above \( Q_3 + 1.5 \times \text{IQR} \) is often considered an outlier.
+
+---
+
+### Summary of Key Terms:
+
+| **Term**             | **Definition**                                               | **Formula**                                                 |
+|----------------------|--------------------------------------------------------------|-------------------------------------------------------------|
+| **Quantile**         | Divides data into equal intervals. Quantiles can be any fraction (e.g., quartiles, quintiles). | \( Q_p = \text{Value at position} \left( p \times (n + 1) \right) \) |
+| **Percentile**       | A specific quantile dividing data into 100 equal parts.      | \( P_p = \text{Value at position} \left( \frac{p}{100} \times (n + 1) \right) \) |
+| **Interquartile Range (IQR)** | The range between the 25th and 75th percentiles, representing the spread of the middle 50% of the data. | \( \text{IQR} = Q_3 - Q_1 \)                                  |
+
+---
+
+### When to Use Each Measure:
+
+- **Quantiles**: Useful to divide the data into equal intervals, such as when examining the distribution or specific sections of a dataset.
+- **Percentiles**: Useful when you want to know the relative position of a data point or the distribution of data in 100 intervals.
+- **IQR**: Useful to understand the spread of the middle 50% of the data and for identifying potential outliers.
+
+### 1. Covariance
+
+**Definition**: Covariance is a measure of how two variables change together. It shows whether an increase in one variable would result in an increase or decrease in another variable. If the covariance is positive, the variables tend to increase or decrease together. If it's negative, one variable tends to increase when the other decreases. If it's close to zero, there is little or no relationship between the variables.
+
+**Formula**:  
+For two variables \( X \) and \( Y \), the covariance is given by:
+\[
+\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})
+\]
+where:
+- \( x_i \) and \( y_i \) are individual data points of variables \( X \) and \( Y \),
+- \( \bar{x} \) and \( \bar{y} \) are the means of \( X \) and \( Y \),
+- \( n \) is the number of data points.
+
+**Interpretation**:
+- If \(\text{Cov}(X, Y) > 0\), both variables tend to increase or decrease together.
+- If \(\text{Cov}(X, Y) < 0\), one variable tends to increase while the other decreases.
+- If \(\text{Cov}(X, Y) = 0\), there is no linear relationship between the variables.
+
+---
+
+### 2. Correlation
+
+**Definition**: Correlation is a normalized version of covariance that provides a measure of the strength and direction of the linear relationship between two variables. It ranges from \(-1\) to \(+1\), where:
+- \( +1 \) indicates a perfect positive linear relationship,
+- \( -1 \) indicates a perfect negative linear relationship,
+- \( 0 \) indicates no linear relationship.
+
+**Formula**:  
+The Pearson correlation coefficient \( r \) between two variables \( X \) and \( Y \) is given by:
+\[
+r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
+\]
+where:
+- \(\text{Cov}(X, Y)\) is the covariance between \( X \) and \( Y \),
+- \( \sigma_X \) and \( \sigma_Y \) are the standard deviations of \( X \) and \( Y \).
+
+**Interpretation**:
+- \( r > 0 \) indicates a positive correlation: as \( X \) increases, \( Y \) tends to increase.
+- \( r < 0 \) indicates a negative correlation: as \( X \) increases, \( Y \) tends to decrease.
+- \( r = 0 \) indicates no linear relationship between \( X \) and \( Y \).
+- The closer \( r \) is to \( +1 \) or \( -1 \), the stronger the linear relationship.
+
+---
+
+### Summary of Key Terms:
+
+| **Term**         | **Definition**                                                                 | **Formula**                                                 |
+|------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------|
+| **Covariance**   | Measures how two variables change together.                                     | \(\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})\) |
+| **Correlation**   | A normalized version of covariance that measures the strength and direction of a linear relationship. | \(r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}\) |
+
+---
+
+### When to Use Each Measure:
+
+- **Covariance**: Use covariance when you want to understand the direction of the relationship between two variables, but be aware that it is affected by the scale of the data (i.e., it doesn't normalize the relationship).
+- **Correlation**: Use correlation when you want to understand both the direction and strength of the linear relationship between two variables, and need a scale-independent measure (since correlation is normalized).
+
+
 
 ### Probability Distributions
 Types of Probability Distributions:
