@@ -480,7 +480,7 @@ Suppose we are studying the height of adult men in a country. The population dis
 
 [Back to Central Limit Theorem](#central-limit-theorem) | [Back to Statistics and Probability](#statistics-and-probability)
 
-#### [Back to Top](#data-science-cheatsheets)
+[Back to Top](#data-science-cheatsheets)
 ---
 
 ## Hypothesis Test
@@ -569,5 +569,6 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 
 [Back to Hypothesis Testing](#hypothesis-test) | [Back to Statistics and Probability](#statistics-and-probability)
 
-#### [Back to Top](#data-science-cheatsheets)
+[Back to Top](#data-science-cheatsheets)
+---
 
