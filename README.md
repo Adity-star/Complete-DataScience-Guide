@@ -32,9 +32,9 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/EBooks)
 * [Pratical Machine Learning and Image Processing](https://github.com/Adity-star/Data-Science-Work/blob/main/EBooks/Machine_Learning_with_Python_Cookbook_Practical_Solutions_from_Preprocessing.pdf)
 * [Python Machine Learing Case Studies](https://github.com/Adity-star/Data-Science-Work/blob/main/EBooks/Python%20Machine%20Learning%20Case%20Studies.pdf)
 * [Thoughtful Machine Learning with Python](https://github.com/Adity-star/Data-Science-Work/blob/main/EBooks/Thoughtful%20Machine%20Learning.pdf)
-* [Dive into Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/d2l-en.pdf)
-* [Generative Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/generative-deep-learning-teaching-machines-to-paint-write-compose-and-play-2nbsped-1098134184-9781098134181.pdf)
-* [Natural Language Processing with Transformers](https://github.com/Adity-star/Data-Science-Work/blob/main/Deep%20Learning/Deep%20Learning%20Study%20Material/natural-language-processing-with-transformers-revised-edition-1098136799-9781098136796-9781098103248.pdf)
+* [Dive into Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/EBooks/d2l-en.pdf)
+* [Generative Deep Learning](https://github.com/Adity-star/Data-Science-Work/blob/main/EBooks/generative-deep-learning-teaching-machines-to-paint-write-compose-and-play-2nbsped-1098134184-9781098134181.pdf)
+* [Natural Language Processing with Transformers](https://github.com/Adity-star/Data-Science-Work/blob/main/EBooks/natural-language-processing-with-transformers-revised-edition-1098136799-9781098136796-9781098103248.pdf)
 
 
 ## Data Science Cheetsheets
