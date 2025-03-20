@@ -25,6 +25,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 ---
 
 ## Statistics and Probability
+* [Measures of central tendency](#measure-of-central-tendency)
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
 * [Statistics Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/stats_cheatsheet.pdf)
 * [Probability Distributions](#probability-distributions)
@@ -33,6 +34,33 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 
 [Back to Top](#data-science-cheatsheets)
 
+### Measure of central Tendency
+### 1. Mean (Arithmetic Mean)
+
+**Definition**: The mean is the sum of all the data points divided by the number of data points. It gives the average value of the data.  
+**Formula**:  
+\[
+\text{Mean} = \frac{\sum_{i=1}^{n} x_i}{n}
+\]
+where \( x_i \) is each data point and \( n \) is the total number of data points.
+
+---
+
+### 2. Median
+
+**Definition**: The median is the middle value when the data points are sorted in ascending (or descending) order. If the dataset has an even number of observations, the median is the average of the two middle values.
+
+**Formula**:
+- If the dataset has an odd number of data points, the median is the value at position \( \frac{n+1}{2} \).
+- If the dataset has an even number of data points, the median is the average of the values at positions \( \frac{n}{2} \) and \( \left( \frac{n}{2} + 1 \right) \).
+
+---
+
+### 3. Mode
+
+**Definition**: The mode is the value that appears most frequently in the dataset. A dataset may have no mode, one mode, or more than one mode (bimodal, multimodal).
+
+[Back to Top](#statistics-and-probability)
 ---
 
 ### Probability Distributions
