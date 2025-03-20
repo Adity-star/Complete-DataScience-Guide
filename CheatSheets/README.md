@@ -33,6 +33,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [Probability Distributions](#probability-distributions)
 * [Central Limit Theorem](#central-limit-theorem)
 * [Hypothesis Test](#hypothesis-test)
+* [Complete Statistics Notebook](#complete-statistics-notebook)
 
 [Back to Top](#data-science-cheatsheets)
 ---
@@ -749,4 +750,7 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 
 [Back to Top](#data-science-cheatsheets)
 ---
+
+## Complete Statistics Notebook
+* If you want all of these concepts with code and visualisation, check out this [NoteBook](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Complete%20Statistics.ipynb).
 
