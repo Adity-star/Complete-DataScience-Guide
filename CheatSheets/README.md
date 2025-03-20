@@ -126,7 +126,8 @@ The IQR is commonly used to detect outliers. Any data point that lies below \( Q
 - **Percentiles**: Useful when you want to know the relative position of a data point or the distribution of data in 100 intervals.
 - **IQR**: Useful to understand the spread of the middle 50% of the data and for identifying potential outliers.
 
-[Back to Top](#statistics-and-probability)
+[Back to Statistics and Probability](#statistics-and-probability)
+
 ---
 
 ### 1. Covariance
@@ -188,7 +189,8 @@ where:
 - **Covariance**: Use covariance when you want to understand the direction of the relationship between two variables, but be aware that it is affected by the scale of the data (i.e., it doesn't normalize the relationship).
 - **Correlation**: Use correlation when you want to understand both the direction and strength of the linear relationship between two variables, and need a scale-independent measure (since correlation is normalized)
   
-[Back to Top](#statistics-and-probability)
+[Back to Statistics and Probability](#statistics-and-probability)
+
 ---
 
 
@@ -206,7 +208,8 @@ Types of Probability Distributions:
    * [Log-Normal Distribution](#log-normal-distribution)
    * [Pareto Distribution](#pareto-distribution)
 
-[Back to Top](#statistics-and-probability)
+[Back to Statistics and Probability](#statistics-and-probability)
+
 ---
 
 ### Discrete Probability Distributions
@@ -389,7 +392,7 @@ Types of Probability Distributions:
 
 ---
 
-#### [Back to Top](#data-science-cheatsheets)
+[Back to Statistics and Probability](#statistics-and-probability)
 
 ---
 
