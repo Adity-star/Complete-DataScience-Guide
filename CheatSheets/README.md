@@ -28,6 +28,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 * [Important Terms](#important-terms)
 * [Probability Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/probability_cheatsheet.pdf)
 * [Statistics Cheatsheet](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/stats_cheatsheet.pdf)
+* [Probability Funcations](#probability-funcations)
 * [Probability Distributions](#probability-distributions)
 * [Central Limit Theorem](#central-limit-theorem)
 * [Hypothesis Test](#hypothesis-test)
@@ -35,7 +36,7 @@ The Stanford cheatsheets are collected from [Sherivine Amidi's teaching Material
 [Back to Top](#data-science-cheatsheets)
 ---
 
-### Measure of central Tendency
+## Measure of central Tendency
 ### 1. Mean (Arithmetic Mean)
 
 **Definition**: The mean is the sum of all the data points divided by the number of data points. It gives the average value of the data.  
@@ -190,6 +191,89 @@ where:
 - **Covariance**: Use covariance when you want to understand the direction of the relationship between two variables, but be aware that it is affected by the scale of the data (i.e., it doesn't normalize the relationship).
 - **Correlation**: Use correlation when you want to understand both the direction and strength of the linear relationship between two variables, and need a scale-independent measure (since correlation is normalized)
   
+[Back to Statistics and Probability](#statistics-and-probability)
+
+---
+## Probability Funcations
+### 1. Probability Mass Function (PMF)
+
+**Definition**: The **Probability Mass Function (PMF)** is used for discrete random variables. It gives the probability that a discrete random variable is exactly equal to some value. The PMF must satisfy two conditions:
+- The probability of each possible outcome is between 0 and 1, i.e., \( 0 \leq P(X = x) \leq 1 \),
+- The sum of all probabilities over all possible outcomes equals 1, i.e., \( \sum_{x} P(X = x) = 1 \).
+
+**Formula**:  
+For a discrete random variable \( X \), the PMF is given by:
+\[
+P(X = x) = p_x
+\]
+where \( p_x \) is the probability of the random variable \( X \) taking the value \( x \).
+
+**Usage**:  
+PMF is used to describe discrete probability distributions, such as the distribution of the number of heads in a coin toss or the number of successes in a series of Bernoulli trials.
+
+---
+
+### 2. Cumulative Distribution Function (CDF)
+
+**Definition**: The **Cumulative Distribution Function (CDF)** is a function that describes the probability that a random variable \( X \) will take a value less than or equal to \( x \). It is used for both discrete and continuous random variables.
+
+**Formula**:  
+The CDF for a random variable \( X \) is given by:
+\[
+F_X(x) = P(X \leq x)
+\]
+For a discrete random variable:
+\[
+F_X(x) = \sum_{t \leq x} P(X = t)
+\]
+For a continuous random variable:
+\[
+F_X(x) = \int_{-\infty}^{x} f_X(t) \, dt
+\]
+where \( P(X \leq x) \) is the probability that \( X \) takes a value less than or equal to \( x \), and \( f_X(t) \) is the probability density function of \( X \).
+
+**Usage**:  
+The CDF is helpful for understanding the cumulative probability up to a certain point and for determining percentiles of a distribution.
+
+---
+
+### 3. Probability Density Function (PDF)
+
+**Definition**: The **Probability Density Function (PDF)** is used for continuous random variables. It provides the probability of the random variable falling within a particular range of values, rather than taking any specific value. Unlike PMF, which gives probabilities for specific outcomes, the PDF gives probabilities in the form of a density.
+
+**Formula**:  
+The PDF of a continuous random variable \( X \) is denoted by \( f_X(x) \) and satisfies the following properties:
+- \( f_X(x) \geq 0 \) for all \( x \),
+- The total area under the curve of the PDF is equal to 1:
+\[
+\int_{-\infty}^{\infty} f_X(x) \, dx = 1
+\]
+To find the probability that \( X \) lies within a range \( [a, b] \), we compute:
+\[
+P(a \leq X \leq b) = \int_{a}^{b} f_X(x) \, dx
+\]
+
+**Usage**:  
+PDF is used to describe continuous probability distributions, such as the normal distribution or the exponential distribution.
+
+---
+
+### Summary of Key Terms:
+
+| **Term**                | **Definition**                                                | **Formula**                                                       |
+|-------------------------|---------------------------------------------------------------|-------------------------------------------------------------------|
+| **PMF**                 | Probability mass function for discrete random variables.       | \( P(X = x) = p_x \)                                              |
+| **CDF**                 | Cumulative distribution function for both discrete and continuous random variables. | \( F_X(x) = P(X \leq x) \)  for discrete, \( F_X(x) = \int_{-\infty}^{x} f_X(t) \, dt \) for continuous |
+| **PDF**                 | Probability density function for continuous random variables.  | \( f_X(x) \), such that \( \int_{-\infty}^{\infty} f_X(x) \, dx = 1 \) |
+
+---
+
+### When to Use Each Measure:
+
+- **PMF**: Use PMF when dealing with discrete random variables to calculate the probability of specific outcomes.
+- **CDF**: Use CDF when you need to know the cumulative probability up to a certain point or when working with percentiles.
+- **PDF**: Use PDF for continuous random variables to find the probability density at a specific point or the probability over a range of values.
+
 [Back to Statistics and Probability](#statistics-and-probability)
 
 ---
