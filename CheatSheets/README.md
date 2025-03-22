@@ -750,6 +750,7 @@ Based on the decision made in Step 6, interpret the results in the context of yo
 
 ## Complete Statistics Notebook
 * If you want all of these concepts with code and visualisation, check out this [NoteBook](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Complete%20Statistics.ipynb).
+* Carlos Fernandez-Granda from New York University has great lecture notes [Probability and Statistics for Data Science](https://cims.nyu.edu/~cfgranda/pages/stuff/probability_stats_for_DS.pdf) (available online)
 
 [Back to Hypothesis Testing](#hypothesis-test) | [Back to Statistics and Probability](#statistics-and-probability)
 
