@@ -21,22 +21,23 @@
 ---
 
 
-## Model and feature selection
-1. Why are model selection methods needed?
-1. How do you do a trade-off between bias and variance?
-1. What are the different attributes that can be selected by model selection methods?
-1. Why is cross-validation required?
-1. Describe different cross-validation techniques.
-1. What is hold-out cross validation? What are its advantages and disadvantages?
-1. What is k-fold cross validation? What are its advantages and disadvantages?
-1. What is leave-one-out cross validation? What are its advantages and disadvantages?
-1. Why is feature selection required?
-1. Describe some feature selection methods.
-1. What is forward feature selection method? What are its advantages and disadvantages?
-1. What is backward feature selection method? What are its advantages and disadvantages?
-1. What is filter feature selection method and describe two of them?
-1. What is mutual information and KL divergence?
-1. Describe KL divergence intuitively.
+## Model Selection and Feature Selection
+
+#### 1. [Why are model selection methods needed?](#answer-1)
+#### 2. [How do you do a trade-off between bias and variance?](#answer-2)
+#### 3. [What are the different attributes that can be selected by model selection methods?](#answer-3)
+#### 4. [Why is cross-validation required?](#answer-4)
+#### 5. [Describe different cross-validation techniques.](#answer-5)
+#### 6. [What is hold-out cross validation? What are its advantages and disadvantages?](#answer-6)
+#### 7. [What is k-fold cross validation? What are its advantages and disadvantages?](#answer-7)
+#### 8. [What is leave-one-out cross validation? What are its advantages and disadvantages?](#answer-8)
+#### 9. [Why is feature selection required?](#answer-9)
+#### 10. [Describe some feature selection methods.](#answer-10)
+#### 11. [What is forward feature selection method? What are its advantages and disadvantages?](#answer-11)
+#### 12. [What is backward feature selection method? What are its advantages and disadvantages?](#answer-12)
+#### 13. [What is filter feature selection method and describe two of them?](#answer-13)
+#### 14. [What is mutual information and KL divergence?](#answer-14)
+#### 15. [Describe KL divergence intuitively.](#answer-15)
 
 ## Curse of dimensionality 
 1. Describe the curse of dimensionality with examples.
@@ -198,3 +199,106 @@ The VC dimension of an SVM is bounded despite the kernel potentially mapping dat
 
 ### Answer 14: [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
 Despite ERM being NP-hard, **logistic regression** and **SVM** use convex loss functions (like log-loss and hinge loss), which allows for efficient optimization. These convex functions ensure that the optimization problem can be solved efficiently and guarantees finding the global minimum without the need for exhaustive search.
+
+### Answer 1: [Why are model selection methods needed?](#answer-1)
+Model selection methods are needed to choose the best-performing model from a set of candidate models. They help optimize the model's performance and ensure that it generalizes well to unseen data. The goal is to avoid overfitting or underfitting by selecting a model that balances complexity and performance.
+
+---
+
+### Answer 2: [How do you do a trade-off between bias and variance?](#answer-2)
+The trade-off between bias and variance is done by selecting a model that balances the two:
+- **High bias**: Occurs with underfitting, where the model is too simple and fails to capture the underlying pattern.
+- **High variance**: Occurs with overfitting, where the model is too complex and fits the training data very well but performs poorly on unseen data.
+You can manage the trade-off by tuning model complexity or using techniques like regularization, cross-validation, or increasing the training data.
+
+---
+
+### Answer 3: [What are the different attributes that can be selected by model selection methods?](#answer-3)
+Model selection methods can select attributes like:
+- **Hyperparameters**: Parameters of the model that are not learned during training, like the learning rate or the number of layers in a neural network.
+- **Model type**: The algorithm to use, such as linear regression, decision trees, or support vector machines.
+- **Feature selection**: Which features or input variables to use for training the model.
+  
+---
+
+### Answer 4: [Why is cross-validation required?](#answer-4)
+Cross-validation is required to estimate the generalization ability of a model. It helps to ensure that the model performs well not just on the training data but also on unseen data. Cross-validation mitigates the risk of overfitting by using different subsets of the data for training and validation.
+
+---
+
+### Answer 5: [Describe different cross-validation techniques.](#answer-5)
+Some common cross-validation techniques are:
+- **Hold-out**: Split the dataset into training and test sets.
+- **k-fold**: Divide the data into k equal parts, using one part for testing and the rest for training, rotating through all k parts.
+- **Leave-one-out**: Use one data point for testing and the rest for training, repeated for all data points.
+
+---
+
+### Answer 6: [What is hold-out cross validation? What are its advantages and disadvantages?](#answer-6)
+**Hold-out cross-validation** splits the data into two sets: a training set and a test set. The model is trained on the training set and tested on the test set.
+
+- **Advantages**: Simple and fast to implement.
+- **Disadvantages**: The performance estimate depends heavily on how the data is split. It may not be as reliable as other methods with smaller datasets.
+
+---
+
+### Answer 7: [What is k-fold cross validation? What are its advantages and disadvantages?](#answer-7)
+**k-fold cross-validation** divides the data into k equal parts, trains the model on k-1 parts, and tests it on the remaining part. This process is repeated k times, with each part used for testing once.
+
+- **Advantages**: Provides a better estimate of model performance by averaging over k test sets.
+- **Disadvantages**: Computationally expensive, especially for large datasets.
+
+---
+
+### Answer 8: [What is leave-one-out cross validation? What are its advantages and disadvantages?](#answer-8)
+**Leave-one-out cross-validation** (LOOCV) uses each data point as a test set while training the model on the remaining data points. This is repeated for each data point in the dataset.
+
+- **Advantages**: Uses all data points for both training and testing, leading to a very reliable estimate.
+- **Disadvantages**: Computationally expensive, as it requires training and testing the model n times, where n is the number of data points.
+
+---
+
+### Answer 9: [Why is feature selection required?](#answer-9)
+Feature selection is required to improve model performance by removing irrelevant or redundant features, reducing the model complexity, and preventing overfitting. It also helps in making the model more interpretable and reduces computation time.
+
+---
+
+### Answer 10: [Describe some feature selection methods.](#answer-10)
+Some feature selection methods include:
+- **Filter methods**: Evaluate features independently of the model, using statistical tests like correlation or mutual information.
+- **Wrapper methods**: Evaluate features by training a model with different subsets of features and selecting the best-performing subset.
+- **Embedded methods**: Perform feature selection during the model training process, such as Lasso regression.
+
+---
+
+### Answer 11: [What is forward feature selection method? What are its advantages and disadvantages?](#answer-11)
+**Forward feature selection** starts with no features and adds features one by one, selecting the feature that improves the model's performance the most.
+
+- **Advantages**: Simple and easy to implement. It can be very effective for models with many features.
+- **Disadvantages**: Can be computationally expensive, especially for large datasets. It may also miss interactions between features.
+
+---
+
+### Answer 12: [What is backward feature selection method? What are its advantages and disadvantages?](#answer-12)
+**Backward feature selection** starts with all features and removes the least useful features one by one.
+
+- **Advantages**: Often more accurate than forward selection because it considers all features initially.
+- **Disadvantages**: Computationally expensive, as it requires training a model for each feature subset.
+
+---
+
+### Answer 13: [What is filter feature selection method and describe two of them?](#answer-13)
+**Filter methods** evaluate features independently of the model. Two examples include:
+- **Chi-square test**: Tests the independence between each feature and the target variable.
+- **Correlation coefficient**: Measures the linear relationship between a feature and the target, selecting features with the highest correlation.
+
+---
+
+### Answer 14: [What is mutual information and KL divergence?](#answer-14)
+- **Mutual Information**: A measure of the amount of information that one variable provides about another. It quantifies the reduction in uncertainty of one variable given the knowledge of another.
+- **KL Divergence**: A measure of how one probability distribution diverges from a second, expected probability distribution. It quantifies the difference between two distributions.
+
+---
+
+### Answer 15: [Describe KL divergence intuitively.](#answer-15)
+KL Divergence measures how much information is lost when approximating one probability distribution by another. If the distributions are the same, the KL divergence is zero. If the distributions are very different, the KL divergence will be large, indicating a significant difference in the information content of the two distributions.
