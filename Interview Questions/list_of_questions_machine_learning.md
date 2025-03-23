@@ -17,6 +17,7 @@
 #### 13. [How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#answer-13)
 #### 14. [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
 
+
 ---
 
 
@@ -197,4 +198,3 @@ The VC dimension of an SVM is bounded despite the kernel potentially mapping dat
 
 ### Answer 14: [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
 Despite ERM being NP-hard, **logistic regression** and **SVM** use convex loss functions (like log-loss and hinge loss), which allows for efficient optimization. These convex functions ensure that the optimization problem can be solved efficiently and guarantees finding the global minimum without the need for exhaustive search.
-
