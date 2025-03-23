@@ -769,6 +769,7 @@ Machine learning is a subfield of artificial intelligence that deals with algori
 - [Machinr Learning Advanced Concepts](#machine-learning-advanced-concepts)
 - [Metrics](#metrics)
 
+[Back to Top](#data-science-cheatsheets)
 ---
 # Machine Learning Basics
 ## What is Machine Learning?
@@ -1794,7 +1795,7 @@ CNNs consist of layers that apply convolutions to input data, followed by poolin
 [Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
-# Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM)
+# Recurrent Neural Networks (RNN) and LSTM
 
 
 **Recurrent Neural Networks (RNNs)** and **Long Short-Term Memory (LSTM)** networks are specialized types of neural networks designed for sequential data, such as time series, speech, or text. Unlike traditional feedforward neural networks, RNNs have connections that form cycles, allowing them to maintain a memory of previous inputs. This makes RNNs particularly well-suited for tasks involving sequential dependencies, such as language modeling, speech recognition, and time-series forecasting.
