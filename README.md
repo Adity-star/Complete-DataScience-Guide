@@ -41,7 +41,7 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/EBooks)
 This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets) contains cheatsheets of basic concepts in data science that will be asked in interviews:
 * [Standford Materials](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#stanford-materials)
 * [Statistics and Probability](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#statistics-and-probability)
-* Machine Learning Concepts
+* [Machine Learning Concepts](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#machine-learning-concepts)
 * Deep Learning Concepts
 * Natural Language Processing
   
