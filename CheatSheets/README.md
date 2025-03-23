@@ -768,7 +768,6 @@ Machine learning is a subfield of artificial intelligence that deals with algori
 - [Machine Learning Workflow](#machine-learning-workflow)
 - [Machinr Learning Advanced Concepts](#machine-learning-advanced-concepts)
 - [Metrics](#metrics)
-- [Advanced Concepts](#advanced-concepts)
 
 ---
 # Machine Learning Basics
@@ -1006,15 +1005,6 @@ Activation functions in neural networks introduce non-linearity, allowing the mo
   - **Pros**: Ideal for regression tasks where the output is a real number.
   - **Cons**: Not suitable for classification tasks, as it does not bound the output between a specific range (e.g., 0 and 1).
 
-## Summary
-
-- **ReLU** is widely used for hidden layers due to its simplicity and efficiency.
-- **Leaky ReLU** fixes the dead ReLU problem by allowing a small gradient for negative inputs.
-- **Softmax** is used for multi-class classification, converting outputs into a probability distribution.
-- **Sigmoid** is used for binary classification, outputting a probability between 0 and 1.
-- **Linear** is used for regression tasks, where the output is continuous.
-
-These activation functions are the building blocks of neural networks, enabling them to solve a wide range of tasks from classification to regression.
 
 [Back to Machine Learning Advanced Concepts](#machine-learning-advanced-concepts)
 
@@ -1031,22 +1021,11 @@ These activation functions are the building blocks of neural networks, enabling 
    - For **classification**, the final output is determined by majority voting (the class with the most votes).
    - For **regression**, the final prediction is typically the average of all individual model predictions.
 
-## Steps in Bagging:
-
-1. **Create multiple bootstrapped datasets**: Randomly select data points with replacement from the original dataset to create different training sets.
-2. **Train models on each dataset**: Train the same learning algorithm on each of the bootstrapped datasets.
-3. **Make predictions**: For classification tasks, each model casts a vote for the class label, and the class with the majority vote is selected. For regression tasks, the predicted values are averaged.
-4. **Combine the predictions**: The final prediction is made based on the aggregated outputs from all the models.
-
 ## Key Points about Bagging:
 
 - **Reduces Variance**: By combining predictions from multiple models, bagging reduces the variance of the model, making it less sensitive to noise in the training data. This helps to reduce overfitting.
 - **Works Well with High-Variance Models**: Bagging is particularly useful for models that have high variance, such as decision trees, as it stabilizes their predictions.
 - **Parallelizable**: Since each model is trained independently on different subsets of data, the training process can be parallelized, making it efficient for large datasets.
-
-## Example: Random Forest
-
-The **Random Forest** algorithm is an extension of bagging applied specifically to decision trees. It generates multiple decision trees using bootstrapped samples of the data and random subsets of features at each split. This diversity of decision trees leads to better overall performance.
 
 ## Pros of Bagging:
 
@@ -1059,9 +1038,6 @@ The **Random Forest** algorithm is an extension of bagging applied specifically 
 - **Computationally Expensive**: Training multiple models can be time-consuming and require more computational resources.
 - **Difficult to Interpret**: The ensemble nature of bagging can make the model harder to interpret compared to a single model.
 
-## Summary
-
-Bagging is a technique that improves model accuracy by combining predictions from multiple models trained on different subsets of data. It is particularly effective for high-variance models like decision trees. While it can be computationally expensive, it helps in reducing overfitting and improving the robustness of the model.
 
 [Back to Machine Learning Advanced Concepts](#machine-learning-advanced-concepts)
 
@@ -1069,28 +1045,6 @@ Bagging is a technique that improves model accuracy by combining predictions fro
 # Stacking 
 
 **Stacking** is an ensemble learning technique that combines multiple models (often of different types) to make predictions. Unlike bagging or boosting, which aggregate the predictions using simple methods like voting or averaging, stacking trains a meta-model to combine the predictions of individual models in a more complex way.
-
-## How Stacking Works:
-
-1. **First Layer (Base Learners)**:
-   - In the first layer, multiple different models (base learners) are trained on the original training dataset. These models can be any type of machine learning model (e.g., decision trees, support vector machines, neural networks).
-   
-2. **Meta-features Creation**:
-   - Once the base learners are trained, they are used to make predictions on a held-out validation subset of the original dataset. These predictions are treated as new features (meta-features) for the second layer.
-   
-3. **Second Layer (Meta-model)**:
-   - A new model, called the meta-model or meta-learner, is trained on the meta-features created by the first layer. This meta-model learns how to combine the predictions from the base learners.
-   
-4. **Prediction**:
-   - During inference (testing or deployment), the base models make predictions, and these predictions are passed to the meta-model to generate the final output.
-
-## Steps in Stacking:
-
-1. **Split the data**: The training set is split into two subsets: one for training the base models and one for generating meta-features. A common approach is to use k-fold cross-validation for this.
-2. **Train base models**: Train multiple base models (learners) on the first subset of the data.
-3. **Generate meta-features**: Use the base models to generate predictions on the second subset, treating these predictions as new features.
-4. **Train the meta-model**: Train a new model (typically a simpler model like logistic regression or linear regression) on the meta-features created by the base models.
-5. **Make final prediction**: During testing, the base models generate predictions, and these predictions are fed into the trained meta-model to make the final prediction.
 
 ## Key Points about Stacking:
 
@@ -1110,20 +1064,10 @@ Bagging is a technique that improves model accuracy by combining predictions fro
 - **Data Splitting**: Stacking requires careful data splitting, often into multiple subsets, which can reduce the amount of data available for training each model.
 - **Complexity**: The process of stacking is more complex to implement and requires more fine-tuning compared to other ensemble methods.
 
-## Example: Stacked Ensemble of Models
-
-1. **Base Learners**: A decision tree, a random forest, and a support vector machine are used as base learners.
-2. **Meta-Model**: A logistic regression model is trained on the predictions from the base learners.
-3. **Prediction**: For a new data point, the decision tree, random forest, and SVM make predictions, and these predictions are passed to the logistic regression model to output the final prediction.
-
-## Summary
-
-Stacking is an advanced ensemble method that improves predictive performance by combining the predictions of multiple models using a meta-model. It allows for the use of diverse models and learns how to best aggregate their outputs. While it can improve accuracy, it also requires careful data management and significant computational resources.
-
 [Back to Machine Learning Advanced Concepts](#machine-learning-advanced-concepts)
 
 ---
-# Parametric vs Nonparametric Models
+# Parametric vs Nonparametric
 
 In machine learning, models are typically categorized as **parametric** or **nonparametric**, based on the number of parameters they use and how they scale with respect to the data.
 
@@ -1137,10 +1081,6 @@ A **parametric model** is one that summarizes data using a fixed set of paramete
 - **Training speed**: Parametric models are usually faster to train because the number of parameters is fixed.
 - **Assumptions**: Parametric models typically make strong assumptions about the data, such as linearity in linear regression.
 
-### Examples of Parametric Models:
-- **Linear Regression**: Assumes a linear relationship between input variables and the target variable.
-- **Logistic Regression**: Assumes a logistic relationship for classification tasks.
-- **Naive Bayes**: Assumes that the features are conditionally independent given the class label.
 
 ### Pros of Parametric Models:
 - **Faster to train**: Since the model has a fixed number of parameters, the training process is usually faster.
@@ -1155,16 +1095,6 @@ A **parametric model** is one that summarizes data using a fixed set of paramete
 
 A **nonparametric model**, in contrast, does not make a strong assumption about the form or number of parameters in the model. These models can become more complex as the amount of training data increases.
 
-### Key Features of Nonparametric Models:
-- **Flexible number of parameters**: The number of parameters can grow with the size of the dataset.
-- **Model complexity**: As more data is provided, the model can become more complex, capturing intricate patterns in the data.
-- **Training time**: Nonparametric models generally require more time to train, as the model's complexity grows with the amount of data.
-- **Less assumption**: Nonparametric models make fewer assumptions about the data, making them more flexible in capturing complex relationships.
-
-### Examples of Nonparametric Models:
-- **K-Nearest Neighbors (KNN)**: Makes predictions based on the majority label of the 'k' closest data points.
-- **Decision Trees**: Can grow in complexity depending on the number of data points and the depth of the tree.
-- **Kernel Density Estimation**: Estimates the probability distribution of data based on the density of points in the feature space.
 
 ### Pros of Nonparametric Models:
 - **Highly flexible**: Nonparametric models can capture complex, non-linear relationships in the data.
@@ -1187,12 +1117,6 @@ A **nonparametric model**, in contrast, does not make a strong assumption about 
 | **Memory Usage**       | Low memory consumption                | High memory consumption                   |
 | **Overfitting Risk**   | Lower risk of overfitting             | Higher risk of overfitting               |
 
-## Summary
-
-- **Parametric models** are characterized by a fixed number of parameters and are often simpler and faster to train, but they make strong assumptions about the data, which can limit their flexibility.
-- **Nonparametric models** have the ability to adapt to the data and grow in complexity as more data is provided. They tend to be more flexible and can model complex relationships but are often slower and require more resources.
-
-Choosing between parametric and nonparametric models depends on the size and complexity of your data and the assumptions you're willing to make about the underlying distribution.
 
 [Back to Machine Learning Advanced Concepts](#machine-learning-advanced-concepts)
 
@@ -1201,7 +1125,7 @@ Choosing between parametric and nonparametric models depends on the size and com
 [Back to Top](#data-science-cheatsheets)
 ---
 
-# Supervised Learning
+# Supervised Algorithms
 ## Table of Contents
 1. [Linear Regression](#linear-regression)
 2. [Logistic Regression](#logistic-regression)
@@ -1268,7 +1192,7 @@ For Linear Regression to give meaningful results, certain assumptions must hold 
 - **Multicollinearity**: High correlation between independent variables can cause issues with the model.
 
   - 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 
@@ -1325,7 +1249,7 @@ For logistic regression to provide meaningful and reliable results, the followin
 - **Requires Large Sample Size**: It works better with larger datasets and may not perform well on small datasets with few observations.
 
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 
@@ -1386,7 +1310,7 @@ Pruning is an important step to prevent overfitting. It involves trimming branch
 4. **Max Features**: The maximum number of features to consider when looking for the best split.
 5. **Criterion**: The function to measure the quality of a split (e.g., **Gini Impurity**, **Entropy**).
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 
@@ -1438,7 +1362,7 @@ The key idea behind SVM is to find the optimal hyperplane that maximizes the mar
 - **Choice of kernel**: The performance of SVM can be highly dependent on the choice of kernel and its parameters. Incorrect kernel choice may lead to poor performance.
 - **Difficult to interpret**: SVM models are often seen as "black box" models because the decision boundary is not as easy to interpret as decision trees, for example.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 # Random Forest
@@ -1486,7 +1410,7 @@ The key advantage of random forests is their ability to handle large datasets wi
 6. **Bootstrap**: Whether to use bootstrap sampling (sampling with replacement) when creating the trees. This is generally set to `True` in random forests.
 7. **Out-of-Bag (OOB) Score**: If set to `True`, the out-of-bag error estimate will be computed for model evaluation.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 # K-Nearest Neighbors (KNN)
@@ -1538,7 +1462,7 @@ KNN is non-parametric, meaning it doesn't make any assumptions about the underly
    - **Brute Force**: A simple but slower approach.
 5. **Leaf Size**: A parameter for the tree-based algorithms (Ball Tree or KD Tree), controlling the number of points in a leaf node.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 # Naive Bayes
@@ -1592,6 +1516,8 @@ There are several variations of Naive Bayes, depending on the type of data and h
 1. **Alpha (Laplace Smoothing)**: This parameter is used in the Multinomial and Bernoulli Naive Bayes models to prevent zero probabilities when a feature is not present in the training data for a given class. The Laplace smoothing parameter \( \alpha \) adds a constant value (usually 1) to the counts of features.
 2. **Fit Prior**: A boolean parameter indicating whether to learn class prior probabilities from the data. If set to `False`, equal class priors will be assumed.
 3. **Var Smoothing**: In Gaussian Naive Bayes, this parameter adds a small value to the variance of each feature to avoid division by zero errors and improve numerical stability.
+
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 
@@ -1652,7 +1578,7 @@ LightGBM is a fast, distributed, high-performance gradient boosting framework ba
 4. **Subsample**: The fraction of the training data used to fit each weak learner. Setting a value less than 1.0 can help prevent overfitting.
 5. **Min Samples Split/Leaf**: The minimum number of samples required to split a node or to form a leaf in decision trees. This can help control the complexity of the individual trees.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 # Multilayer Perceptron (MLP)
@@ -1700,7 +1626,7 @@ Each neuron in an MLP applies an activation function to its input to introduce n
 6. **Dropout Rate**: The rate at which neurons are randomly dropped during training to prevent overfitting. Dropout helps the model generalize better.
 7. **Epochs**: The number of times the entire dataset is passed through the network during training.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 
@@ -1758,7 +1684,7 @@ CNNs consist of layers that apply convolutions to input data, followed by poolin
 5. **Dropout Rate**: The fraction of neurons randomly dropped during training to prevent overfitting.
 6. **Learning Rate**: The rate at which the model’s weights are updated during training. A learning rate that is too high may result in poor convergence, while a learning rate that is too low may slow down training.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
 # Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM)
@@ -1837,7 +1763,7 @@ However, standard RNNs struggle with long-term dependencies due to the **vanishi
 6. **Dropout Rate**: The fraction of neurons randomly dropped during training to prevent overfitting.
 7. **Optimizer**: The optimization algorithm used to minimize the loss function. Common choices for RNNs and LSTMs include **Adam**, **RMSprop**, and **SGD**.
 
-[Back to Supervised Learning](#supervised=learning)
+[Back to Supervised Algorithms](#supervised-algorithms)
 
 [Back to Machine Learning Concepts](#machine-learning-concepts)
 
