@@ -1,6 +1,6 @@
 # Machine Learning - List of questions
 
-## Learning Theory(#learning-theory)
+## [Learning Theory](#learning-theory)
 
 #### 1. [Describe bias and variance with examples](#describe-bias-and-variance-with-examples)
 #### 2. [What is Empirical Risk Minimization?](#answer-2)
