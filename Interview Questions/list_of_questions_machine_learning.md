@@ -7,7 +7,7 @@
 #### 3. [What is Union bound and Hoeffding's inequality?](#answer-3)
 #### 4. [Write the formulae for training error and generalization error. Point out the differences.](#answer-4)
 #### 5. [State the uniform convergence theorem and derive it.](#answer-5)
-## 6. [What is sample complexity bound of uniform convergence theorem?](#answer-6)
+#### 6. [What is sample complexity bound of uniform convergence theorem?](#answer-6)
 #### 7. [What is error bound of uniform convergence theorem?](#answer-7)
 #### 8. [What is the bias-variance trade-off theorem?](#answer-8)
 #### 9. [From the bias-variance trade-off, can you derive the bound on training set size?](#answer-9)
