@@ -1298,6 +1298,7 @@ For Linear Regression to give meaningful results, certain assumptions must hold 
 - **Linearity Assumption**: It can only capture linear relationships; complex relationships may not be modeled well.
 - **Sensitive to Outliers**: Linear regression is sensitive to outliers, which can skew the results.
 - **Multicollinearity**: High correlation between independent variables can cause issues with the model.
+  
 [![image](https://github.com/user-attachments/assets/b8ef569c-2b7d-477d-a375-f9c90ebf5e16)
 ](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/linear_regression.png)
   - 
@@ -1357,6 +1358,7 @@ For logistic regression to provide meaningful and reliable results, the followin
 - **Sensitive to Outliers**: Logistic regression can be sensitive to outliers, which may affect the model's performance.
 - **Requires Large Sample Size**: It works better with larger datasets and may not perform well on small datasets with few observations.
 
+[![image](https://github.com/user-attachments/assets/64c1c9df-f461-4832-9992-99462cb0a124)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/logistics_regression.png)
 
 [Back to Supervised Algorithms](#supervised-algorithms)
 
@@ -1421,6 +1423,7 @@ Pruning is an important step to prevent overfitting. It involves trimming branch
 
 [![image](https://github.com/user-attachments/assets/a5806ba8-cfe4-4fc6-8657-a873591c6a48)
 ](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/tree.gif)
+
 [Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
@@ -1523,6 +1526,8 @@ The key advantage of random forests is their ability to handle large datasets wi
 5. **Max Features**: The maximum number of features to consider when looking for the best split at each node. Reducing the number of features can increase the randomness of the trees, reducing overfitting.
 6. **Bootstrap**: Whether to use bootstrap sampling (sampling with replacement) when creating the trees. This is generally set to `True` in random forests.
 7. **Out-of-Bag (OOB) Score**: If set to `True`, the out-of-bag error estimate will be computed for model evaluation.
+
+[![image](https://github.com/user-attachments/assets/fea41a6e-04c0-4151-8f11-eebe1e0fb03c)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/random_forest.jpeg)
 
 [Back to Supervised Algorithms](#supervised-algorithms)
 
