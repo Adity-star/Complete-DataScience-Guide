@@ -2,20 +2,21 @@
 
 ## Learning Theory
 
-1. Describe bias and variance with examples. 
-1. What is Empirical Risk Minimization? 
-1. What is Union bound and Hoeffding's inequality? 
-1. Write the formulae for training error and generalization error. Point out the differences.
-1. State the uniform convergence theorem and derive it. 
-1. What is sample complexity bound of uniform convergence theorem? 
-1. What is error bound of uniform convergence theorem? 
-1. What is the bias-variance trade-off theorem? 
-1. From the bias-variance trade-off, can you derive the bound on training set size?
-1. What is the VC dimension? 
-1. What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast. 
-1. What is the VC dimension for an n-dimensional linear classifier? 
-1. How is the VC dimension of a SVM bounded although it is projected to an infinite dimension? 
-1. Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work? 
+## 1. [Describe bias and variance with examples](#answer-1)
+## 2. [What is Empirical Risk Minimization?](#answer-2)
+## 3. [What is Union bound and Hoeffding's inequality?](#answer-3)
+## 4. [Write the formulae for training error and generalization error. Point out the differences.](#answer-4)
+## 5. [State the uniform convergence theorem and derive it.](#answer-5)
+## 6. [What is sample complexity bound of uniform convergence theorem?](#answer-6)
+## 7. [What is error bound of uniform convergence theorem?](#answer-7)
+## 8. [What is the bias-variance trade-off theorem?](#answer-8)
+## 9. [From the bias-variance trade-off, can you derive the bound on training set size?](#answer-9)
+## 10. [What is the VC dimension?](#answer-10)
+## 11. [What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast.](#answer-11)
+## 12. [What is the VC dimension for an n-dimensional linear classifier?](#answer-12)
+## 13. [How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#answer-13)
+## 14. [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
+
 
 ## Model and feature selection
 1. Why are model selection methods needed?
@@ -117,3 +118,95 @@
 
 ## Miscellaneous
 1. What is the difference between loss function, cost function and objective function?
+
+
+---
+
+## Answer 1: [Describe bias and variance with examples](#answer-1)
+### Answer:
+- **Bias**: The error introduced by approximating a real-world problem with a simplified model. Example: Using a linear model for non-linear data causes high bias because the model is too simple.
+- **Variance**: The error due to the model's sensitivity to small fluctuations in the training data. Example: A very complex model that overfits to the training data may have high variance and perform poorly on unseen data.
+
+---
+
+## Answer 2: [What is Empirical Risk Minimization?](#answer-2)
+### Answer:
+Empirical Risk Minimization (ERM) is a principle in machine learning where the model aims to minimize the average error on the training set. Essentially, it seeks to minimize the empirical risk (i.e., the average loss) over the given dataset.
+
+---
+
+## Answer 3: [What is Union bound and Hoeffding's inequality?](#answer-3)
+### Answer:
+- **Union Bound**: A probability bound that provides an upper limit for the probability of the union of multiple events. For events \( A \) and \( B \), \( P(A \cup B) \leq P(A) + P(B) \).
+- **Hoeffding's Inequality**: A statistical tool that provides a bound on the probability that the sum of random variables deviates from its expected value. It is often used for large sample sizes to analyze how much the observed mean deviates from the expected mean.
+
+---
+
+## Answer 4: [Write the formulae for training error and generalization error. Point out the differences.](#answer-4)
+### Answer:
+- **Training error**: \( \hat{L}_{\text{train}} = \frac{1}{N} \sum_{i=1}^{N} \ell(f(x_i), y_i) \)
+- **Generalization error**: \( \hat{L}_{\text{gen}} = \mathbb{E}[\ell(f(x), y)] \)
+  
+The **training error** is calculated on the training data, while the **generalization error** measures how well the model performs on unseen data. Generalization error is typically more important for assessing model performance.
+
+---
+
+## Answer 5: [State the uniform convergence theorem and derive it.](#answer-5)
+### Answer:
+The uniform convergence theorem states that as the number of samples increases, the empirical risk (error on the training set) converges uniformly to the true risk (error on the entire distribution) for all hypotheses in the hypothesis class. The derivation involves bounding the deviation of the empirical risk from the true risk using concentration inequalities.
+
+---
+
+## Answer 6: [What is sample complexity bound of uniform convergence theorem?](#answer-6)
+### Answer:
+The sample complexity bound of the uniform convergence theorem provides the number of samples required to ensure that the empirical risk approximates the true risk with high probability. This is typically bounded as \( O\left(\frac{1}{\epsilon^2} \log \frac{1}{\delta}\right) \), where \( \epsilon \) is the error tolerance and \( \delta \) is the confidence level.
+
+---
+
+## Answer 7: [What is error bound of uniform convergence theorem?](#answer-7)
+### Answer:
+The error bound of the uniform convergence theorem provides a limit on how far the empirical risk can be from the true risk. The probability that this deviation exceeds some threshold \( \epsilon \) is bounded by \( \delta \), i.e., \( P(\hat{L} - L > \epsilon) \leq \delta \), ensuring that the model generalizes well.
+
+---
+
+## Answer 8: [What is the bias-variance trade-off theorem?](#answer-8)
+### Answer:
+The bias-variance trade-off theorem suggests that there is a trade-off between the complexity of the model and its ability to generalize. Increasing model complexity reduces bias (leading to a better fit to training data) but increases variance (making it more sensitive to noise and overfitting). The optimal model balances both to minimize total error.
+
+---
+
+## Answer 9: [From the bias-variance trade-off, can you derive the bound on training set size?](#answer-9)
+### Answer:
+The training set size is critical in managing the bias-variance trade-off. A larger training set reduces variance by providing more representative data, thus preventing overfitting. From the trade-off, a bound on the training set size can be derived based on the desired error and confidence levels, often related to the complexity of the hypothesis class.
+
+---
+
+## Answer 10: [What is the VC dimension?](#answer-10)
+### Answer:
+The VC (Vapnik-Chervonenkis) dimension is a measure of the capacity of a hypothesis class. It represents the largest set of points that can be shattered by a hypothesis class, meaning that the hypothesis class can correctly classify all possible labelings of those points.
+
+---
+
+## Answer 11: [What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast.](#answer-11)
+### Answer:
+- **Finite hypothesis set**: The training set size typically depends on the number of hypotheses and their complexity. It grows logarithmically with the number of hypotheses.
+- **Infinite hypothesis set**: The training set size grows significantly larger, typically requiring \( O(1/\epsilon^2) \) samples to avoid overfitting and ensure good generalization.
+
+---
+
+## Answer 12: [What is the VC dimension for an n-dimensional linear classifier?](#answer-12)
+### Answer:
+The VC dimension of an \( n \)-dimensional linear classifier is \( n + 1 \). This means that an \( n \)-dimensional linear classifier can shatter any set of \( n + 1 \) points in general position.
+
+---
+
+## Answer 13: [How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#answer-13)
+### Answer:
+The VC dimension of an SVM is bounded despite the kernel potentially mapping data to an infinite-dimensional space due to the regularization term and the specific form of the kernel. The capacity of the SVM is controlled by the regularization parameter, preventing it from overfitting the data.
+
+---
+
+## Answer 14: [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
+### Answer:
+Despite ERM being NP-hard, **logistic regression** and **SVM** use convex loss functions (like log-loss and hinge loss), which allows for efficient optimization. These convex functions ensure that the optimization problem can be solved efficiently and guarantees finding the global minimum without the need for exhaustive search.
+
