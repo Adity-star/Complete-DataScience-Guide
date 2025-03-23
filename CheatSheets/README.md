@@ -764,12 +764,14 @@ Machine learning is a subfield of artificial intelligence that deals with algori
 ## Table of Contents
 - [Machine Learning Basics](#machine-learning-basics)
 - [Machine Learning Workflow](#machine-learning-workflow)
+- [Machinr Learning Advanced Concepts](#machine-learning-advanced-concepts)
 - [Supervised Algorithms](#supervised-algorithms)
 - [Unsupervised Algorithms](#unsupervised-algorithms)
 - [Metrics](#metrics)
 - [Advanced Concepts](#advanced-concepts)
 
 ---
+# Machine Learning Basics
 ## What is Machine Learning?
 
 Machine learning is the process of developing algorithms that can learn from and make predictions on data. Instead of being programmed with specific instructions, the model improves its performance through experience (data). Machine learning can be applied to tasks such as classification, regression, clustering, and recommendation.
@@ -840,10 +842,360 @@ Once the model is trained and evaluated, it can be deployed in real-world applic
 [Back to Top](#data-science-cheaatsheets)
 
 ---
+# Machine Learning Advanced Concepts
+- [Cross Validation](#cross-validation)
+- [Feature Importance](#feature-importance)
+- [Mean Squared Error vs. Mean Absolute Error](#mean-squared-error-vs-mean-absolute-error)
+- [L1 vs L2 regularization](#l1-vs-l2-regularization)
+- [Correlation vs Covariance](#correlation-vs-covariance)
+- [Would adding more data address underfitting?](#would-adding-more-data-address-underfitting)
+- [Activation Function](#activation-function)
+- [Bagging](#bagging)
+- [Stacking](#stacking)
+- [Parametric vs Nonparametric](#parametric-vs-nonparametric)
 
-# Supervised Algorithms
+[Back to Machine Learning Concepts](#machine-learning-concepts) 
 
+[Back to Top](#data-science-cheaatsheets)
+
+---
+## Cross Validation
+Cross-validation is a technique to evaluate predictive models by partitioning the original sample into a training set to train the model, and a validation set to evaluate it. For example, a k-fold cross validation divides the data into k folds (or partitions), trains on each k-1 fold, and evaluate on the remaining 1 fold. This results to k models/evaluations, which can be averaged to get an overall model performance.
+
+[Back to Machine Learning Concepts](#machine-learning-concepts)
+
+---
+## Feature Importance
+In linear models, feature importance can be calculated by the scale of the coefficients.
+In tree-based methods (such as random forest), important features are likely to appear closer to the root of the tree. We can get a feature's importance for random forest by computing the averaging depth at which it appears across all trees in the forest.
 Supervised learning is a type of machine learning where the model is trained using labeled data. The goal is to learn a mapping from inputs to the outputs based on a set of training data.
+
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced--concepts)
+
+---
+## Mean Squared Error vs. Mean Absolute Error
+Similarity: both measure the average model prediction error; range from 0 to infinity; the lower the better.
+Mean Squared Error (MSE) gives higher weights to large error (e.g., being off by 10 just MORE THAN TWICE as bad as being off by 5), whereas Mean Absolute Error (MAE) assign equal weights (being off by 10 is just twice as bad as being off by 5).
+MSE is continuously differentiable, MAE is not (where y_pred == y_true).
+
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced--concepts)
+
+---
+
+## L1 vs L2 Regularization
+
+### Similarity:
+Both L1 and L2 regularization prevent overfitting by shrinking (imposing a penalty) on the coefficients.
+
+### Difference:
+- **L2 (Ridge)** shrinks all the coefficients by the same proportions but eliminates none.
+- **L1 (Lasso)** can shrink some coefficients to zero, performing variable selection.
+
+### Which to Choose:
+- If all the features are correlated with the label, **Ridge (L2)** outperforms **Lasso (L1)**, as the coefficients are never zero in Ridge.
+- If only a subset of features are correlated with the label, **Lasso (L1)** outperforms **Ridge (L2)**, as in Lasso some coefficients can be shrunken to zero.
+
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced--concepts)
+
+---
+## Correlation vs Covariance
+
+### Similarities:
+Both determine the relationship and measure the dependency between two random variables.
+
+### Difference:
+- **Correlation**: Measures the change in one item that may result in the change of another item.
+- **Covariance**: Measures when two items vary together (joint variability).
+
+### Key Points:
+- Covariance is essentially a measure of correlation.
+- **Correlation** refers to the scaled form of covariance.
+
+### Range:
+- **Correlation** ranges between **-1 and +1**.
+- **Covariance** lies between **negative infinity and infinity**.
+
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced--concepts)
+
+---
+## Would Adding More Data Address Underfitting?
+
+Underfitting happens when a model is not complex enough to learn well from the data. It is a problem with the model rather than the data size. 
+
+### Solution:
+A potential way to address underfitting is to increase the model complexity, such as:
+- Adding higher-order coefficients for linear models.
+- Increasing the depth for tree-based methods.
+- Adding more layers or neurons for neural networks, etc.
+
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced--concepts)
+
+---
+
+# Activation Function
+
+Activation functions in neural networks introduce non-linearity, allowing the model to learn more complex patterns. The choice of activation function depends on the type of problem you are solving (e.g., regression, binary classification, multi-class classification).
+
+## Types of Activation Functions
+
+### 1. Non-linearity: ReLU (Rectified Linear Unit)
+
+- **ReLU** is one of the most commonly used activation functions in neural networks, especially for hidden layers.
+- It is simple and computationally efficient.
+- The function outputs zero for negative input and returns the input itself for positive input:
+  
+  \[
+  f(x) = \max(0, x)
+  \]
+
+  - **Pros**: It helps the model to learn non-linear relationships, making it suitable for most tasks.
+  - **Cons**: It can suffer from the "dead ReLU" issue, where some neurons stop updating and output zeros for all inputs.
+
+### 2. Leaky ReLU
+
+- **Leaky ReLU** is a variation of the ReLU function designed to fix the "dead ReLU" issue.
+- Instead of outputting zero for negative input, it outputs a small positive gradient:
+  
+  \[
+  f(x) = 
+  \begin{cases} 
+  x & \text{if } x > 0 \\
+  \alpha x & \text{if } x \leq 0 
+  \end{cases}
+  \]
+  
+  Where \( \alpha \) is a small constant (e.g., 0.01).
+
+  - **Pros**: It allows for small negative values, preventing neurons from "dying."
+  - **Cons**: The choice of \( \alpha \) can affect performance and needs to be tuned.
+
+### 3. Multi-class Classification: Softmax
+
+- **Softmax** is commonly used for multi-class classification problems.
+- It converts the output of a neural network into probabilities, with each value between 0 and 1, and the sum of all probabilities is 1. This allows us to treat the output as the likelihood of each class.
+
+  \[
+  f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^n e^{x_j}}
+  \]
+  
+  Where \( x_i \) is the output of the \( i \)-th neuron, and \( n \) is the number of classes.
+
+  - **Pros**: Converts the raw output into a probability distribution for multi-class classification tasks.
+  - **Cons**: Can be computationally expensive when there are many classes.
+
+### 4. Binary Classification: Sigmoid
+
+- **Sigmoid** is used for binary classification problems. It squashes the output between 0 and 1, interpreting the result as a probability.
+  
+  \[
+  f(x) = \frac{1}{1 + e^{-x}}
+  \]
+
+  - **Pros**: It works well for binary classification tasks, producing probabilities that can be interpreted as confidence in the positive class.
+  - **Cons**: It suffers from the "vanishing gradient" problem for large values of input, leading to slow learning.
+
+### 5. Regression: Linear
+
+- For regression problems, where the goal is to predict continuous values, the **linear activation function** is used.
+- It simply outputs the value of the input without any transformation:
+
+  \[
+  f(x) = x
+  \]
+
+  - **Pros**: Ideal for regression tasks where the output is a real number.
+  - **Cons**: Not suitable for classification tasks, as it does not bound the output between a specific range (e.g., 0 and 1).
+
+## Summary
+
+- **ReLU** is widely used for hidden layers due to its simplicity and efficiency.
+- **Leaky ReLU** fixes the dead ReLU problem by allowing a small gradient for negative inputs.
+- **Softmax** is used for multi-class classification, converting outputs into a probability distribution.
+- **Sigmoid** is used for binary classification, outputting a probability between 0 and 1.
+- **Linear** is used for regression tasks, where the output is continuous.
+
+These activation functions are the building blocks of neural networks, enabling them to solve a wide range of tasks from classification to regression.
+
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced--concepts)
+
+---
+# Bagging (Bootstrap Aggregating)
+
+**Bagging** is an ensemble learning technique that combines multiple models (typically of the same type) to improve the overall performance of a machine learning algorithm. The core idea behind bagging is to generate multiple different subsets of the training data, train a model on each subset, and then combine their predictions.
+
+## How Bagging Works:
+
+1. **Bootstrap Sampling**: Multiple subsets of the original dataset are created by sampling with replacement. This means some data points may appear multiple times in a subset, while others might not appear at all.
+2. **Training Multiple Models**: A separate model is trained on each of these subsets.
+3. **Aggregation**: The final prediction is made by aggregating the predictions of all the individual models:
+   - For **classification**, the final output is determined by majority voting (the class with the most votes).
+   - For **regression**, the final prediction is typically the average of all individual model predictions.
+
+## Steps in Bagging:
+
+1. **Create multiple bootstrapped datasets**: Randomly select data points with replacement from the original dataset to create different training sets.
+2. **Train models on each dataset**: Train the same learning algorithm on each of the bootstrapped datasets.
+3. **Make predictions**: For classification tasks, each model casts a vote for the class label, and the class with the majority vote is selected. For regression tasks, the predicted values are averaged.
+4. **Combine the predictions**: The final prediction is made based on the aggregated outputs from all the models.
+
+## Key Points about Bagging:
+
+- **Reduces Variance**: By combining predictions from multiple models, bagging reduces the variance of the model, making it less sensitive to noise in the training data. This helps to reduce overfitting.
+- **Works Well with High-Variance Models**: Bagging is particularly useful for models that have high variance, such as decision trees, as it stabilizes their predictions.
+- **Parallelizable**: Since each model is trained independently on different subsets of data, the training process can be parallelized, making it efficient for large datasets.
+
+## Example: Random Forest
+
+The **Random Forest** algorithm is an extension of bagging applied specifically to decision trees. It generates multiple decision trees using bootstrapped samples of the data and random subsets of features at each split. This diversity of decision trees leads to better overall performance.
+
+## Pros of Bagging:
+
+- **Improves Accuracy**: Bagging often leads to higher accuracy by reducing the variance and overfitting.
+- **Robust to Outliers**: Since bagging combines predictions from multiple models, outliers that affect one model may not affect the final prediction.
+- **Can be Parallelized**: Since each model is trained independently, bagging can be parallelized to speed up training.
+
+## Cons of Bagging:
+
+- **Computationally Expensive**: Training multiple models can be time-consuming and require more computational resources.
+- **Difficult to Interpret**: The ensemble nature of bagging can make the model harder to interpret compared to a single model.
+
+## Summary
+
+Bagging is a technique that improves model accuracy by combining predictions from multiple models trained on different subsets of data. It is particularly effective for high-variance models like decision trees. While it can be computationally expensive, it helps in reducing overfitting and improving the robustness of the model.
+
+[Back to Machine Learning Concepts](#machine-learning-concepts)
+
+---
+# Stacking (Stacked Generalization)
+
+**Stacking** is an ensemble learning technique that combines multiple models (often of different types) to make predictions. Unlike bagging or boosting, which aggregate the predictions using simple methods like voting or averaging, stacking trains a meta-model to combine the predictions of individual models in a more complex way.
+
+## How Stacking Works:
+
+1. **First Layer (Base Learners)**:
+   - In the first layer, multiple different models (base learners) are trained on the original training dataset. These models can be any type of machine learning model (e.g., decision trees, support vector machines, neural networks).
+   
+2. **Meta-features Creation**:
+   - Once the base learners are trained, they are used to make predictions on a held-out validation subset of the original dataset. These predictions are treated as new features (meta-features) for the second layer.
+   
+3. **Second Layer (Meta-model)**:
+   - A new model, called the meta-model or meta-learner, is trained on the meta-features created by the first layer. This meta-model learns how to combine the predictions from the base learners.
+   
+4. **Prediction**:
+   - During inference (testing or deployment), the base models make predictions, and these predictions are passed to the meta-model to generate the final output.
+
+## Steps in Stacking:
+
+1. **Split the data**: The training set is split into two subsets: one for training the base models and one for generating meta-features. A common approach is to use k-fold cross-validation for this.
+2. **Train base models**: Train multiple base models (learners) on the first subset of the data.
+3. **Generate meta-features**: Use the base models to generate predictions on the second subset, treating these predictions as new features.
+4. **Train the meta-model**: Train a new model (typically a simpler model like logistic regression or linear regression) on the meta-features created by the base models.
+5. **Make final prediction**: During testing, the base models generate predictions, and these predictions are fed into the trained meta-model to make the final prediction.
+
+## Key Points about Stacking:
+
+- **Combines Different Models**: Stacking leverages the strengths of different models by combining them in a meta-model. Unlike bagging and boosting, which use the same type of model, stacking can use a variety of models as base learners.
+- **Meta-learning**: The second layer (meta-model) learns how to best combine the predictions of the base models, which can improve performance.
+- **More Complex**: Stacking tends to be more complex than other ensemble methods like bagging or boosting. It requires careful model selection, data splitting, and training.
+
+## Pros of Stacking:
+
+- **Improved Accuracy**: By combining the strengths of different models, stacking can lead to better performance than using a single model.
+- **Flexibility**: You can use any combination of models as base learners, which provides flexibility to experiment with different combinations and improve performance.
+- **Handles Overfitting**: The meta-model can help reduce overfitting by learning the optimal way to combine the base model predictions.
+
+## Cons of Stacking:
+
+- **Computationally Expensive**: Training multiple base models and a meta-model requires more computational resources compared to simpler ensemble methods like bagging or boosting.
+- **Data Splitting**: Stacking requires careful data splitting, often into multiple subsets, which can reduce the amount of data available for training each model.
+- **Complexity**: The process of stacking is more complex to implement and requires more fine-tuning compared to other ensemble methods.
+
+## Example: Stacked Ensemble of Models
+
+1. **Base Learners**: A decision tree, a random forest, and a support vector machine are used as base learners.
+2. **Meta-Model**: A logistic regression model is trained on the predictions from the base learners.
+3. **Prediction**: For a new data point, the decision tree, random forest, and SVM make predictions, and these predictions are passed to the logistic regression model to output the final prediction.
+
+## Summary
+
+Stacking is an advanced ensemble method that improves predictive performance by combining the predictions of multiple models using a meta-model. It allows for the use of diverse models and learns how to best aggregate their outputs. While it can improve accuracy, it also requires careful data management and significant computational resources.
+
+[Back to Machine Learning Concepts](#machine-learning-concepts)
+
+---
+# Parametric vs Nonparametric Models
+
+In machine learning, models are typically categorized as **parametric** or **nonparametric**, based on the number of parameters they use and how they scale with respect to the data.
+
+## Parametric Models
+
+A **parametric model** is one that summarizes data using a fixed set of parameters, regardless of the amount of training data. The number of parameters is predetermined before the model is trained, and it remains constant throughout the learning process.
+
+### Key Features of Parametric Models:
+- **Fixed number of parameters**: The number of parameters does not depend on the size of the dataset.
+- **Model complexity**: The complexity of the model is fixed. Increasing the amount of data doesn't make the model more complex.
+- **Training speed**: Parametric models are usually faster to train because the number of parameters is fixed.
+- **Assumptions**: Parametric models typically make strong assumptions about the data, such as linearity in linear regression.
+
+### Examples of Parametric Models:
+- **Linear Regression**: Assumes a linear relationship between input variables and the target variable.
+- **Logistic Regression**: Assumes a logistic relationship for classification tasks.
+- **Naive Bayes**: Assumes that the features are conditionally independent given the class label.
+
+### Pros of Parametric Models:
+- **Faster to train**: Since the model has a fixed number of parameters, the training process is usually faster.
+- **Simpler**: These models are often simpler and easier to interpret due to their limited complexity.
+- **Efficient with small data**: Parametric models tend to perform well when you have relatively small amounts of data.
+
+### Cons of Parametric Models:
+- **Limited flexibility**: The model's assumptions might not hold for complex data distributions, which can limit its performance.
+- **Over-simplification**: If the assumptions are incorrect, the model can underfit the data, resulting in poor predictions.
+
+## Nonparametric Models
+
+A **nonparametric model**, in contrast, does not make a strong assumption about the form or number of parameters in the model. These models can become more complex as the amount of training data increases.
+
+### Key Features of Nonparametric Models:
+- **Flexible number of parameters**: The number of parameters can grow with the size of the dataset.
+- **Model complexity**: As more data is provided, the model can become more complex, capturing intricate patterns in the data.
+- **Training time**: Nonparametric models generally require more time to train, as the model's complexity grows with the amount of data.
+- **Less assumption**: Nonparametric models make fewer assumptions about the data, making them more flexible in capturing complex relationships.
+
+### Examples of Nonparametric Models:
+- **K-Nearest Neighbors (KNN)**: Makes predictions based on the majority label of the 'k' closest data points.
+- **Decision Trees**: Can grow in complexity depending on the number of data points and the depth of the tree.
+- **Kernel Density Estimation**: Estimates the probability distribution of data based on the density of points in the feature space.
+
+### Pros of Nonparametric Models:
+- **Highly flexible**: Nonparametric models can capture complex, non-linear relationships in the data.
+- **No strong assumptions**: These models don't require assumptions about the underlying data distribution.
+- **Better performance with large datasets**: As the amount of data increases, nonparametric models can become more powerful and accurate.
+
+### Cons of Nonparametric Models:
+- **Slower training**: Since the model grows with the data, it can be computationally expensive and take longer to train.
+- **Memory-intensive**: Nonparametric models often require storing large amounts of data, which can be inefficient for large datasets.
+- **Overfitting**: With increased flexibility, nonparametric models are more prone to overfitting, especially when the training data is noisy.
+
+## Key Differences:
+
+| Feature               | Parametric Models                     | Nonparametric Models                      |
+|-----------------------|---------------------------------------|-------------------------------------------|
+| **Number of Parameters** | Fixed, independent of data size      | Grows with data size                      |
+| **Complexity**         | Fixed complexity                      | Complexity increases with data            |
+| **Assumptions**        | Strong assumptions about the data     | Few assumptions, more flexible            |
+| **Training Speed**     | Faster                                | Slower, especially with large datasets     |
+| **Memory Usage**       | Low memory consumption                | High memory consumption                   |
+| **Overfitting Risk**   | Lower risk of overfitting             | Higher risk of overfitting               |
+
+## Summary
+
+- **Parametric models** are characterized by a fixed number of parameters and are often simpler and faster to train, but they make strong assumptions about the data, which can limit their flexibility.
+- **Nonparametric models** have the ability to adapt to the data and grow in complexity as more data is provided. They tend to be more flexible and can model complex relationships but are often slower and require more resources.
+
+Choosing between parametric and nonparametric models depends on the size and complexity of your data and the assumptions you're willing to make about the underlying distribution.
+
+[Back to Machine Learning Concepts](#machine-learning-concepts)
+
 
 ## Table of Contents
 1. [Linear Regression](#linear-regression)
