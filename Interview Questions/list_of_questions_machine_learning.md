@@ -1,22 +1,23 @@
 # Machine Learning - List of questions
 
-## [Learning Theory](#learning-theory)
+# Learning Theory
 
-1.Describe bias and variance with examples.
-2.What is Empirical Risk Minimization?
-3.What is Union bound and Hoeffding's inequality?
-4.Write the formulae for training error and generalization error. Point out the differences.
-5.State the uniform convergence theorem and derive it.
-6.What is sample complexity bound of uniform convergence theorem?
-7.What is error bound of uniform convergence theorem?
-8.What is the bias-variance trade-off theorem?
-9.From the bias-variance trade-off, can you derive the bound on training set size?
-10.What is the VC dimension?
-11.What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast.
-12.What is the VC dimension for an n-dimensional linear classifier?
-13.How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?
-14.Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?
+## Questions
 
+### [1. Describe bias and variance with examples.](#1-describe-bias-and-variance-with-examples)
+### [2. What is Empirical Risk Minimization?](#2-what-is-empirical-risk-minimization)
+### [3. What is Union bound and Hoeffding's inequality?](#3-what-is-union-bound-and-hoeffdings-inequality)
+### [4. Write the formulae for training error and generalization error. Point out the differences.](#4-write-the-formulae-for-training-error-and-generalization-error-point-out-the-differences)
+### [5. State the uniform convergence theorem and derive it.](#5-state-the-uniform-convergence-theorem-and-derive-it)
+### [6. What is sample complexity bound of uniform convergence theorem?](#6-what-is-sample-complexity-bound-of-uniform-convergence-theorem)
+### [7. What is error bound of uniform convergence theorem?](#7-what-is-error-bound-of-uniform-convergence-theorem)
+### [8. What is the bias-variance trade-off theorem?](#8-what-is-the-bias-variance-trade-off-theorem)
+### [9. From the bias-variance trade-off, can you derive the bound on training set size?](#9-from-the-bias-variance-trade-off-can-you-derive-the-bound-on-training-set-size)
+### [10. What is the VC dimension?](#10-what-is-the-vc-dimension)
+### [11. What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast.](#11-what-does-the-training-set-size-depend-on-for-a-finite-and-infinite-hypothesis-set-compare-and-contrast)
+### [12. What is the VC dimension for an n-dimensional linear classifier?](#12-what-is-the-vc-dimension-for-an-n-dimensional-linear-classifier)
+### [13. How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#13-how-is-the-vc-dimension-of-a-svm-bounded-although-it-is-projected-to-an-infinite-dimension)
+### [14. Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#14-considering-that-empirical-risk-minimization-is-a-np-hard-problem-how-does-logistic-regression-and-svm-loss-work)
 
 ---
 
@@ -132,66 +133,82 @@
 ---
 # Machine Learning - List of questions and answers
 
-## Learning Theory
+## Answers
 
-#### 1. [Describe bias and variance with examples](#describe-bias-and-variance-with-examples)
-**Answer**: 
-Bias refers to the error introduced by approximating a real-world problem with a simplified model. High bias leads to underfitting. Variance refers to the model's sensitivity to small fluctuations in the training set. High variance leads to overfitting. For example, a linear regression model with few features (high bias) vs. a decision tree with many splits (high variance).
+### [1. Describe bias and variance with examples.](#1-describe-bias-and-variance-with-examples)
+**Answer**:  
+Bias refers to the error introduced by approximating a real-world problem with a simplified model. It is the difference between the predicted output of the model and the true output. Variance, on the other hand, refers to the model's sensitivity to small fluctuations in the training set. A high-variance model will fit the training data well but may fail to generalize to unseen data.  
+**Example**:  
+- High bias: A linear model trying to fit a complex nonlinear dataset (underfitting).
+- High variance: A high-degree polynomial model that fits all points perfectly but generalizes poorly (overfitting).
 
-#### 2. [What is Empirical Risk Minimization?](#answer-2)
-**Answer**: 
-Empirical Risk Minimization (ERM) is a principle that aims to minimize the average loss (or error) on a given training set. It finds the model parameters that minimize the training error, assuming that the training data is a good representation of the true distribution.
+### [2. What is Empirical Risk Minimization?](#2-what-is-empirical-risk-minimization)
+**Answer**:  
+Empirical Risk Minimization (ERM) is a principle in machine learning where the learning algorithm aims to minimize the average loss (empirical risk) on the given sample data. It estimates the expected loss based on the observed data and tries to minimize it. However, it may not necessarily minimize the true risk over the entire distribution.
 
-#### 3. [What is Union bound and Hoeffding's inequality?](#answer-3)
-**Answer**: 
-Union bound is a probability inequality that provides an upper bound on the probability of the union of events. Hoeffding’s inequality gives a bound on the probability that the sum of random variables deviates from its expected value, providing confidence in how closely the empirical mean approximates the true mean.
+### [3. What is Union bound and Hoeffding's inequality?](#3-what-is-union-bound-and-hoeffdings-inequality)
+**Answer**:  
+- **Union bound**: It is a probability bound that states that the probability of at least one of a set of events occurring is less than or equal to the sum of their individual probabilities.  
+  \[
+  P(A \cup B) \leq P(A) + P(B)
+  \]
+- **Hoeffding's inequality**: It provides a bound on the probability that the sum of random variables deviates from its expected value by more than a certain amount. For a sum of independent random variables, Hoeffding's inequality helps quantify the deviation in terms of the number of samples and the range of the variables.
 
-#### 4. [Write the formulae for training error and generalization error. Point out the differences.](#answer-4)
-**Answer**: 
-Training error is the average error over the training set, while generalization error is the expected error over the true distribution. Mathematically:
-- Training error: \( \hat{R}(h) = \frac{1}{m} \sum_{i=1}^{m} L(h(x_i), y_i) \)
-- Generalization error: \( R(h) = \mathbb{E}_{(X,Y)} [L(h(X), Y)] \)
-Where \( h \) is the hypothesis, \( L \) is the loss function, and \( (x_i, y_i) \) are the training examples.
+### [4. Write the formulae for training error and generalization error. Point out the differences.](#4-write-the-formulae-for-training-error-and-generalization-error-point-out-the-differences)
+**Answer**:  
+- **Training error** is the average error over the training set:
+  \[
+  \text{Training Error} = \frac{1}{n} \sum_{i=1}^{n} L(f(x_i), y_i)
+  \]
+- **Generalization error** is the expected error over all possible data:
+  \[
+  \text{Generalization Error} = \mathbb{E}_{(x, y)}[L(f(x), y)]
+  \]
+- **Difference**: The training error is computed over the training set, while the generalization error is computed over the distribution of data. Training error is typically lower than generalization error because the model is trained on the training data.
 
-#### 5. [State the uniform convergence theorem and derive it.](#answer-5)
-**Answer**: 
-The uniform convergence theorem states that, with high probability, the empirical risk converges to the true risk uniformly across all hypotheses in a hypothesis class as the number of training samples increases. It implies that a hypothesis class with a low bound on uniform convergence will generalize well to unseen data.
+### [5. State the uniform convergence theorem and derive it.](#5-state-the-uniform-convergence-theorem-and-derive-it)
+**Answer**:  
+The **uniform convergence theorem** states that, for a large enough sample size, the difference between the true risk and the empirical risk will be small for all hypotheses in a class of functions. The theorem guarantees that the empirical risk converges uniformly to the true risk as the sample size increases.
 
-#### 6. [What is sample complexity bound of uniform convergence theorem?](#answer-6)
-**Answer**: 
-The sample complexity bound indicates the number of training samples required for a hypothesis class to have a uniform convergence property. Typically, it scales as \( O\left(\frac{1}{\epsilon^2} \log\frac{1}{\delta}\right) \), where \( \epsilon \) is the error tolerance and \( \delta \) is the confidence level.
+**Derivation**:  
+Given a hypothesis space \( H \), a sample set of size \( n \), and a probability bound \( \delta \), the theorem asserts that the difference between the empirical risk and true risk for all hypotheses in \( H \) is small with high probability. The formal derivation involves concentration inequalities and uniform bounds.
 
-#### 7. [What is error bound of uniform convergence theorem?](#answer-7)
-**Answer**: 
-The error bound indicates how much the empirical risk can deviate from the true risk. It gives a probability that the error of a hypothesis will exceed a certain value based on the size of the sample set and the complexity of the hypothesis class.
+### [6. What is sample complexity bound of uniform convergence theorem?](#6-what-is-sample-complexity-bound-of-uniform-convergence-theorem)
+**Answer**:  
+The **sample complexity** of the uniform convergence theorem refers to the number of samples required to ensure that the empirical risk uniformly approximates the true risk for all hypotheses in a given hypothesis class. It depends on the complexity of the hypothesis space (measured by the VC dimension) and the desired confidence level.
 
-#### 8. [What is the bias-variance trade-off theorem?](#answer-8)
-**Answer**: 
-The bias-variance trade-off theorem states that as a model becomes more complex (lower bias), it tends to overfit (higher variance), while simpler models (higher bias) generalize better but may underfit. The optimal model complexity minimizes both bias and variance.
+### [7. What is error bound of uniform convergence theorem?](#7-what-is-error-bound-of-uniform-convergence-theorem)
+**Answer**:  
+The **error bound** of the uniform convergence theorem quantifies how close the empirical risk is to the true risk for all hypotheses in the hypothesis class. It provides a bound on the probability that the empirical risk deviates from the true risk by more than a specified amount. The error bound typically involves terms related to the number of samples and the complexity of the hypothesis class.
 
-#### 9. [From the bias-variance trade-off, can you derive the bound on training set size?](#answer-9)
-**Answer**: 
-From the trade-off, we derive that the training set size should increase with model complexity to prevent overfitting and underfitting. Typically, to reduce variance, the sample size must be large enough to ensure that the model can generalize well while controlling bias.
+### [8. What is the bias-variance trade-off theorem?](#8-what-is-the-bias-variance-trade-off-theorem)
+**Answer**:  
+The **bias-variance trade-off theorem** describes the relationship between bias and variance in model prediction. As model complexity increases, bias decreases (the model fits the training data better), but variance increases (the model becomes more sensitive to fluctuations in the training set). There exists an optimal point where the sum of bias and variance is minimized, leading to the lowest generalization error.
 
-#### 10. [What is the VC dimension?](#answer-10)
-**Answer**: 
-The VC (Vapnik-Chervonenkis) dimension is a measure of the capacity of a hypothesis class. It is the largest number of points that can be shattered (classified in all possible ways) by the hypothesis class.
+### [9. From the bias-variance trade-off, can you derive the bound on training set size?](#9-from-the-bias-variance-trade-off-can-you-derive-the-bound-on-training-set-size)
+**Answer**:  
+From the bias-variance trade-off, we can derive a bound on the training set size by balancing the complexity of the model and the available data. For models with high variance, a larger training set is required to reduce variance, whereas for high bias, a more complex model (or larger training set) might be necessary to reduce bias.
 
-#### 11. [What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast.](#answer-11)
-**Answer**: 
-For a finite hypothesis set, the training set size is generally small and depends on the complexity of the model. For an infinite hypothesis set, the training set size must be large enough to ensure that the model generalizes well. The sample size required grows with the VC dimension.
+### [10. What is the VC dimension?](#10-what-is-the-vc-dimension)
+**Answer**:  
+The **VC (Vapnik-Chervonenkis) dimension** is a measure of the capacity of a hypothesis class to fit different datasets. It represents the maximum number of points that can be shattered (perfectly classified) by the hypothesis class. A higher VC dimension indicates a more complex hypothesis space, capable of fitting more diverse datasets.
 
-#### 12. [What is the VC dimension for an n-dimensional linear classifier?](#answer-12)
-**Answer**: 
-The VC dimension of an n-dimensional linear classifier is \( n+1 \). This is because an n-dimensional hyperplane can separate data points in a way that it can shatter \( n+1 \) points, but not more.
+### [11. What does the training set size depend on for a finite and infinite hypothesis set? Compare and contrast.](#11-what-does-the-training-set-size-depend-on-for-a-finite-and-infinite-hypothesis-set-compare-and-contrast)
+**Answer**:  
+- For a **finite hypothesis set**, the training set size depends on the desired accuracy and confidence level. Larger hypothesis sets typically require more data to avoid overfitting.
+- For an **infinite hypothesis set**, the training set size depends heavily on the **VC dimension**. An infinite hypothesis space requires more data to ensure that the empirical risk converges to the true risk uniformly across all hypotheses.
 
-#### 13. [How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#answer-13)
-**Answer**: 
-The VC dimension of a Support Vector Machine (SVM) is bounded due to the regularization constraints imposed by the SVM’s optimization process. The kernel trick allows for high-dimensional projections, but the hypothesis class's complexity is controlled by the regularization parameter \( C \).
+### [12. What is the VC dimension for an n-dimensional linear classifier?](#12-what-is-the-vc-dimension-for-an-n-dimensional-linear-classifier)
+**Answer**:  
+For an **n-dimensional linear classifier**, the VC dimension is \( n + 1 \). This is because the classifier can shatter \( n + 1 \) points in general position, meaning that it can separate them with a hyperplane.
 
-#### 14. [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
-**Answer**: 
-Although Empirical Risk Minimization (ERM) is NP-hard, logistic regression and SVMs simplify the problem by using convex loss functions. For logistic regression, the loss is convex in terms of model parameters, and SVM uses a quadratic loss, both of which ensure efficient optimization.
+### [13. How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#13-how-is-the-vc-dimension-of-a-svm-bounded-although-it-is-projected-to-an-infinite-dimension)
+**Answer**:  
+While an SVM may map data to an infinite-dimensional space via the kernel trick, its VC dimension remains bounded. This is because the VC dimension depends on the complexity of the hypothesis class, which is determined by the kernel used. The effective VC dimension of the SVM is related to the kernel function and the dimensionality of the feature space.
+
+### [14. Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#14-considering-that-empirical-risk-minimization-is-a-np-hard-problem-how-does-logistic-regression-and-svm-loss-work)
+**Answer**:  
+Although Empirical Risk Minimization (ERM) is NP-hard in general, logistic regression and SVMs can be efficiently solved using convex optimization techniques. Logistic regression minimizes a convex loss function (log-loss), and SVMs minimize a convex hinge loss function. These optimization problems are convex, which guarantees the existence of a global minimum, and can be solved efficiently using algorithms like gradient descent or quadratic programming.
 
 ---
 
