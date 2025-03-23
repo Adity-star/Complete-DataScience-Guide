@@ -1117,6 +1117,113 @@ A **nonparametric model**, in contrast, does not make a strong assumption about 
 | **Memory Usage**       | Low memory consumption                | High memory consumption                   |
 | **Overfitting Risk**   | Lower risk of overfitting             | Higher risk of overfitting               |
 
+[Back to Machine Learning Advanced Concepts](#machine-learning-advanced-concepts)
+
+---
+# Metrics
+
+In machine learning, **metrics** are used to evaluate the performance of models. These metrics provide insights into how well a model is performing for a given task. The metrics you use depend on the type of problem you're working on (e.g., classification, regression, etc.).
+
+In this document, we will cover common evaluation metrics for **classification** and **regression** problems.
+
+---
+
+## Metrics for Classification Problems
+
+### 1. Accuracy
+- **Definition**: Accuracy measures the proportion of correct predictions out of all predictions.
+- **Formula**:
+  \[
+  \text{Accuracy} = \frac{\text{Correct Predictions}}{\text{Total Predictions}}
+  \]
+- **Use case**: Useful when the classes are balanced.
+- **Limitation**: Can be misleading if the dataset is imbalanced.
+
+### 2. Precision
+- **Definition**: Precision calculates the proportion of true positive predictions among all positive predictions made by the model.
+- **Formula**:
+  \[
+  \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
+  \]
+- **Use case**: Important when false positives have high cost (e.g., in medical diagnoses).
+- **Limitation**: Does not consider false negatives.
+
+### 3. Recall (Sensitivity)
+- **Definition**: Recall calculates the proportion of true positive predictions out of all actual positive instances.
+- **Formula**:
+  \[
+  \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
+  \]
+- **Use case**: Useful when false negatives are costly (e.g., fraud detection).
+- **Limitation**: Does not consider false positives.
+
+### 4. F1-Score
+- **Definition**: The harmonic mean of precision and recall. It balances the trade-off between precision and recall.
+- **Formula**:
+  \[
+  \text{F1-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+  \]
+- **Use case**: Useful when you need a balance between precision and recall, especially for imbalanced datasets.
+- **Limitation**: Does not give insights into how much precision or recall is prioritized.
+
+### 5. Confusion Matrix
+- **Definition**: A confusion matrix is a table that describes the performance of a classification model. It shows the number of true positives, true negatives, false positives, and false negatives.
+- **Components**:
+  - **True Positive (TP)**: Correctly predicted positive cases.
+  - **True Negative (TN)**: Correctly predicted negative cases.
+  - **False Positive (FP)**: Incorrectly predicted as positive.
+  - **False Negative (FN)**: Incorrectly predicted as negative.
+
+### 6. Area Under the ROC Curve (AUC-ROC)
+- **Definition**: AUC measures the area under the ROC curve, which plots the true positive rate (recall) against the false positive rate. It helps evaluate the model's ability to distinguish between positive and negative classes.
+- **Use case**: AUC is a great metric for models with imbalanced classes. A higher AUC indicates better model performance.
+
+### 7. Receiver Operating Characteristic (ROC) Curve
+- **Definition**: The ROC curve is a graphical representation of the trade-off between the true positive rate and the false positive rate at various thresholds. 
+- **Use case**: Helps visualize and compare the performance of classification models.
+
+---
+
+## Metrics for Regression Problems
+
+### 1. Mean Absolute Error (MAE)
+- **Definition**: MAE is the average of the absolute differences between the predicted and actual values. It gives a sense of the average error magnitude.
+- **Formula**:
+  \[
+  \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+  \]
+- **Use case**: Simple to understand and interpret. Used when you need a measure of how far off predictions are from the actual values.
+
+### 2. Mean Squared Error (MSE)
+- **Definition**: MSE is the average of the squared differences between the predicted and actual values. It penalizes larger errors more heavily.
+- **Formula**:
+  \[
+  \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+  \]
+- **Use case**: Commonly used when you want to penalize large errors and emphasize the importance of larger mistakes.
+
+### 3. Root Mean Squared Error (RMSE)
+- **Definition**: RMSE is the square root of the mean squared error. It brings the error back to the original unit of the target variable, making it more interpretable.
+- **Formula**:
+  \[
+  \text{RMSE} = \sqrt{\text{MSE}}
+  \]
+- **Use case**: Useful when you want to understand the error in the same units as the original data.
+
+### 4. R-Squared (R²)
+- **Definition**: R² measures how well the regression model fits the data. It is the proportion of the variance in the dependent variable that is predictable from the independent variables.
+- **Formula**:
+  \[
+  R^2 = 1 - \frac{\sum{(y_i - \hat{y}_i)^2}}{\sum{(y_i - \bar{y})^2}}
+  \]
+- **Use case**: R² provides a measure of goodness-of-fit. An R² value closer to 1 indicates a better fit.
+
+---
+
+## References
+- [Scikit-learn: Classification metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
+- [Scikit-learn: Regression metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics)
+- [Kaggle: Evaluation Metrics](https://www.kaggle.com/learn/machine-learning-explainability)
 
 [Back to Machine Learning Advanced Concepts](#machine-learning-advanced-concepts)
 
