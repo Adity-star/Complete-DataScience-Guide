@@ -17,6 +17,8 @@
 #### 13. [How is the VC dimension of a SVM bounded although it is projected to an infinite dimension?](#answer-13)
 #### 14. [Considering that Empirical Risk Minimization is a NP-hard problem, how does logistic regression and SVM loss work?](#answer-14)
 
+---
+
 
 ## Model and feature selection
 1. Why are model selection methods needed?
