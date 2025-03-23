@@ -1299,9 +1299,9 @@ For Linear Regression to give meaningful results, certain assumptions must hold 
 - **Sensitive to Outliers**: Linear regression is sensitive to outliers, which can skew the results.
 - **Multicollinearity**: High correlation between independent variables can cause issues with the model.
   
-[![image](https://github.com/user-attachments/assets/b8ef569c-2b7d-477d-a375-f9c90ebf5e16)
-](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/linear_regression.png)
-  - 
+[![image](https://github.com/user-attachments/assets/b8ef569c-2b7d-477d-a375-f9c90ebf5e16)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/linear_regression.png)
+
+
 [Back to Supervised Algorithms](#supervised-algorithms)
 
 ---
@@ -1421,8 +1421,7 @@ Pruning is an important step to prevent overfitting. It involves trimming branch
 4. **Max Features**: The maximum number of features to consider when looking for the best split.
 5. **Criterion**: The function to measure the quality of a split (e.g., **Gini Impurity**, **Entropy**).
 
-[![image](https://github.com/user-attachments/assets/a5806ba8-cfe4-4fc6-8657-a873591c6a48)
-](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/tree.gif)
+[![image](https://github.com/user-attachments/assets/a5806ba8-cfe4-4fc6-8657-a873591c6a48)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/tree.gif)
 
 [Back to Supervised Algorithms](#supervised-algorithms)
 
@@ -1476,8 +1475,7 @@ The key idea behind SVM is to find the optimal hyperplane that maximizes the mar
 - **Choice of kernel**: The performance of SVM can be highly dependent on the choice of kernel and its parameters. Incorrect kernel choice may lead to poor performance.
 - **Difficult to interpret**: SVM models are often seen as "black box" models because the decision boundary is not as easy to interpret as decision trees, for example.
 
-[![image](https://github.com/user-attachments/assets/0efea5d0-c1ed-4fe9-924a-6b5ce3d094f4)
-](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/svm.png)
+[![image](https://github.com/user-attachments/assets/0efea5d0-c1ed-4fe9-924a-6b5ce3d094f4)](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/Visualisations/svm.png)
 
 [Back to Supervised Algorithms](#supervised-algorithms)
 
