@@ -839,7 +839,7 @@ Once the model is trained and evaluated, it can be deployed in real-world applic
 
 [Back to Machine Learning Concepts](#machine-learning-concepts) 
 
-[Back to Top](#data-science-cheaatsheets)
+[Back to Top](#data-science-cheatsheets)
 
 ---
 # Machine Learning Advanced Concepts
@@ -856,7 +856,7 @@ Once the model is trained and evaluated, it can be deployed in real-world applic
 
 [Back to Machine Learning Concepts](#machine-learning-concepts) 
 
-[Back to Top](#data-science-cheaatsheets)
+[Back to Top](#data-science-cheatsheets)
 
 ---
 ## Cross Validation
