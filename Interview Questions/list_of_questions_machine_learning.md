@@ -2,7 +2,7 @@
 
 ## Learning Theory
 
-#### 1. [Describe bias and variance with examples](#answer-1)
+#### 1. [Describe bias and variance with examples](#describe-bias-and-variance-with-examples)
 #### 2. [What is Empirical Risk Minimization?](#answer-2)
 #### 3. [What is Union bound and Hoeffding's inequality?](#answer-3)
 #### 4. [Write the formulae for training error and generalization error. Point out the differences.](#answer-4)
@@ -134,7 +134,7 @@
 
 ## Learning Theory
 
-#### 1. [Describe bias and variance with examples]
+#### 1.Describe bias and variance with examples
 **Answer**: 
 Bias refers to the error introduced by approximating a real-world problem with a simplified model. High bias leads to underfitting. Variance refers to the model's sensitivity to small fluctuations in the training set. High variance leads to overfitting. For example, a linear regression model with few features (high bias) vs. a decision tree with many splits (high variance).
 
