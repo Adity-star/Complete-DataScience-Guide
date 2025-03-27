@@ -47,7 +47,7 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSh
 * Natural Language Processing
 
 ## Interview Questions
-This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Interview%20Questions) contains all types of interview questions you need to crack ant data science interview
+This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Interview%20Prep) contains all types of interview questions you need to crack ant data science interview
 * [Machine Learning Questions](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/list_of_questions_machine_learning.md)
 * [Deep Learning Questions](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/list_of_questions_deep_learning.md)
 * [Mathetics and Probability Questions](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/list_of_questions_mathematics.md)
@@ -55,6 +55,7 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Intervi
 * [Complete Data Science Interview Question](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/Data%20Science%20interview%20questions.pdf)
 * [General 64 Toughest Interview Questions](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/64%20Toughest%20Interview%20Questions.pdf)
 * [Machine Learning Assessment](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/Machine%20Learning%20Assessmentpdf.pdf)
+* [30 Days Interview Prepration Guide](https://github.com/Adity-star/Data-Science-Work/tree/main/Interview%20Prep/30_days_interview_questions)
   
 
 
