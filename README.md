@@ -43,7 +43,7 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSh
 * [Standford Materials](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#stanford-materials)
 * [Statistics and Probability](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#statistics-and-probability)
 * [Machine Learning Concepts](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#machine-learning-concepts)
-* Deep Learning Concepts
+* [Deep Learning Concepts](https://github.com/Adity-star/Data-Science-Work/blob/main/CheatSheets/README.md#deep-learning-concepts)
 * Natural Language Processing
 
 ## Interview Questions
