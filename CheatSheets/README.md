@@ -2052,19 +2052,19 @@ The gradient descent algorithm is often used to update the weights in the direct
 - Neural Network without Activation function would simply be a Linear Regression Model, which has limited power and does not performs good most of the times. We want our Neural Network to not just learn and compute a linear function but something more complicated than that. Specifically, we want our network to represent non-linear complex arbitrary functional mappings between inputs and outputs (Universal Function Approximators).
 - Another important feature of an Activation function is that it should be differentiable. We need it to be this way so that we can perform back-propagation optimization strategy: (1) Propagating backwards in the network to compute gradients of loss/error with respect to weights and (2) Accordingly optimize the weights using Gradient Descent or any other Optimization technique to reduce error.
 
-- **Sigmoid**: Output values range between 0 and 1. Used for binary classification.
+    - **Sigmoid**: Output values range between 0 and 1. Used for binary classification.
   
   $$ f(x) = \frac{1}{1 + e^{-x}} $$
 
-- **ReLU (Rectified Linear Unit)**: Most commonly used. If input is negative, output is 0; if input is positive, output is the input.
+    - **ReLU (Rectified Linear Unit)**: Most commonly used. If input is negative, output is 0; if input is positive, output is the input.
   
   $$ f(x) = \max(0, x) $$
 
-- **Tanh**: Similar to the sigmoid function, but output values range between -1 and 1.
+    - **Tanh**: Similar to the sigmoid function, but output values range between -1 and 1.
 
   $$ f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $$
 
-- **Softmax**: Converts output into a probability distribution for multi-class classification tasks.
+    - **Softmax**: Converts output into a probability distribution for multi-class classification tasks.
 
 [Back to Deep Learning Concepts](#deep-learning-concepts)
 
@@ -2074,11 +2074,6 @@ The gradient descent algorithm is often used to update the weights in the direct
 ## Weight Initialization
 Proper weight initialization is critical to the training process. Poor initialization can lead to issues like vanishing or exploding gradients. Some common methods for weight initialization include:
 
-- **Zero Initialization**: Setting all weights to zero. This method is usually not recommended because it leads to symmetry problems.
-- **Random Initialization**: Weights are initialized randomly. This helps break symmetry.
-- **Xavier Initialization**: Specifically designed for tanh and sigmoid activation functions, aiming to keep the variance of activations in each layer constant.
-- **He Initialization**: A variant of Xavier initialization, particularly suited for ReLU activations.
-- 
 - Why is initialization important?
 
    - Initializing all the weights with 0 leads the neurons to learn the same features during training.
@@ -2090,12 +2085,11 @@ Proper weight initialization is critical to the training process. Poor initializ
  
 -  Prpoer initialization:
 
-   - Rules of thumb: (1) The mean of the activations should be 0, (2) The variance of the activations should stay the same across every layer.
-  - Xavier initialization for tanh activations.
+   - **Rules of thumb**: (1) The mean of the activations should be 0, (2) The variance of the activations should stay the same across every layer.
+- **Xavier initialization for tanh activations**.
       - All the weights of layer l are picked randomly from a normal distribution with mean 0 and variance 1 / n^{# of neurons in previous layer (l - 1)}.
       - Biases are initialized with 0s.
-   - He initialization for ReLU activations.
-The weights are initialized by multiplying by 2 the variance of the Xavier initialization.
+- He initialization for ReLU activations.The weights are initialized by multiplying by 2 the variance of the Xavier initialization.
 
 [Back to Deep Learning Concepts](#deep-learning-concepts)
 
@@ -2138,7 +2132,7 @@ Research into batch size has revealed the following principles:
 - Batch size determines the frequency of updates. The smaller the batches, the more, and the quicker, the updates.
 - The larger the batch size, the more accurate the gradient of the cost will be with respect to the parameters. That is, the direction of the update is most likely going down the local slope of the cost landscape.
 - Having larger batch sizes, but not so large that they no longer fit in GPU memory, tends to improve parallelization efficiency and can accelerate training.
-- 
+
 In choosing batch size, there’s a balance to be struck depending on the available computational hardware and the task you’re trying to achieve.
 
 [Back to Deep Learning Concepts](#deep-learning-concepts)
@@ -2167,7 +2161,7 @@ Of the optimizers profiled here, Adam uses the most memory for a given batch siz
 Regularization techniques help prevent overfitting by penalizing large weights or adding noise to the training process. Some common regularizers include:
 
 
-- **Weight Decay:
+- **Weight Decay**:
     - When training neural networks, it is common to use "weight decay," where after each update, the weights are multiplied by a factor slightly less than 1. This prevents the weights from growing too large, and can be seen as gradient descent on a quadratic regularization term.
    - Weight decay is used as part of the back-propagation algorithm.
 There are 3 ways to do weight decay: Lasso (shrinks coefficients to 0), Ridge (makes coefficients smaller), and Elastic Net (tradeoff between variable selection and small coefficients).
