@@ -1890,13 +1890,329 @@ However, standard RNNs struggle with long-term dependencies due to the **vanishi
 [Back to Top](#data-science-cheatsheets)
 ---
 
+# Deep Learning Concepts
+
+- [Neural Network Model](#neural-network-model)
+- [Backpropagation](#backpropagation)
+- [Common Activation Functions](#common-activation-functions)
+- [Weight Initialization](#weight-initialization)
+- [Gradient Descent Variants](#gradient-descent-variants)
+- [Learning Rate](#learning-rate)
+- [Batch Size](#batch-size)
+- [Choice of Optimizers](#choice-of-optimizers)
+- [Common Regularizers](#common-regularizers)
+- [Common Normalization](#common-normalization)
+- [Neural Networks From Scratch](#neural-networks-from-scratch)
+
+[Back to Top](#data-science-cheatsheets)
+---
 
 
+## Neural Network Model
+A neural network (NN) is composed of layers of nodes (also called neurons). Each node takes in one or more inputs, applies a transformation (typically a weighted sum followed by an activation function), and outputs a value. The layers in the network can be:
+
+- **Input Layer**: Takes in the features.
+- **Hidden Layers**: Perform computations on the input and pass information to the next layer.
+- **Output Layer**: Produces the final prediction.
+
+Neural networks are the foundation for deep learning, where the "depth" refers to the number of hidden layers.
+
+![image](https://github.com/user-attachments/assets/85782032-6d17-4c6b-b37a-958387e3ad4c)
+
+# Neural Network Notation and Forward Propagation
+
+## Notation
+
+We will use the following notations for our neural network:
+
+- **n_l**: The number of layers in the network. In our example, \( n_l = 3 \).
+- **L_l**: The label for layer \( l \). For instance:
+  - Layer \( L_1 \) is the input layer.
+  - Layer \( L_{n_l} \) is the output layer.
+  
+- **Parameters (W, b)**: The neural network has parameters \( (W, b) = (W^{(1)}, b^{(1)}, W^{(2)}, b^{(2)}) \).
+  - \( W^{(l)}_{ij} \): The weight parameter associated with the connection between unit \( j \) in layer \( l \) and unit \( i \) in layer \( l + 1 \).
+  - \( W^{(1)} \in \mathbb{R}^{3 \times 3} \), \( W^{(2)} \in \mathbb{R}^{1 \times 3} \) in our example.
+  
+- **Biases (b)**: \( b^{(l)}_i \) is the bias associated with unit \( i \) in layer \( l + 1 \).
+  - Note that bias units don’t have inputs or connections going into them, as they always output the value +1.
+
+- **Number of nodes (s_l)**: \( s_l \) denotes the number of nodes in layer \( l \), excluding the bias unit.
+
+### Example Notation
+
+In a simple 3-layer network:
+- Input layer \( L_1 \), hidden layer \( L_2 \), and output layer \( L_3 \).
+- For \( L_2 \), we have \( W^{(1)} \in \mathbb{R}^{3 \times 3} \) and \( W^{(2)} \in \mathbb{R}^{1 \times 3} \).
+
+## Forward Propagation
+
+### Activation Function and Hypothesis
+
+The output of unit \( i \) in layer \( l \) is denoted by \( a^{(l)}_i \), which is the activation function \( f(z^{(l)}_i) \), where \( z^{(l)}_i \) is the total weighted sum of inputs to unit \( i \), including the bias term.
+
+#### Equation for Activation:
+For layer \( l \), the activation is given by:
+\[
+a^{(l)}_i = f(z^{(l)}_i)
+\]
+where:
+\[
+z^{(l)}_i = W^{(l)}_i \cdot a^{(l-1)} + b^{(l)}_i
+\]
+
+Here, \( f \) is typically a nonlinear activation function like sigmoid, tanh, or ReLU. For \( l = 1 \), the input layer, \( a^{(1)}_i = x_i \) (the input values).
+
+### Compact Notation
+
+The process of forward propagation can be compactly written as:
+\[
+a^{(l)} = f(W^{(l)} a^{(l-1)} + b^{(l)})
+\]
+where:
+- \( W^{(l)} \) is the weight matrix for layer \( l \).
+- \( a^{(l-1)} \) is the activation from the previous layer.
+- \( b^{(l)} \) is the bias term for layer \( l \).
+
+This compact form allows for efficient matrix and vector operations, making it faster to compute the activations of all layers in parallel using linear algebra.
+
+### Forward Propagation Example
+
+For a network with 3 layers, the activations for the layers are computed as:
+
+- **Input layer \( L_1 \):**
+  \[
+  a^{(1)} = x
+  \]
+
+- **Hidden layer \( L_2 \):**
+  \[
+  a^{(2)} = f(W^{(1)} x + b^{(1)})
+  \]
+
+- **Output layer \( L_3 \):**
+  \[
+  a^{(3)} = f(W^{(2)} a^{(2)} + b^{(2)})
+  \]
+
+Thus, the hypothesis \( h_{\theta}(x) \) (the network's output) is \( a^{(3)} \).
+
+## Multiple Hidden Layers
+
+In the case of a neural network with multiple hidden layers, we extend the same forward propagation process for each successive layer:
+
+1. Compute the activations for layer 2.
+2. Compute the activations for layer 3.
+3. Continue this process until reaching the output layer.
+
+For example, a network with two hidden layers \( L_2 \) and \( L_3 \), and two output units in \( L_4 \), would follow the same forward propagation process to compute the activations for all layers.
+
+### Feedforward Neural Network
+
+This kind of network is called a **feedforward neural network** because the information flows in one direction from input to output without any loops.
+
+### Training with Multiple Outputs
+
+When the network has multiple output units, for example, two output units in \( L_4 \), we need training examples \( (x^{(i)}, y^{(i)}) \), where:
+- \( x^{(i)} \) is the input vector.
+- \( y^{(i)} \) is a vector in \( \mathbb{R}^2 \) representing the expected output.
+
+This is useful for tasks where you want to predict multiple values, such as in multi-output regression problems.
+
+## Conclusion
+
+This section covered the basic notations and concepts of forward propagation in neural networks. By using matrix operations, we can efficiently compute the activations of each layer in the network. Forward propagation serves as the foundation for training neural networks, where the goal is to adjust the weights and biases to minimize the error in the predictions.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+
+## Backpropagation
+Backpropagation is the process of updating the weights in a neural network to minimize the loss function. It works as follows:
+
+1. **Forward Pass**: Input is passed through the network to get the prediction.
+2. **Compute Loss**: The difference between the predicted output and the actual label is computed.
+3. **Backward Pass**: The error is propagated back through the network to update the weights using the gradient of the loss with respect to each weight.
+
+The gradient descent algorithm is often used to update the weights in the direction that minimizes the loss.
+
+![image](https://github.com/user-attachments/assets/01359c0a-9a02-42a9-8aa1-fd6a3bea3622)
+
+- Given a training example (x,y), we will first run a “forward pass” to compute all the activations throughout the network, including the output value of the hypothesis hW,b(x).
+- Then, for each node i in layer l, we would like to compute an “error term” δ(l)_i that measures how much that node was “responsible” for any errors in our output.
+- For an output node, we can directly measure the difference between the network’s activation and the true target value, and use that to define δ(n_l)_i (where layer n_l is the output layer).
+- For hidden units, we will compute δ(l)_i based on a weighted average of the error terms of the nodes that uses a(l)_i as an input.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+
+## Common Activation Functions
+- Activation functions introduce non-linear properties to our network. The main purpose is to convert an input signal of a node in a neural network to an output signal. That output signal now is used as an input in the next layer in the stack.
+- Neural Network without Activation function would simply be a Linear Regression Model, which has limited power and does not performs good most of the times. We want our Neural Network to not just learn and compute a linear function but something more complicated than that. Specifically, we want our network to represent non-linear complex arbitrary functional mappings between inputs and outputs (Universal Function Approximators).
+- Another important feature of an Activation function is that it should be differentiable. We need it to be this way so that we can perform back-propagation optimization strategy: (1) Propagating backwards in the network to compute gradients of loss/error with respect to weights and (2) Accordingly optimize the weights using Gradient Descent or any other Optimization technique to reduce error.
+
+    - **Sigmoid**: Output values range between 0 and 1. Used for binary classification.
+  
+  $$ f(x) = \frac{1}{1 + e^{-x}} $$
+
+    - **ReLU (Rectified Linear Unit)**: Most commonly used. If input is negative, output is 0; if input is positive, output is the input.
+  
+  $$ f(x) = \max(0, x) $$
+
+    - **Tanh**: Similar to the sigmoid function, but output values range between -1 and 1.
+
+  $$ f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $$
+
+    - **Softmax**: Converts output into a probability distribution for multi-class classification tasks.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
 
 
+## Weight Initialization
+Proper weight initialization is critical to the training process. Poor initialization can lead to issues like vanishing or exploding gradients. Some common methods for weight initialization include:
+
+- Why is initialization important?
+
+   - Initializing all the weights with 0 leads the neurons to learn the same features during training.
+   - Initializing the weights with values too small or too large leads respectively to slow learning or divergence.
+ 
+- The problem of exploding or vanishing gradients:
+     - A too-large initialization leads to exploding gradients. That is, the gradients of the cost with the respect to the parameters are too big. This leads the cost to oscillate around its minimum value.
+     - A too-small initialization leads to vanishing gradients. That is, the gradients of the cost with the respect to the parameters are too small. This leads to convergence of the cost before it has reached the minimum value.
+ 
+-  Prpoer initialization:
+
+   - **Rules of thumb**: (1) The mean of the activations should be 0, (2) The variance of the activations should stay the same across every layer.
+- **Xavier initialization for tanh activations**.
+      - All the weights of layer l are picked randomly from a normal distribution with mean 0 and variance 1 / n^{# of neurons in previous layer (l - 1)}.
+      - Biases are initialized with 0s.
+- He initialization for ReLU activations.The weights are initialized by multiplying by 2 the variance of the Xavier initialization.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+
+## Gradient Descent Variants
+Gradient Descent is the optimization algorithm used to minimize the loss function. Variants include:
+
+- **Batch Gradient Descent**: Uses the entire dataset to compute the gradient at each step.
+- **Stochastic Gradient Descent (SGD)**: Uses a single data point at each step.
+- **Mini-batch Gradient Descent**: Uses a small batch of data points at each step. A common trade-off between the first two variants.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+## Learning Rate
+The learning rate determines the step size at each iteration while moving toward a minimum of the loss function. If the learning rate is too high, you may overshoot the minimum; if too low, convergence may be slow.
+The learning rate influences the optimization’s convergence. It also counterbalances the influence of the cost function’s curvature.
+
+  - If the learning rate is too small, updates are small and optimization is slow, especially if the cost curvature is low. Also, you’re likely to settle into an poor local minimum or plateau.
+  - If the learning rate is too large, updates will be large and the optimization is likely to diverge, especially if the cost function’s curvature is high.
+If the learning rate is chosen well, updates are appropriate and the optimization should converge to a good set of parameters.
+
+It is common to start with a large learning rate — say, between 0.1 and 1 — and decay it during training. Choosing the right decay (how often? by how much?) is non-trivial. An excessively aggressive decay schedule slows progress toward the optimum, while a slow-paced decay schedule leads to chaotic updates with small improvements.
+
+In fact, finding the “best decay schedule” is non trivial. However, adaptive learning-rate algorithms such as Momentum Adam and RMSprop help adjust the learning rate during the optimization process.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+## Batch Size
+The batch size defines how many training samples are used in one forward/backward pass. A smaller batch size results in noisier gradient estimates, while larger batch sizes provide more stable but slower updates.
+
+Batch size is the number of data points used to train a model in each iteration. Typical small batches are 32, 64, 128, 256, 512, while large batches can be thousands of examples.
+
+Choosing the right batch size is important to ensure convergence of the cost function and parameter values, and to the generalization of your model. Some research has considered how to make the choice, but there is no consensus. In practice, you can use a hyperparameter search.
+
+Research into batch size has revealed the following principles:
+
+- Batch size determines the frequency of updates. The smaller the batches, the more, and the quicker, the updates.
+- The larger the batch size, the more accurate the gradient of the cost will be with respect to the parameters. That is, the direction of the update is most likely going down the local slope of the cost landscape.
+- Having larger batch sizes, but not so large that they no longer fit in GPU memory, tends to improve parallelization efficiency and can accelerate training.
+
+In choosing batch size, there’s a balance to be struck depending on the available computational hardware and the task you’re trying to achieve.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+
+## Choice of Optimizers
+Optimizers are algorithms or methods used to update the weights in a network. Some common optimizers include:
+
+- **SGD (Stochastic Gradient Descent)**: A simple optimization algorithm that updates weights based on the gradient.
+- **Momentum**:
+    - Helps accelerate SGD by adding a fraction of the previous update to the current one.
+    - Momentum usually speeds up the learning with a very minor implementation change.
+    - Momentum uses more memory for a given batch size than stochastic gradient descent but less than RMSprop and Adam.
+- **Adam (Adaptive Moment Estimation)**:
+    - Combines momentum and adaptive learning rates, making it widely used in practice for most deep learning tasks.
+    - Adaptive Moment Estimation is most popular today. The hyperparameters of Adam (learning rate, exponential decay rates for the moment estimates, etc.) are usually set to predefined values (given in the paper), and do not need to be tuned.
+    - Adam performs a form of learning rate annealing with adaptive step-sizes.
+Of the optimizers profiled here, Adam uses the most memory for a given batch size.
+    - Adam is often the default optimizer in machine learning.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+## Common Regularizers
+Regularization techniques help prevent overfitting by penalizing large weights or adding noise to the training process. Some common regularizers include:
 
 
+- **Weight Decay**:
+    - When training neural networks, it is common to use "weight decay," where after each update, the weights are multiplied by a factor slightly less than 1. This prevents the weights from growing too large, and can be seen as gradient descent on a quadratic regularization term.
+   - Weight decay is used as part of the back-propagation algorithm.
+There are 3 ways to do weight decay: Lasso (shrinks coefficients to 0), Ridge (makes coefficients smaller), and Elastic Net (tradeoff between variable selection and small coefficients).
+   - **L1 Regularization (Lasso)**: Adds the absolute value of the weights as a penalty to the loss function.
+  - **L2 Regularization (Ridge)**: Adds the square of the weights as a penalty to the loss function.
+- **Dropout**: Randomly sets a fraction of the weights to zero during training to prevent the model from relying too heavily on any particular neuron.
+   - During training, randomly set some activations to 0.
+   - Typically drop 50% of activations in layer.
+   - Forces network to not rely on any 1 node.
+   - One of the drawbacks of dropout is that it increases training time. A dropout network typically takes 2-3 times longer to train than a standard neural network of the same architecture. A major cause of this increase is that the parameter updates are very noisy. Each training case effectively tries to train a different random architecture. Therefore, the gradients that are being computed are not gradients of the final architecture that will be used at test time.
+   - At test time, we replace the masks by their expectation. This is simply the constant vector 0.5 if dropout probability is 0.5.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
+
+## Common Normalization
+Normalization techniques adjust the inputs to the network or the activations in the hidden layers to improve training efficiency:
+
+**Batch Normalization**: Normalizes the input to each layer so that its mean is 0 and variance is 1. This helps stabilize learning and speed up convergence.
+   -  Batch normalization is a method that normalizes activations in a network across the mini-batch of definite size.
+   - During training, batch normalization computes the mean and variance of each feature in the mini-batch. It then subtracts the mean and divides the feature by its mini-batch standard deviation.
+   - Backpropagation takes into account the normalization.
+   - At test time, the global mean and stddev is used.
+ **Layer Normalization**: Similar to batch normalization but normalizes across the features rather than the batch.
+    - Layer normalization normalizes input across the features instead of normalizing input features across the batch dimension in batch normalization.
+    - A mini-batch consists of multiple examples with the same number of features.
+    - Layer normalization performs better than batch norm in case of RNNs.
+
+**Weight Norm**:
+   - Weight normalization is a method that normalize weights of a layer instead of normalizing the activations directly.
+   - Weight normalization separates the weight vector from its direction. This has a similar effect as in batch normalization with variance. The only difference is in variation instead of direction.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+---
 
 
+## Neural Networks From Scratch
+Building neural networks from scratch helps deepen your understanding of how they work. You can implement forward propagation, backpropagation, and optimization algorithms manually without relying on libraries like TensorFlow or PyTorch.
+
+Key steps to building a simple neural network from scratch:
+1. Initialize weights and biases.
+2. Implement the forward pass (computing activations).
+3. Implement the loss function (e.g., cross-entropy, mean squared error).
+4. Compute gradients for backpropagation.
+5. Update weights using an optimizer.
+
+[Back to Deep Learning Concepts](#deep-learning-concepts)
+
+[Back to Top](#data-science-cheatsheets)
+---
 
 
