@@ -2218,7 +2218,7 @@ Key steps to building a simple neural network from scratch:
 - [Clustering](#clustering)
 - [Principal Component Analysis](#principal-component-analysis)
 - [Autoencoders](#autoencoders)
-- [Generative Adversal Network](#generative-adversal-network)
+- [Generative Adversarial Network ](#generative-adversarial-network)
 
 ---
 
@@ -2462,7 +2462,6 @@ While the **adversarial loss** is important, it is **only auxiliary**. The **ult
 [Back to unsupervised Learning](#unsupervised-algorithms)
 
 [Back to Top](#data-science-cheatsheets)
-
 ---
 
 # Natural Language Processing
@@ -2474,7 +2473,9 @@ While the **adversarial loss** is important, it is **only auxiliary**. The **ult
 - [Recurrent Neural Networks](#recurrent-neural-networks)
 - [LSTMs](#lstms)
 - [Gated Recurrent Units](#gated-recurrent-units)
-- 
+
+  [Back to Top](#data-science-cheatsheets)
+  
   ---
 # Tokenization
 
@@ -2630,7 +2631,7 @@ Choosing the value of `n` involves trade-offs:
 [Back to NLP](#natural-language-processing)
 
 ---
-# Bag of Words (BoW)
+# Bag of Words 
 
 In machine learning, **raw text** cannot be directly used by models. Instead, text must be converted into **numerical values** that can be processed by algorithms. **Bag of Words (BoW)** is a technique to achieve this conversion.
 
