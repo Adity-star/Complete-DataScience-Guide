@@ -18,6 +18,7 @@ This repository serves as a collection of hands-on projects and code snippets re
 * [Data Science Ebooks](#data-science-ebooks)
 * [Data Science CheatSheets](#data-science-cheetsheets)
 * [Interview Prepration](#interview-questions)
+* [Machine Learning](#Machine-learning)
 
 
 ## Data Science EBooks
@@ -56,7 +57,12 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Intervi
 * [General 64 Toughest Interview Questions](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/64%20Toughest%20Interview%20Questions.pdf)
 * [Machine Learning Assessment](https://github.com/Adity-star/Data-Science-Work/blob/main/Interview%20Questions/Machine%20Learning%20Assessmentpdf.pdf)
 * [30 Days Interview Prepration Guide](https://github.com/Adity-star/Data-Science-Work/tree/main/Interview%20Prep/30_days_interview_questions)
-  
+
+# Machine Learning
+This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning) contains all machine learning concepts with implementatiions.
+-[Explotitary Data Analysis](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Explotitary%20data%20analysis)
+- [Predictions](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/ML%20Predictions)
+- [Models](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Models)
 
 
 ## 📢 Contributions
