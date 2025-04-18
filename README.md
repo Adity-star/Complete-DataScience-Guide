@@ -60,7 +60,8 @@ This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Intervi
 
 # Machine Learning
 This [section](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning) contains all machine learning concepts with implementatiions.
--[Explotitary Data Analysis](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Explotitary%20data%20analysis)
+
+- [Explotitary Data Analysis](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Explotitary%20data%20analysis)
 - [Predictions](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/ML%20Predictions)
 - [Models](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Models)
 
