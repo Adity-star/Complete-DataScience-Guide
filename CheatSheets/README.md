@@ -2214,5 +2214,548 @@ Key steps to building a simple neural network from scratch:
 
 [Back to Top](#data-science-cheatsheets)
 ---
+# Unsupervised Algorithms
+- [Clustering](#clustering)
+- [Principal Component Analysis](#principal-component-analysis)
+- [Autoencoders](#autoencoders)
+- [Generative Adversal Network](#generative-adversal-network)
 
+---
+
+  # Clustering
+
+Clustering is an **unsupervised learning algorithm** that groups data such that data points in the same group (called **clusters**) are **more similar to each other** than to those in other groups.
+
+### 🔍 What is Similarity?
+Similarity is typically measured using a **distance metric**, such as:
+- **Euclidean Distance**
+- **Cosine Similarity**
+- **Jaccard Index**
+- **Manhattan Distance** (also known as L1 norm)
+
+These metrics help determine how "close" or "far apart" data points are in a high-dimensional space.
+
+### 🎯 Goal of Clustering
+The primary goal of clustering is to **uncover the hidden structure** or **natural groupings** in data — especially in **high-dimensional** datasets where visualization and intuitive understanding become difficult.
+
+
+## 💡 Common Clustering Algorithm: K-Means
+
+One of the most widely used clustering algorithms is **K-Means**.
+
+### How K-Means Works:
+1. Choose the number of clusters, **K**.
+2. Randomly initialize **K centroids** (one for each cluster).
+3. Assign each data point to the **nearest centroid** based on a distance metric.
+4. Recompute the centroids as the **mean** of all points in the cluster.
+5. Repeat steps 3–4 until centroids no longer move significantly (i.e., convergence).
+
+> ⚠️ Note: K-Means assumes spherical clusters and works best when clusters have similar size and density.
+
+
+## 🛠 Clustering in Scikit-learn
+
+`scikit-learn`, a popular Python machine learning library, provides implementations for many clustering algorithms, including but not limited to:
+
+- `KMeans`
+- `DBSCAN`
+- `AgglomerativeClustering`
+- `MeanShift`
+- `SpectralClustering`
+- `Birch`
+- `OPTICS`
+
+Each algorithm has its strengths and trade-offs depending on the nature of your data (e.g., density-based, hierarchical, centroid-based, etc.).
+
+Here’s a **comparison chart** adapted from the [scikit-learn documentation](https://scikit-learn.org/stable/modules/clustering.html):
+
+![clustering](https://github.com/user-attachments/assets/b8468b0d-63e3-4b9c-8656-4c9cb57c3b50)
+
+
+
+| Algorithm              | Type              | Works Well With             | Handles Noise | Number of Clusters Needed |
+|------------------------|-------------------|------------------------------|----------------|-----------------------------|
+| **KMeans**             | Centroid-based    | Convex, isotropic clusters   | ❌              | ✅                          |
+| **DBSCAN**             | Density-based     | Arbitrary shape clusters     | ✅              | ❌                          |
+| **Agglomerative**      | Hierarchical      | Nested, tree-like structure  | ❌              | ✅                          |
+| **MeanShift**          | Centroid-based    | Varying density              | ✅              | ❌                          |
+| **Spectral Clustering**| Graph-based       | Complex structure, small data| ❌              | ✅                          |
+| **OPTICS**             | Density-based     | Varying density, noise       | ✅              | ❌                          |
+| **Birch**              | Hierarchical      | Large datasets               | ❌              | ✅                          |
+
+[Back to unsupervised Learning](#unsupervised-algorithms)
+
+---
+
+# Principal Component Analysis
+
+**Principal Component Analysis (PCA)** is a **dimensionality reduction technique** that transforms high-dimensional data into a **lower-dimensional space**, while preserving as much **variance (information)** as possible.
+
+
+## 🧠 How PCA Works
+
+PCA is based on **Singular Value Decomposition (SVD)** — a matrix factorization method that decomposes a matrix into three simpler matrices:
+
+- Original matrix **X** is decomposed as:  
+  **X = U Σ Vᵀ**  
+  where:
+  - **U**: left singular vectors (directions of data)
+  - **Σ**: diagonal matrix of singular values (importance/variance)
+  - **Vᵀ**: right singular vectors (principal components)
+
+📌 *More on SVD [here](https://en.wikipedia.org/wiki/Singular_value_decomposition).*
+
+![pca](https://github.com/user-attachments/assets/711abae2-c97d-49ce-b009-b9224c6b6834)
+
+
+## 🔍 What PCA Finds
+
+PCA identifies the **top N principal components**, which are **orthogonal directions** in the feature space where the data varies the most. These components capture the **maximum variance** in the data.
+
+- Each **principal component** is a **linear combination** of the original features.
+- The **first principal component** captures the most variance.
+- The **second** captures the next most (orthogonal to the first), and so on.
+
+### ✨ Why Variance Matters
+
+The more **spread out** (variance) the data is along a dimension:
+- The **more information** that dimension holds
+- The **more useful** it is for pattern recognition, classification, and visualization
+
+
+
+## 📉 Applications of PCA
+
+- **Dimensionality Reduction**: Reducing features to speed up ML algorithms and reduce overfitting.
+- **Noise Reduction**: Eliminating less informative components.
+- **Data Visualization**: Projecting high-dimensional data into:
+  - **2D** or **3D** for visual exploration
+- **Feature Extraction**: Creating new, uncorrelated features.
+
+
+
+## 🆚 PCA vs. t-SNE
+
+| Feature                | PCA                          | t-SNE                            |
+|------------------------|------------------------------|----------------------------------|
+| Type                   | Linear                       | Non-linear                       |
+| Focus                  | Variance                     | Local similarities               |
+| Output Components      | Principal components         | Non-linear mapping               |
+| Suitable For           | Large datasets, preprocessing| Visualization of clusters        |
+| Computational Cost     | Low                          | High                             |
+
+[Back to unsupervised Learning](#unsupervised-algorithms)
+
+---
+
+# Autoencoders
+
+An **autoencoder** is a type of **neural network** used to learn efficient **representations (encodings)** of data, typically for the purposes of **dimensionality reduction**, **feature learning**, or **denoising**.
+
+
+## 🧩 Structure of an Autoencoder
+
+An autoencoder always consists of two main components:
+
+### 🔹 Encoder
+- Maps the input data to a **lower-dimensional space** (called the **latent space** or **bottleneck**).
+- Learns a compressed representation of the input.
+
+### 🔹 Decoder
+- Attempts to **reconstruct** the original input from the latent representation.
+- Learns to minimize the **reconstruction error** (i.e., how different the reconstructed data is from the original).
+
+The network is trained such that:
+
+
+> 📉 The goal is to **minimize the loss function** (e.g., Mean Squared Error) between the input and the output.
+
+
+## 🧠 Why Use Autoencoders?
+
+Autoencoders are powerful tools in unsupervised learning and data preprocessing. They can be used for:
+
+- **Dimensionality Reduction**: Similar to PCA but with the ability to model **non-linear relationships**.
+- **Data Denoising**: Train on clean data but feed noisy inputs to learn how to remove noise.
+- **Anomaly Detection**: Poor reconstruction can indicate outliers or anomalies.
+- **Pretraining for Deep Networks**: Encoded features can be used to initialize deeper models.
+
+
+## 🧪 Applications
+
+- Image compression and reconstruction
+- Denoising images or signals
+- Latent space representation for generative tasks (e.g., Variational Autoencoders)
+- Recommendation systems
+- Time series anomaly detection
+
+[Back to unsupervised Learning](#unsupervised-algorithms)
+
+---
+# Generative Adversarial Network 
+
+A **Generative Adversarial Network (GAN)** is an **unsupervised learning algorithm** that also incorporates **supervised learning principles** through its use of a supervised loss during training.
+
+GANs are widely used for **data generation** tasks—producing synthetic images, text, or other types of data that are nearly indistinguishable from real data.
+
+
+## 🧠 Key Components of GAN
+
+A GAN consists of two neural networks playing a **zero-sum game**:
+
+### 🔹 Generator (G)
+- Takes in a **random input** (usually noise).
+- Attempts to **generate fake data** that resemble real data.
+- Learns to fool the discriminator.
+
+### 🔹 Discriminator (D)
+- Receives real or generated data.
+- Tries to **distinguish real from fake** (a binary classification problem).
+- Gives a score between 0 (fake) and 1 (real).
+
+> 🎮 It's an **adversarial game**—the generator tries to trick the discriminator, while the discriminator tries not to be tricked. This push-pull dynamic helps both networks improve.
+
+
+## ✨ Intuition Behind GANs
+
+1. The **Generator** takes a random input vector (latent noise) and outputs a **fake sample** (e.g., image).
+2. The **Discriminator** is fed either:
+   - a real sample (labeled as 1)
+   - or a generated sample (labeled as 0)
+3. The Discriminator attempts to predict whether the input is **real or fake**.
+4. The Generator is trained to **maximize the chance** that its fake data are classified as real (i.e., it wants the Discriminator to output 1 for its outputs).
+
+> Ideally, real data should score near **1.0** and fake data should score near **0.0**. But the generator gets better over time and begins to **fool the discriminator** more frequently.
+
+
+
+## 🏋️‍♀️ Training a GAN (Simplified Workflow)
+
+1. **Pretrain the Discriminator**:
+   - Feed it both real data (label = 1) and generated data (label = 0).
+   - Train it to correctly classify them.
+   - Do this for **N epochs** until the Discriminator becomes a decent judge.
+
+2. **Train the Generator** (while keeping the Discriminator fixed):
+   - Generate new data samples.
+   - Use the Discriminator to evaluate them.
+   - Backpropagate the error **through the Discriminator** to improve the Generator.
+
+3. **Repeat Alternating Training**:
+   - Train Discriminator → Freeze it
+   - Train Generator → Freeze it
+   - Repeat until neither can improve significantly.
+
+
+## 💡 Tips & Tricks to Make GANs Work
+
+- Use **batch normalization** to stabilize training.
+- Apply **label smoothing** to prevent the discriminator from becoming overconfident.
+- Use **different learning rates** for the generator and discriminator.
+- Try **Wasserstein GAN (WGAN)** or **Conditional GAN (cGAN)** for better stability or control over generated content.
+
+
+## ⚠️ A Key Caveat
+
+While the **adversarial loss** is important, it is **only auxiliary**. The **ultimate goal** of a GAN is to **generate synthetic data** that are **so realistic** that even human experts **cannot tell the difference** between fake and real.
+
+[Back to unsupervised Learning](#unsupervised-algorithms)
+
+[Back to Top](#data-science-cheatsheets)
+
+---
+
+# Natural Language Processing
+- [Tokenization](#tokenization)
+- [Stemming and Lemmatization](#stemming-and-lemmatization)
+- [N-gram](#n-gram)
+- [Bag-of-Words](#bag-of-words)
+- [Word2vec](#word2vec)
+- [Recurrent Neural Networks](#recurrent-neural-networks)
+- [LSTMs](#lstms)
+- [Gated Recurrent Units](#gated-recurrent-units)
+- 
+  ---
+# Tokenization
+
+**Tokenization** is the process of converting a sequence of characters into a sequence of **tokens**.  
+Tokens are typically words, subwords, characters, or symbols—depending on the type of tokenization used.
+
+
+## ✂️ Example
+
+Given the sentence: The quick brown fox jumped over the lazy dog.
+A **simple whitespace tokenizer** would split it into: ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog", "."]
+
+
+## 🤔 Why Tokenization Is Non-Trivial
+
+Tokenization might seem straightforward, but it involves many edge cases and language-specific rules.
+
+### Examples:
+
+- **"O'Neill"**  
+  Can be tokenized as:
+  - `"o"` and `"neill"`
+  - `"oneill"`
+  - `"o'neill"`
+
+- **"aren't"**  
+  Should ideally remain as a single token or split into `"are"` and `"not"` depending on the tokenizer.  
+  Splitting it into `"aren"` and `"t"` would not make semantic sense.
+
+
+## 🌐 Language-Specific Challenges
+
+Tokenization becomes complex with languages that:
+
+- Don’t use spaces (e.g., Chinese, Japanese).
+- Have compound or agglutinative word structures (e.g., German, Finnish).
+- Use contractions or irregular punctuation (e.g., English).
+
+
+## 🛠 Types of Tokenization
+
+| Type                | Description                                             | Example                        |
+|---------------------|---------------------------------------------------------|--------------------------------|
+| **Whitespace**       | Splits on spaces and punctuation                       | `"Hello world!"` → `["Hello", "world", "!"]` |
+| **Regex-based**      | Uses regular expressions to define tokens              | Can capture numbers, hashtags, etc. |
+| **Subword (BPE, WordPiece)** | Breaks words into common subunits                | `"unhappiness"` → `["un", "happi", "ness"]` |
+| **Character-level**  | Splits input into individual characters                | `"cat"` → `["c", "a", "t"]`    |
+
+[Back to NLP](#natural-language-processing)
+
+---
+# Stemming and Lemmatization
+
+Both **stemming** and **lemmatization** are techniques used in **natural language processing (NLP)** to reduce words to their **base** or **root form**. The goal is to group together different inflected forms of a word so they can be analyzed as a single item.
+
+## 🌱 Stemming
+
+- A **crude heuristic process** that removes common word suffixes (and sometimes prefixes).
+- Often results in **non-lexical** or incomplete root forms.
+- Doesn’t use vocabulary or grammar knowledge.
+  
+### Example:
+- `"running"` → `"run"`
+- `"flies"` → `"fli"`
+- `"studies"` → `"studi"`
+
+> 📌 Stemming can be overly aggressive and may return roots that are **not actual words**.
+
+## 📘 Lemmatization
+
+- A more **sophisticated method** that uses a **vocabulary** and **morphological analysis**.
+- Aims to return the **dictionary form** of a word, called the *lemma*.
+- Requires **part-of-speech (POS) tagging** to get accurate results.
+
+### Example:
+- `"running"` → `"run"` (verb)
+- `"better"` → `"good"` (adjective)
+- `"saw"`:
+  - If used as a **verb**, returns `"see"`
+  - If used as a **noun**, remains `"saw"`
+
+> ✅ Lemmatization is generally more accurate but also more computationally expensive.
+
+
+
+## 🆚 Stemming vs. Lemmatization
+
+| Feature           | Stemming                         | Lemmatization                     |
+|-------------------|----------------------------------|------------------------------------|
+| Technique         | Rule-based stripping             | Dictionary + grammar-based         |
+| Output            | Root form (possibly non-word)    | Valid lemma                        |
+| Accuracy          | Lower                            | Higher                             |
+| Language awareness| No                               | Yes                                |
+| Speed             | Fast                             | Slower                             |
+
+[Back to NLP](#natural-language-processing)
+
+---
+
+# N-gram
+
+An **n-gram** is a **contiguous sequence of `n` items** (typically words or tokens) from a given sample of **text** or **speech**.
+
+
+
+## 🔢 Types of n-grams
+
+- **Unigram (n = 1)**: Single words  
+- **Bigram (n = 2)**: Sequences of 2 consecutive words  
+- **Trigram (n = 3)**: Sequences of 3 consecutive words  
+- **Four-gram**, **Five-gram**, ..., depending on the value of `n`
+
+
+## 📝 Example
+
+Given the sentence: The quick brown fox jumped over the lazy dog.
+
+- **Bigrams**:
+  - `"The quick"`, `"quick brown"`, `"brown fox"`, ..., `"lazy dog"`
+  
+- **Trigrams**:
+  - `"The quick brown"`, `"quick brown fox"`, `"brown fox jumped"`, ..., `"the lazy dog"`
+
+Each n-gram consists of a **sliding window of `n` tokens**, capturing local context within the sentence.
+
+
+## 🤖 Use in Language Modeling
+
+An **n-gram language model** predicts the probability of a word **given the previous (n−1) words**: P(wₙ | w₁, w₂, ..., wₙ₋₁)
+
+- **Unigram model**: Assumes each word is independent.
+- **Bigram model**: Conditions on the previous word.
+- **Trigram model**: Conditions on the two previous words.
+- Higher-order n-grams capture **more context**, but may require **more data** and become sparse.
+
+
+## ⚖️ Choosing the Right `n`
+
+Choosing the value of `n` involves trade-offs:
+
+- **Smaller `n` (e.g., bigrams)**:
+  - More **stable** estimates (less data needed)
+  - Less context awareness
+
+- **Larger `n` (e.g., trigrams, 4-grams)**:
+  - **More context**
+  - Require **large corpora** to avoid sparsity
+
+> 📌 **Rule of thumb**:
+> - **Trigram** models are commonly used when large training corpora are available (millions of words).
+> - **Bigram** models are more suitable for smaller datasets.
+
+[Back to NLP](#natural-language-processing)
+
+---
+# Bag of Words (BoW)
+
+In machine learning, **raw text** cannot be directly used by models. Instead, text must be converted into **numerical values** that can be processed by algorithms. **Bag of Words (BoW)** is a technique to achieve this conversion.
+
+
+## 📝 What is Bag of Words?
+
+**Bag of Words (BoW)** is a **text representation model** that represents text as a collection of individual words, ignoring the grammar and word order. The idea is to count the **frequency** of each word in a given document and treat each word as an individual feature.
+
+- **Vocabulary**: A collection of all unique words in the dataset.
+- Each word in the vocabulary is assigned a **unique index**.
+
+
+## 📚 Example
+
+Given two sentences:
+
+1. **"John likes to watch movies, especially horror movies."**
+2. **"Mary likes movies too."**
+
+### Step 1: Build Vocabulary
+Create a list of **unique words** (ignoring case and punctuation): ["john", "likes", "to", "watch", "movies", "especially", "horror", "mary", "too"]
+
+
+### Step 2: Represent Each Sentence with Term Frequency
+Count the frequency of each word in the vocabulary for each sentence.
+
+- **Sentence 1**: "John likes to watch movies, especially horror movies."
+  - Representation: `[1, 1, 1, 1, 2, 1, 1, 0, 0]`
+
+- **Sentence 2**: "Mary likes movies too."
+  - Representation: `[0, 1, 0, 0, 1, 0, 0, 1, 1]`
+
+### Explanation:
+- The vector length is the size of the vocabulary (9 words in this case).
+- Each element in the vector represents the frequency of the corresponding word in the sentence.
+
+
+## ⚙️ Alternative: Hashing Trick
+
+In cases where the vocabulary is very large (tens of thousands of words), the vocabulary-based approach can lead to very **sparse vectors** (with many zeros). An alternative is the **hashing trick**, where:
+
+- Each word is **hashed** to a fixed-size index.
+- The hashing function directly maps words to indices without storing the entire vocabulary.
+
+This approach avoids memory issues with large vocabularies but can sometimes lead to **collisions** (i.e., different words being hashed to the same index).
+
+
+## 🧠 Pros and Cons
+
+### Pros:
+- Simple and easy to implement.
+- Can be effective in many machine learning models for tasks like **text classification**, **sentiment analysis**, and more.
+
+### Cons:
+- **Sparsity**: As the vocabulary grows, the vectors representing sentences become increasingly sparse (many zeros).
+- **No context**: BoW ignores the **order** and **context** of words, which may result in the loss of valuable semantic information.
+- **High dimensionality**: With large vocabularies, the number of features (dimensions) can become extremely large.
+
+[Back to NLP](#natural-language-processing)
+
+---
+
+# Word2Vec
+
+**Word2Vec** is a shallow, **two-layer neural network** model used to learn word representations (word embeddings) from large text corpora. The primary goal is to construct **linguistic context** for words by associating each word with a dense vector in a **continuous vector space**.
+
+
+## 🔑 Key Idea: Context
+
+The central idea of Word2Vec is that **words with similar meanings** tend to occur in **similar contexts**. Thus, words that appear in similar contexts in the training corpus will have similar or related vector representations.
+
+For example:
+- **"cat"** and **"dog"** should have similar vector representations because they often appear in similar contexts (e.g., "pet", "animal", "owner").
+
+
+
+## 📐 Word2Vec Output
+
+- **Input**: A large corpus of text.
+- **Output**: A vector space (usually hundreds of dimensions).
+- Each word in the corpus is assigned a vector in this vector space.
+
+
+
+## ⚙️ Two Flavors of Word2Vec
+
+1. **Continuous Bag of Words (CBOW)**:
+   - **Objective**: Predict the **current word** given a **window** of surrounding context words.
+   - The context words are used to predict the target word (the word in the center).
+   - **Example**: Given the context words ["the", "cat", "sat", "on"], predict the word "mat" in the center.
+
+2. **Skip-gram**:
+   - **Objective**: Predict the **surrounding context words** using the **current word**.
+   - In this approach, the model uses the target word to predict words around it within a certain context window.
+   - **Example**: Given the word "dog", predict the context words ["the", "chased", "the"].
+
+
+
+## 🧠 Word2Vec Applications
+
+- **Word embeddings** for downstream NLP tasks (e.g., text classification, sentiment analysis, named entity recognition).
+- **Semantic similarity**: Measure similarity between words based on vector distance.
+- **Machine translation**: Improve translation quality by using word embeddings.
+
+[Back to NLP](#natural-language-processing)
+
+[Back to Top](#data-science-cheatsheets)
+---
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
 
