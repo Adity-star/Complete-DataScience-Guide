@@ -12,15 +12,15 @@ Whether you're a beginner just starting out or someone prepping for technical in
 
 This repository includes hands-on code and theoretical knowledge across the following key areas:
 
-- 🧼 **Data Cleaning & Preprocessing**
-- 📊 **Exploratory Data Analysis (EDA)**
-- 🧠 **Machine Learning Algorithms**
-- 🤖 **Deep Learning Basics & Applications**
-- 🔥 **PyTorch** Implementations
-- 🛠️ **Feature Engineering Techniques**
-- 📚 **Data Science eBooks**
-- 📄 **Research Papers on Advanced Topics**
-- 💼 **Interview Questions & Prep Guides**
+-  **Data Cleaning & Preprocessing**
+-  **Exploratory Data Analysis (EDA)**
+-  **Machine Learning Algorithms**
+-  **Deep Learning Basics & Applications**
+-  **PyTorch** Implementations
+-  **Feature Engineering Techniques**
+-  **Data Science eBooks**
+-  **Research Papers on Advanced Topics**
+-  **Interview Questions & Prep Guides**
 
 ---
 ## 🔗 Related Projects
