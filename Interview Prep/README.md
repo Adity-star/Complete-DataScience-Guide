@@ -14,3 +14,5 @@ In different files, I list various questions that might be asked in a Data Scien
 - [40 Question on probability for a Data Science Interview](https://towardsdatascience.com/40-statistics-interview-problems-and-answers-for-data-scientists-6971a02b7eee/)
 -  [Statistics Interview Problems and Answers for Data Scientists](https://www.analyticsvidhya.com/blog/2017/04/40-questions-on-probability-for-all-aspiring-data-scientists/)
 -  [109 Statistics Interview Questions for Data Science](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/stats%20interview%20questions.pdf)
+-  [50+ Statistics Interview Questions and Answers for Data Scientists](https://towardsdatascience.com/50-statistics-interview-questions-and-answers-for-data-scientists-for-2021-24f886221271/)
+- [35 Advanced Statistics Interview Questions For Data Scientists](https://www.mlstack.cafe/blog/statistics-interview-questions)
