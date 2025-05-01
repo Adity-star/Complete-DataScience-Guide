@@ -39,13 +39,13 @@ Explore more of my work:
 --- 
 # Here are the Sections
 * [Data Science Ebooks](#data-science-ebooks)
-* [📄 Data Science CheatSheets](#data-science-cheatsheets)
-* [🧠 Interview Preparation](#interview-questions)
-* [🤖 Machine Learning](#machine-learning)
+* [Data Science CheatSheets](#data-science-cheatsheets)
+* [Interview Preparation](#interview-preparation)
+* [Machine Learning](#machine-learning)
 
 ---
 
-## 📘 Data Science Ebooks
+##  Data Science Ebooks
 A collection of curated ebooks covering key topics in data science, machine learning, and analytics. These resources are perfect for both foundational knowledge and advanced learning.
 > [🔗 section Link](https://github.com/Adity-star/Data-Science-Work/tree/main/EBooks)
  
@@ -66,7 +66,7 @@ A collection of curated ebooks covering key topics in data science, machine lear
 
 ---
 
-## 📄 Data Science CheatSheets
+##  Data Science CheatSheets
 Quick reference guides for key concepts, formulas, and processes in data science and machine learning. Ideal for revision and interview prep.
 > [🔗 section Link](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets) 
 * [Standford Materials](https://github.com/Adity-star/Data-Science-Work/tree/main/CheatSheets#stanford-materials)
@@ -77,22 +77,15 @@ Quick reference guides for key concepts, formulas, and processes in data science
 
 ---
 
-## 🧠 Interview Preparation
+##  Interview Preparation
 Crack any Data Science interview.It includes top interview questions, answers, and tips for cracking data science, machine learning, and analytics roles at top companies.
 > [🔗 section Link](https://github.com/Adity-star/Data-Science-Guide/tree/main/Interview%20Prep) 
-* [Machine Learning Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/list_of_questions_machine_learning.md)
-* [Deep Learning Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/list_of_questions_deep_learning.md)
-* [Mathetics and Probability Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/list_of_questions_mathematics.md)
-* [Statistics Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/stats%20interview%20questions.pdf)
-* [Complete Data Science Interview Question](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/Data%20Science%20interview%20questions.pdf)
-* [General 64 Toughest Interview Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/64%20Toughest%20Interview%20Questions.pdf)
-* [Machine Learning Assessment](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/Machine%20Learning%20Assessmentpdf.pdf)
-* [30 Days Interview Prepration Guide](https://github.com/Adity-star/Data-Science-Guide/tree/main/Interview%20Prep/30_days_interview_questions)
-* [JP Morgan Chase HR Interview Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/Jp%20Morgan%20Chase-%20interview.pdf)
+* [Overall Interview Resourses](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Interview%20Prep/README.md#overall-interview-resourses)
+* [Statistics and Probability](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Interview%20Prep/README.md#statistics-and-probability)
 
 ---
 
-## 🤖 Machine Learning
+##  Machine Learning
 Hands-on projects, algorithms, and theory covering supervised, unsupervised, and deep learning techniques.
 >[🔗 section Link](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning)
 
