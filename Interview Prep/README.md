@@ -1,6 +1,6 @@
 In different files, I list various questions that might be asked in a Data Science interview. Here is the table of contents:
 
-
+## Overall Interview Resourses
 * [Machine Learning Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/list_of_questions_machine_learning.md)
 * [Deep Learning Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/list_of_questions_deep_learning.md)
 * [Complete Data Science Interview Question](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/Data%20Science%20interview%20questions.pdf)
