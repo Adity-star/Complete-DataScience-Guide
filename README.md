@@ -89,9 +89,10 @@ Crack any Data Science interview.It includes top interview questions, answers, a
 Hands-on projects, algorithms, and theory covering supervised, unsupervised, and deep learning techniques.
 >[🔗 section Link](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning)
 
-- [Explotitary Data Analysis](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Explotitary%20data%20analysis)
-- [Predictions](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/ML%20Predictions)
-- [Models](https://github.com/Adity-star/Data-Science-Work/tree/main/Machine%20Learning/Models)
+- [Explotitary Data Analysis](https://github.com/Adity-star/Complete-DataScience-Guide/tree/main/Machine%20Learning#explotitary-data-analysis)
+- [Machine Learning Predictions](https://github.com/Adity-star/Complete-DataScience-Guide/tree/main/Machine%20Learning#machine-learning-predictions)
+- [Machine Learning Models](https://github.com/Adity-star/Complete-DataScience-Guide/tree/main/Machine%20Learning#machine-learning-models)
+- [Mcahine Learning Concepts](https://github.com/Adity-star/Complete-DataScience-Guide/tree/main/Machine%20Learning#machine-learning-concepts)
 
 ---
 
