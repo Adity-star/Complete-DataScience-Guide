@@ -42,6 +42,10 @@ Explore more of my work:
 * [Data Science CheatSheets](#data-science-cheatsheets)
 * [Interview Preparation](#interview-preparation)
 * [Machine Learning](#machine-learning)
+* [Deep Learning Pytorch](#deep-learning-pytorch)
+* [NLP](#nlp)
+* [Time Series](#time-series)
+* [Research Papers](https://github.com/Adity-star/Complete-DataScience-Guide/tree/main/Research%20papers)
 
 ---
 
@@ -95,6 +99,44 @@ Hands-on projects, algorithms, and theory covering supervised, unsupervised, and
 - [Mcahine Learning Concepts](https://github.com/Adity-star/Complete-DataScience-Guide/tree/main/Machine%20Learning#machine-learning-concepts)
 
 ---
+## Deep Learning pytorch
+- [Pytorch Basics](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/pytorch_basics.ipynb)
+- [Pytorch Workflow](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/01_Pytorch_WorkFlow.ipynb)
+- [Pytorch Classification](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/02_pytorch_classificationipynb)
+- [Neural Network Classification](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Neural_Network_classification.ipynb)
+- [Building ANN Network](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Building_ANN_pytorch.ipynb)
+- [Workinh with Data](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/working_with_data_pytorch.ipynb)
+- [Pytorch Training Pipeline](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/pytorch_training_pipeline_using_dataset_and_dataloader.ipynb)
+- [Pytorch Working with custom Dataset](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Custom_datasets_pytorch.ipynb)
+- [Hyperparameter Tuning using optina](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Hyperparameter_using_Optuna%20(1).ipynb)
+- [Keras HyperParameter Tuning](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Keras_hyperparameter_tuning.ipynb)
+- [Building Linear function](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Linear_fn_pytorch.ipynb)
+- [Transfer Learning Pytorch](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Transfer%20learning%20Pytorch.ipynb)
+- [Pytorch Computer Vision](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/PyTorch_Computer_Vision.ipynb)
+- [Building QA System using RNN](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/Pytorch_RNN_qa_system.ipynb)
+- [LSTM Project](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Deep%20Learning/LSTM_Project.ipynb)
+
+## NLP
+  - [Begineers Text Preprocessing](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/Beginner's_Text_Preprocessing.ipynb)
+  - [Postagging Spacy](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/Postagging_Spacy.ipynb)
+  - [Transformers Pipeline](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/transformers_Pipeline.ipynb)
+  - [Training Full Model](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/Training_full_model.ipynb)
+  - [Transformers Tokenizer](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/transformers_tokenizers.ipynb)
+  - [FineTuning Pretrained Model](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/FineTuning_PreTrained.ipynb)
+  - [FineTuning on AG News](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/Finetuned_on_Ag_News.ipynb)
+  - [Sentiment Analysis](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/Sentiment_Analysis_Hotel_Reviews.ipynb)
+  - [Text Summarization](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/NLP/01_text_summarization%20(1).ipynb)
+
+
+ ## Time Series
+- [Complete Time Series Data Analysis](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Complete_Data_Analysis.ipynb)
+- [Complete Time Series Data source](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Completet_Time_Series_Data_source.ipynb)
+- [Time Series Modeling](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Time_Series_Modeling.ipynb)
+- [Time Series with Arima](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Time_Series_with_ARIMA.ipynb)
+- [Time Series with SVM](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Time_Series_with_SVM.ipynb)
+- [Time Series Analysis](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Time_series_analysis.ipynb)
+- [Scrapping Financial News](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Scraping_Financial_News.ipynb)
+- [Twitter Sentimental Analysis](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Time%20Series/Twitter_Sentiment_Analysis.ipynb)
 
 ## 📢 Contributions
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository, create a new branch, and submit a pull request.
