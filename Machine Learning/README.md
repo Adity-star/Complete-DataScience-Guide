@@ -13,6 +13,7 @@
 1. [Road Traffic Accident severity prediction](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/ML%20Predictions/Road%20Traffic%20Accident%20Severity%20Prediction.ipynb)
 2. [Stock Market Prediction](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/ML%20Predictions/Stock%20Market%20prediction.ipynb)
 3. [Car Price Prediction](https://github.com/Adity-star/Data-Science-Work/blob/main/Machine%20Learning/ML%20Predictions/car_price_prediction.ipynb)
+4. [Customer Churn Project](https://github.com/Adity-star/Complete-DataScience-Guide/blob/main/Machine%20Learning/Custome_Churn_Project.ipynb)
 
 
 ## Machine learning Models
