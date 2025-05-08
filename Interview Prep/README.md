@@ -8,6 +8,7 @@ In different files, I list various questions that might be asked in a Data Scien
 * [Machine Learning Assessment](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/Machine%20Learning%20Assessmentpdf.pdf)
 * [30 Days Interview Prepration Guide](https://github.com/Adity-star/Data-Science-Guide/tree/main/Interview%20Prep/30_days_interview_questions)
 * [JP Morgan Chase HR Interview Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/Jp%20Morgan%20Chase-%20interview.pdf)
+* [160 Data Science Interview Questions](https://hackernoon.com/160-data-science-interview-questions-415s3y2a?ref=hackernoon.com)
 
 ## Statistics and probability
 - [Mathematics and Probability Questions](https://github.com/Adity-star/Data-Science-Guide/blob/main/Interview%20Prep/list_of_questions_mathematics.md)
